@@ -6,6 +6,8 @@ cache: npm
 branches:
   only:
     - master # build master branch only
+before_install:
+  - git clone --depth=1 https://github.com/JoeyBling/hexo-theme-yilia-plus.git themes/yilia-plus
 script:
   - hexo generate # generate static files
 deploy:
