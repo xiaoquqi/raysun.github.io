@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="参考链接：https:&#x2F;&#x2F;www.examtopics.com&#x2F;exams&#x2F;amazon&#x2F;aws-certified-solutions-architect-associate&#x2F;view&#x2F; 由于备考AWS ACA考试，所以从网上看到这套模拟试题，在学习过程中对试题进行系统性分析和记录。发现有很多问题答案并非十分准确，所以也尝试做出分析和更正。 &lt;!- more –&gt; A Solutio">
+  <meta name="description" content="参考链接：https:&#x2F;&#x2F;www.examtopics.com&#x2F;exams&#x2F;amazon&#x2F;aws-certified-solutions-architect-associate&#x2F;view&#x2F; 由于备考AWS ACA考试，所以从网上看到这套模拟试题，在学习过程中对试题进行系统性分析和记录。发现有很多问题答案并非十分准确，所以也尝试做出分析和更正。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AWS Certified Solutions Architect - Associate Exam">
 <meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2019&#x2F;12&#x2F;31&#x2F;AWS-Certified-Solutions-Architect-Associate-Exam&#x2F;index.html">
 <meta property="og:site_name" content="Ray&#39;s Blog">
-<meta property="og:description" content="参考链接：https:&#x2F;&#x2F;www.examtopics.com&#x2F;exams&#x2F;amazon&#x2F;aws-certified-solutions-architect-associate&#x2F;view&#x2F; 由于备考AWS ACA考试，所以从网上看到这套模拟试题，在学习过程中对试题进行系统性分析和记录。发现有很多问题答案并非十分准确，所以也尝试做出分析和更正。 &lt;!- more –&gt; A Solutio">
+<meta property="og:description" content="参考链接：https:&#x2F;&#x2F;www.examtopics.com&#x2F;exams&#x2F;amazon&#x2F;aws-certified-solutions-architect-associate&#x2F;view&#x2F; 由于备考AWS ACA考试，所以从网上看到这套模拟试题，在学习过程中对试题进行系统性分析和记录。发现有很多问题答案并非十分准确，所以也尝试做出分析和更正。">
 <meta property="og:locale" content="zh">
 <meta property="article:published_time" content="2019-12-31T01:11:55.000Z">
-<meta property="article:modified_time" content="2019-12-31T10:06:27.779Z">
+<meta property="article:modified_time" content="2020-01-01T14:41:49.251Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta property="article:tag" content="AWS">
 <meta property="article:tag" content="ACA Exam">
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">736字</span>
+      <span class="post-count">3.1k字</span>
     </span>
   </span>
 
@@ -211,7 +211,7 @@ var _hmt = _hmt || [];
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">14分</span>
     </span>
   </span>
 </div>
@@ -224,7 +224,8 @@ var _hmt = _hmt || [];
     
     <p>参考链接：<a href="https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate/view/" target="_blank" rel="noopener">https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate/view/</a></p>
 <p>由于备考AWS ACA考试，所以从网上看到这套模拟试题，在学习过程中对试题进行系统性分析和记录。发现有很多问题答案并非十分准确，所以也尝试做出分析和更正。</p>
-<p>&lt;!- more –&gt;</p>
+<a id="more"></a>
+
 <h2 id="A-Solutions-Architect-is-designing-an-application-that-will-encrypt-all-data-in-an-Amazon-Redshift-cluster-Which-action-will-encrypt-the-data-at-rest"><a href="#A-Solutions-Architect-is-designing-an-application-that-will-encrypt-all-data-in-an-Amazon-Redshift-cluster-Which-action-will-encrypt-the-data-at-rest" class="headerlink" title="A Solutions Architect is designing an application that will encrypt all data in an Amazon Redshift cluster. Which action will encrypt the data at rest?"></a>A Solutions Architect is designing an application that will encrypt all data in an Amazon Redshift cluster. Which action will encrypt the data at rest?</h2><p>A. Place the Redshift cluster in a private subnet.<br>B. Use the AWS KMS Default Customer master key.<br>C. Encrypt the Amazon EBS volumes.<br>D. Encrypt the data using SSL/TLS.</p>
 <p>Answer: B</p>
 <ul>
@@ -247,6 +248,58 @@ var _hmt = _hmt || [];
 <ul>
 <li>分析：该问题的关键在于bottleneck due to frequently accessed queries，查询变成瓶颈，可以使用ElastiCache服务作为缓存，降低读取频率解决问题。</li>
 </ul>
+<h2 id="A-company-is-launching-an-application-that-it-expects-to-be-very-popular-The-company-needs-a-database-that-can-scale-with-the-rest-of-the-application-The-schema-will-change-frequently-The-application-cannot-afford-any-downtime-for-database-changes-Which-AWS-service-allows-the-company-to-achieve-these-objectives"><a href="#A-company-is-launching-an-application-that-it-expects-to-be-very-popular-The-company-needs-a-database-that-can-scale-with-the-rest-of-the-application-The-schema-will-change-frequently-The-application-cannot-afford-any-downtime-for-database-changes-Which-AWS-service-allows-the-company-to-achieve-these-objectives" class="headerlink" title="A company is launching an application that it expects to be very popular. The company needs a database that can scale with the rest of the application. The schema will change frequently. The application cannot afford any downtime for database changes. Which AWS service allows the company to achieve these objectives?"></a>A company is launching an application that it expects to be very popular. The company needs a database that can scale with the rest of the application. The schema will change frequently. The application cannot afford any downtime for database changes. Which AWS service allows the company to achieve these objectives?</h2><p>A. Amazon Redshift<br>B. Amazon DynamoDB<br>C. Amazon RDS MySQL<br>D. Amazon Aurora</p>
+<p>Answer: B</p>
+<ul>
+<li>分析：原网站给出的答案是A，但是经过分析觉得有些问题，这道题的几个关键词：scale with the rest of the application, schema will change frequently, cannot afford any downtime for database changes. 首先，schema总是变更，所以这里需要的非关系型数据库，排除C和D。Redshift是数据仓库，其实也是数据仓库，从第一点上就可以排除。另外从这个链接（<a href="http://braindump2go.hatenablog.com/entry/2019/11/05/123057）分析上，还有一点除了DynamoDB可以真正做到scale时候zero" target="_blank" rel="noopener">http://braindump2go.hatenablog.com/entry/2019/11/05/123057）分析上，还有一点除了DynamoDB可以真正做到scale时候zero</a> downtime，其他的都不行。所以原网站给出的答案是错误的。</li>
+</ul>
+<h2 id="A-Solution-Architect-is-designing-a-disaster-recovery-solution-for-a-5-TB-Amazon-Redshift-cluster-The-recovery-site-must-be-at-least-500-miles-805-kilometers-from-the-live-site-How-should-the-Architect-meet-these-requirements"><a href="#A-Solution-Architect-is-designing-a-disaster-recovery-solution-for-a-5-TB-Amazon-Redshift-cluster-The-recovery-site-must-be-at-least-500-miles-805-kilometers-from-the-live-site-How-should-the-Architect-meet-these-requirements" class="headerlink" title="A Solution Architect is designing a disaster recovery solution for a 5 TB Amazon Redshift cluster. The recovery site must be at least 500 miles (805 kilometers) from the live site. How should the Architect meet these requirements?"></a>A Solution Architect is designing a disaster recovery solution for a 5 TB Amazon Redshift cluster. The recovery site must be at least 500 miles (805 kilometers) from the live site. How should the Architect meet these requirements?</h2><p>A. Use AWS CloudFormation to deploy the cluster in a second region.<br>B. Take a snapshot of the cluster and copy it to another Availability Zone.<br>C. Modify the Redshift cluster to span two regions.<br>D. Enable cross-region snapshots to a different region.</p>
+<p>Answer: D</p>
+<ul>
+<li>参考链接：<a href="https://aws.amazon.com/cn/blogs/aws/automated-cross-region-snapshot-copy-for-amazon-redshift/" target="_blank" rel="noopener">https://aws.amazon.com/cn/blogs/aws/automated-cross-region-snapshot-copy-for-amazon-redshift/</a></li>
+</ul>
+<h2 id="A-customer-has-written-an-application-that-uses-Amazon-S3-exclusively-as-a-data-store-The-application-works-well-until-the-customer-increases-the-rate-at-which-the-application-is-updating-information-The-customer-now-reports-that-outdated-data-occasionally-appears-when-the-application-accesses-objects-in-Amazon-S3-What-could-be-the-problem-given-that-the-application-logic-is-otherwise-correct"><a href="#A-customer-has-written-an-application-that-uses-Amazon-S3-exclusively-as-a-data-store-The-application-works-well-until-the-customer-increases-the-rate-at-which-the-application-is-updating-information-The-customer-now-reports-that-outdated-data-occasionally-appears-when-the-application-accesses-objects-in-Amazon-S3-What-could-be-the-problem-given-that-the-application-logic-is-otherwise-correct" class="headerlink" title="A customer has written an application that uses Amazon S3 exclusively as a data store. The application works well until the customer increases the rate at which the application is updating information. The customer now reports that outdated data occasionally appears when the application accesses objects in Amazon S3. What could be the problem, given that the application logic is otherwise correct?"></a>A customer has written an application that uses Amazon S3 exclusively as a data store. The application works well until the customer increases the rate at which the application is updating information. The customer now reports that outdated data occasionally appears when the application accesses objects in Amazon S3. What could be the problem, given that the application logic is otherwise correct?</h2><p>A. The application is reading parts of objects from Amazon S3 using a range header.<br>B. The application is reading objects from Amazon S3 using parallel object requests.<br>C. The application is updating records by writing new objects with unique keys.<br>D. The application is updating records by overwriting existing objects with the same keys.</p>
+<p>Answer: D</p>
+<ul>
+<li>分析：这道题也是争论很大的一道题，原网站答案为A。问题简单描述为客户端访问不到最新的数据，发生的时间点在于应用上传信息时候速率提高导致的，所以问题应该出现在写入的时候，这样排除A和B读取的问题。因为S3同一object永远是覆盖，所以最有可能的问题是在same key的情况下，所以选择D。</li>
+</ul>
+<h2 id="A-Solutions-Architect-is-designing-a-new-social-media-application-The-application-must-provide-a-secure-method-for-uploading-profile-photos-Each-user-should-be-able-to-upload-a-profile-photo-into-a-shared-storage-location-for-one-week-after-their-profile-is-created-Which-approach-will-meet-all-of-these-requirements"><a href="#A-Solutions-Architect-is-designing-a-new-social-media-application-The-application-must-provide-a-secure-method-for-uploading-profile-photos-Each-user-should-be-able-to-upload-a-profile-photo-into-a-shared-storage-location-for-one-week-after-their-profile-is-created-Which-approach-will-meet-all-of-these-requirements" class="headerlink" title="A Solutions Architect is designing a new social media application. The application must provide a secure method for uploading profile photos. Each user should be able to upload a profile photo into a shared storage location for one week after their profile is created. Which approach will meet all of these requirements?"></a>A Solutions Architect is designing a new social media application. The application must provide a secure method for uploading profile photos. Each user should be able to upload a profile photo into a shared storage location for one week after their profile is created. Which approach will meet all of these requirements?</h2><p>A. Use Amazon Kinesis with AWS CloudTrail for auditing the specific times when profile photos are uploaded.<br>B. Use Amazon EBS volumes with IAM policies restricting user access to specific time periods.<br>C. Use Amazon S3 with the default private access policy and generate pre-signed URLs each time a new site profile is created.<br>D. Use Amazon CloudFront with AWS CloudTrail for auditing the specific times when profile photos are uploaded.</p>
+<p>Answer: C</p>
+<h2 id="An-application-requires-block-storage-for-file-updates-The-data-is-500-GB-and-must-continuously-sustain-100-MiB-s-of-aggregate-read-write-operations-Which-storage-option-is-appropriate-for-this-application"><a href="#An-application-requires-block-storage-for-file-updates-The-data-is-500-GB-and-must-continuously-sustain-100-MiB-s-of-aggregate-read-write-operations-Which-storage-option-is-appropriate-for-this-application" class="headerlink" title="An application requires block storage for file updates. The data is 500 GB and must continuously sustain 100 MiB/s of aggregate read/write operations. Which storage option is appropriate for this application?"></a>An application requires block storage for file updates. The data is 500 GB and must continuously sustain 100 MiB/s of aggregate read/write operations. Which storage option is appropriate for this application?</h2><p>A. Amazon S3<br>B. Amazon EFS<br>C. Amazon EBS<br>D. Amazon Glacier</p>
+<p>Answer: C</p>
+<ul>
+<li>分析：没想到这道题原网站给出的答案是B，争议比较大，但是从题目描述需要Block Storage角度来看，选择C才是最合理的。这道题还需要进一步确认一下。</li>
+</ul>
+<h2 id="A-mobile-application-serves-scientific-articles-from-individual-files-in-an-Amazon-S3-bucket-Articles-older-than-30-days-are-rarely-read-Articles-older-than-60-days-no-longer-need-to-be-available-through-the-application-but-the-application-owner-would-like-to-keep-them-for-historical-purposes-Which-cost-effective-solution-BEST-meets-these-requirements"><a href="#A-mobile-application-serves-scientific-articles-from-individual-files-in-an-Amazon-S3-bucket-Articles-older-than-30-days-are-rarely-read-Articles-older-than-60-days-no-longer-need-to-be-available-through-the-application-but-the-application-owner-would-like-to-keep-them-for-historical-purposes-Which-cost-effective-solution-BEST-meets-these-requirements" class="headerlink" title="A mobile application serves scientific articles from individual files in an Amazon S3 bucket. Articles older than 30 days are rarely read. Articles older than 60 days no longer need to be available through the application, but the application owner would like to keep them for historical purposes. Which cost-effective solution BEST meets these requirements?"></a>A mobile application serves scientific articles from individual files in an Amazon S3 bucket. Articles older than 30 days are rarely read. Articles older than 60 days no longer need to be available through the application, but the application owner would like to keep them for historical purposes. Which cost-effective solution BEST meets these requirements?</h2><p>A. Create a Lambda function to move files older than 30 days to Amazon EBS and move files older than 60 days to Amazon Glacier.<br>B. Create a Lambda function to move files older than 30 days to Amazon Glacier and move files older than 60 days to Amazon EBS.<br>C. Create lifecycle rules to move files older than 30 days to Amazon S3 Standard Infrequent Access and move files older than 60 days to Amazon Glacier.<br>D. Create lifecycle rules to move files older than 30 days to Amazon Glacier and move files older than 60 days to Amazon S3 Standard Infrequent Access.</p>
+<p>Answer: C</p>
+<ul>
+<li>分析：很明显的排除A和B，S3可以自定义规则，那么问题就是30天后和60天后需要哪种存储的问题了，根据题目C是明显正确的。</li>
+</ul>
+<h2 id="An-organization-is-currently-hosting-a-large-amount-of-frequently-accessed-data-consisting-of-key-value-pairs-and-semi-structured-documents-in-their-data-center-They-are-planning-to-move-this-data-to-AWS-Which-of-one-of-the-following-services-MOST-effectively-meets-their-needs"><a href="#An-organization-is-currently-hosting-a-large-amount-of-frequently-accessed-data-consisting-of-key-value-pairs-and-semi-structured-documents-in-their-data-center-They-are-planning-to-move-this-data-to-AWS-Which-of-one-of-the-following-services-MOST-effectively-meets-their-needs" class="headerlink" title="An organization is currently hosting a large amount of frequently accessed data consisting of key-value pairs and semi-structured documents in their data center. They are planning to move this data to AWS. Which of one of the following services MOST effectively meets their needs?"></a>An organization is currently hosting a large amount of frequently accessed data consisting of key-value pairs and semi-structured documents in their data center. They are planning to move this data to AWS. Which of one of the following services MOST effectively meets their needs?</h2><p>A. Amazon Redshift<br>B. Amazon RDS<br>C. Amazon DynamoDB<br>D. Amazon Aurora</p>
+<p>Answer: C</p>
+<h2 id="A-Lambda-function-must-execute-a-query-against-an-Amazon-RDS-database-in-a-private-subnet-Which-steps-are-required-to-allow-the-Lambda-function-to-access-the-Amazon-RDS-database-Select-two"><a href="#A-Lambda-function-must-execute-a-query-against-an-Amazon-RDS-database-in-a-private-subnet-Which-steps-are-required-to-allow-the-Lambda-function-to-access-the-Amazon-RDS-database-Select-two" class="headerlink" title="A Lambda function must execute a query against an Amazon RDS database in a private subnet. Which steps are required to allow the Lambda function to access the Amazon RDS database? (Select two.)"></a>A Lambda function must execute a query against an Amazon RDS database in a private subnet. Which steps are required to allow the Lambda function to access the Amazon RDS database? (Select two.)</h2><p>A. Create a VPC Endpoint for Amazon RDS.<br>B. Create the Lambda function within the Amazon RDS VPC.<br>C. Change the ingress rules of Lambda security group, allowing the Amazon RDS security group.<br>D. Change the ingress rules of the Amazon RDS security group, allowing the Lambda security group.<br>E. Add an Internet Gateway (IGW) to the VPC, route the private subnet to the IGW.</p>
+<p>Answer: BD</p>
+<ul>
+<li>分析：又是原网站一道错题，原网站答案为AD。D选项是允许Lambda服务访问RDS，所以在进方向允许。</li>
+<li>目前VPC支持Endpoint的服务：<a href="https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpc-endpoints.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpc-endpoints.html</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">接口终端节点是一个弹性网络接口，具有来自子网 IP 地址范围的私有 IP 地址，用作发送到受支持的服务的通信的入口点。支持以下服务：</span><br><span class="line">Amazon API Gateway</span><br><span class="line">Amazon AppStream 2.0</span><br><span class="line">AWS App Mesh</span><br><span class="line">Amazon Athena</span><br><span class="line">AWS CloudFormation</span><br><span class="line">AWS CloudTrail</span><br><span class="line">Amazon CloudWatch</span><br><span class="line">Amazon CloudWatch Events</span><br><span class="line">Amazon CloudWatch Logs</span><br><span class="line">AWS CodeBuild</span><br><span class="line">AWS CodeCommit</span><br><span class="line">AWS CodePipeline</span><br><span class="line">AWS Config</span><br><span class="line">AWS DataSync</span><br><span class="line">Amazon EC2 API</span><br><span class="line">Elastic Load Balancing</span><br><span class="line">Amazon Elastic Container Registry</span><br><span class="line">Amazon Elastic Container Service</span><br><span class="line">AWS Glue</span><br><span class="line">AWS Key Management Service</span><br><span class="line">Amazon Kinesis Data Firehose</span><br><span class="line">Amazon Kinesis Data Streams</span><br><span class="line">Amazon Rekognition</span><br><span class="line">Amazon SageMaker 和 Amazon SageMaker 运行时</span><br><span class="line">Amazon SageMaker 笔记本</span><br><span class="line">AWS Secrets Manager</span><br><span class="line">AWS Security Token Service</span><br><span class="line">AWS Service Catalog</span><br><span class="line">Amazon SNS</span><br><span class="line">Amazon SQS</span><br><span class="line">AWS Systems Manager</span><br><span class="line">AWS Storage Gateway</span><br><span class="line">AWS Transfer for SFTP</span><br><span class="line">其他 AWS 账户托管的终端节点服务</span><br><span class="line"></span><br><span class="line">网关终端节点是一个网关，作为您在路由表中指定的路由的目标，用于发往受支持的 AWS 服务的流量。支持以下 AWS 服务：</span><br><span class="line">Amazon S3</span><br><span class="line">DynamoDB</span><br></pre></td></tr></table></figure>
+
+<h2 id="待实际环境验证-A-Solutions-Architect-needs-to-build-a-resilient-data-warehouse-using-Amazon-Redshift-The-Architect-needs-to-rebuild-the-Redshift-cluster-in-another-region-Which-approach-can-the-Architect-take-to-address-this-requirement"><a href="#待实际环境验证-A-Solutions-Architect-needs-to-build-a-resilient-data-warehouse-using-Amazon-Redshift-The-Architect-needs-to-rebuild-the-Redshift-cluster-in-another-region-Which-approach-can-the-Architect-take-to-address-this-requirement" class="headerlink" title="(待实际环境验证)A Solutions Architect needs to build a resilient data warehouse using Amazon Redshift. The Architect needs to rebuild the Redshift cluster in another region. Which approach can the Architect take to address this requirement?"></a>(待实际环境验证)A Solutions Architect needs to build a resilient data warehouse using Amazon Redshift. The Architect needs to rebuild the Redshift cluster in another region. Which approach can the Architect take to address this requirement?</h2><p>A. Modify the Redshift cluster and configure cross-region snapshots to the other region.<br>B. Modify the Redshift cluster to take snapshots of the Amazon EBS volumes each day, sharing those snapshots with the other region.<br>C. Modify the Redshift cluster and configure the backup and specify the Amazon S3 bucket in the other region.<br>D. Modify the Redshift cluster to use AWS Snowball in export mode with data delivered to the other region.</p>
+<p>Answer: A</p>
+<ul>
+<li>分析：又是一道错题，Redhift备份是通过S3实现的, 所以不存在B的情况，我个人有点倾向于C，但是A确实是Redshift在快照时默认的格式，可能是更容易恢复吧，这道题需要在实际环境进行一下验证。另外国际版本的Redshift和国内的应该比国内的高很多。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">问：Amazon Redshift 如何备份数据？ 如何从备份中还原我的集群？</span><br><span class="line"></span><br><span class="line">在加载数据时，Amazon Redshift 会复制数据仓库集群内的所有数据并将其连续备份至 S3。Amazon Redshift 始终尝试维持至少三份数据（计算节点上的正本数据、副本数据和 Amazon S3 上的备份数据）。Redshift 还能将您的快照异步复制到另一个区域的 S3 中进行灾难恢复。</span><br><span class="line"></span><br><span class="line">默认情况下，Amazon Redshift 以一天的保留期启用数据仓库群集的自动化备份。您可将其配置为 35 天之久。</span><br><span class="line"></span><br><span class="line">免费备份存储受限于数据仓库群集中节点上的总存储大小，并仅适用于已激活的数据仓库群集。例如，如果您有 8TB 的数据仓库总存储大小，那么我们将提供最多 8TB 的备份存储而不另外收费。如果您想将备份保留期延长为超过一天，那么您可以使用 AWS 管理控制台或 Amazon Redshift API 来实现这一目的。有关自动快照的更多信息，请参阅《Amazon Redshift 管理指南》。Amazon Redshift 仅备份已更改的数据，因此大多数快照仅占用少量的免费备份存储。</span><br><span class="line"></span><br><span class="line">如果您需要还原备份，则可以在备份保留期内访问所有自动备份。在您选择某个要还原的备份后，我们将预置一个新的数据仓库集群并将数据还原至此集群中。</span><br></pre></td></tr></table></figure>
+
+<h2 id="A-popular-e-commerce-application-runs-on-AWS-The-application-encounters-performance-issues-The-database-is-unable-to-handle-the-amount-of-queries-and-load-during-peak-times-The-database-is-running-on-the-RDS-Aurora-engine-on-the-largest-instance-size-available-What-should-an-administrator-do-to-improve-performance"><a href="#A-popular-e-commerce-application-runs-on-AWS-The-application-encounters-performance-issues-The-database-is-unable-to-handle-the-amount-of-queries-and-load-during-peak-times-The-database-is-running-on-the-RDS-Aurora-engine-on-the-largest-instance-size-available-What-should-an-administrator-do-to-improve-performance" class="headerlink" title="A popular e-commerce application runs on AWS. The application encounters performance issues. The database is unable to handle the amount of queries and load during peak times. The database is running on the RDS Aurora engine on the largest instance size available. What should an administrator do to improve performance?"></a>A popular e-commerce application runs on AWS. The application encounters performance issues. The database is unable to handle the amount of queries and load during peak times. The database is running on the RDS Aurora engine on the largest instance size available. What should an administrator do to improve performance?</h2><p>A. Convert the database to Amazon Redshift.<br>B. Create a CloudFront distribution.<br>C. Convert the database to use EBS Provisioned IOPS.<br>D. Create one or more read replicas.</p>
+<p>Answer: C</p>
+<ul>
+<li>分析：这道题我最开始选择的是D，但是评论区的一种解释有一定的道理：这个网站应用类型为电商，原题中没有很清楚说明queris and load的压力有多大，很可能我们建立了read replicas只能临时性解决问题，并不是一劳永逸的方式。并且根据<a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">因此，所有 Aurora 副本均返回相同的查询结果数据，且副本滞后时间非常短 - 通常远远少于主实例写入更新后的 100 毫秒。副本滞后因数据库更改速率而异。也就是说，在对数据库执行大量写入操作期间，您可能发现副本滞后时间变长。</span><br></pre></td></tr></table></figure>
+
+<p>如果读副本在这个延时上，很可能对业务系统造成很大的影响。</p>
 
     
 
@@ -458,7 +511,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2012-2019 <a href="http://sunqi.me/" target="_blank">孙琦(Ray)</a>
+    		&copy; 2012-2020 <a href="http://sunqi.me/" target="_blank">孙琦(Ray)</a>
     	</div>
       	<div class="footer-right">
 			
@@ -544,14 +597,6 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AWS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ACA Exam</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
               </li>
              
@@ -561,6 +606,14 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AWS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ACA Exam</a>
               </li>
             
             <div class="clearfix"></div>
