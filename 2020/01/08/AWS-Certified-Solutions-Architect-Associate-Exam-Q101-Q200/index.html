@@ -18,7 +18,7 @@
 <meta property="og:description" content="通过之前100道题的梳理，发现这个网站竟然有这么多争议的题目，我觉得有可能是有些题目已经跟不上AWS自身发展速度了，有了更多的方法。总之，通过这些题目的梳理，对AWS服务细节层面有了更多的了解，希望能够一次性通过ACA考试。这篇继续这个网站101到200题的学习工作，希望能提高点速度。">
 <meta property="og:locale" content="zh">
 <meta property="article:published_time" content="2020-01-08T07:36:23.000Z">
-<meta property="article:modified_time" content="2020-01-08T10:03:45.651Z">
+<meta property="article:modified_time" content="2020-01-08T13:09:09.383Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta property="article:tag" content="AWS">
 <meta property="article:tag" content="ACA Exam">
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.8k字</span>
+      <span class="post-count">3.5k字</span>
     </span>
   </span>
 
@@ -211,7 +211,7 @@ var _hmt = _hmt || [];
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">14分</span>
+      <span class="post-count">18分</span>
     </span>
   </span>
 </div>
@@ -306,6 +306,31 @@ var _hmt = _hmt || [];
 <p>Answer: A</p>
 <h2 id="A-company-wants-to-analyze-all-of-its-sales-information-aggregated-over-the-last-12-months-The-company-expects-there-to-be-over-10TB-of-data-from-multiple-sources-What-service-should-be-used"><a href="#A-company-wants-to-analyze-all-of-its-sales-information-aggregated-over-the-last-12-months-The-company-expects-there-to-be-over-10TB-of-data-from-multiple-sources-What-service-should-be-used" class="headerlink" title="A company wants to analyze all of its sales information aggregated over the last 12 months. The company expects there to be over 10TB of data from multiple sources. What service should be used?"></a>A company wants to analyze all of its sales information aggregated over the last 12 months. The company expects there to be over 10TB of data from multiple sources. What service should be used?</h2><p>A. Amazon DynamoDB<br>B. Amazon Aurora MySQL<br>C. Amazon RDS MySQL<br>D. Amazon Redshift</p>
 <p>Answer: D</p>
+<h2 id="A-media-company-has-deployed-a-multi-tier-architecture-on-AWS-Web-servers-are-deployed-in-two-Availability-Zones-using-an-Auto-Scaling-group-with-a-default-Auto-Scaling-termination-policy-The-web-servers’-Auto-Scaling-group-currently-has-15-instances-running-Which-instance-will-be-terminated-first-during-a-scale-in-operation"><a href="#A-media-company-has-deployed-a-multi-tier-architecture-on-AWS-Web-servers-are-deployed-in-two-Availability-Zones-using-an-Auto-Scaling-group-with-a-default-Auto-Scaling-termination-policy-The-web-servers’-Auto-Scaling-group-currently-has-15-instances-running-Which-instance-will-be-terminated-first-during-a-scale-in-operation" class="headerlink" title="A media company has deployed a multi-tier architecture on AWS. Web servers are deployed in two Availability Zones using an Auto Scaling group with a default Auto Scaling termination policy. The web servers’ Auto Scaling group currently has 15 instances running. Which instance will be terminated first during a scale-in operation?"></a>A media company has deployed a multi-tier architecture on AWS. Web servers are deployed in two Availability Zones using an Auto Scaling group with a default Auto Scaling termination policy. The web servers’ Auto Scaling group currently has 15 instances running. Which instance will be terminated first during a scale-in operation?</h2><p>A. The instance with the oldest launch configuration.<br>B. The instance in the Availability Zone that has most instances.<br>C. The instance closest to the next billing hour.<br>D. The oldest instance in the group.</p>
+<p>Answer: B</p>
+<ul>
+<li>控制在缩小过程中终止哪些 Auto Scaling 实例(<a href="https://docs.aws.amazon.com/zh_cn/autoscaling/ec2/userguide/as-instance-termination.html#default-termination-policy" target="_blank" rel="noopener">https://docs.aws.amazon.com/zh_cn/autoscaling/ec2/userguide/as-instance-termination.html#default-termination-policy</a>)</li>
+</ul>
+<blockquote>
+<p>当达到缩减策略的阈值时，策略生效，Auto Scaling 组终止其中一个实例。如果您没有为该组分配特定的终止策略，则使用默认终止策略。它选择有两个实例的可用区，并终止从最旧启动配置启动的实例。如果这些实例是从同一启动配置启动的，则 Auto Scaling 组选择最接近下一个计费小时的实例并终止该实例。</p>
+</blockquote>
+<h2 id="A-retail-company-has-sensors-placed-in-its-physical-retail-stores-The-sensors-send-messages-over-HTTP-when-customers-interact-with-in-store-product-displays-A-Solutions-Architect-needs-to-implement-a-system-for-processing-those-sensor-messages-the-results-must-be-available-for-the-Data-Analysis-team-Which-architecture-should-be-used-to-meet-these-requirements"><a href="#A-retail-company-has-sensors-placed-in-its-physical-retail-stores-The-sensors-send-messages-over-HTTP-when-customers-interact-with-in-store-product-displays-A-Solutions-Architect-needs-to-implement-a-system-for-processing-those-sensor-messages-the-results-must-be-available-for-the-Data-Analysis-team-Which-architecture-should-be-used-to-meet-these-requirements" class="headerlink" title="A retail company has sensors placed in its physical retail stores. The sensors send messages over HTTP when customers interact with in-store product displays. A Solutions Architect needs to implement a system for processing those sensor messages; the results must be available for the Data Analysis team. Which architecture should be used to meet these requirements?"></a>A retail company has sensors placed in its physical retail stores. The sensors send messages over HTTP when customers interact with in-store product displays. A Solutions Architect needs to implement a system for processing those sensor messages; the results must be available for the Data Analysis team. Which architecture should be used to meet these requirements?</h2><p>A. Implement an Amazon API Gateway to server as the HTTP endpoint. Have the API Gateway trigger an AWS Lambda function to process the messages, and save the results to an Amazon DynamoDB table.<br>B. Create an Amazon EC2 instance to server as the HTTP endpoint and to process the messages. Save the results to Amazon S3 for the Data Analysis team to download.<br>C. Use Amazon Route 53 to direct incoming sensor messages to a Lambda function to process the message and save the results to a Amazon DynamoDB table.<br>D. Use AWS Direct Connect to connect sensors to DynamoDB so that data can be written directly to a DynamoDB table where it can be accessed by the Data Analysis team.</p>
+<p>Answer: A</p>
+<ul>
+<li>分析：原来AWS Lambda的HTTP trigger是这么实现的</li>
+</ul>
+<h2 id="A-client-is-migrating-a-legacy-web-application-to-the-AWS-Cloud-The-current-system-uses-an-Oracle-database-as-a-relational-database-management-system-solution-Backups-occur-every-night-and-the-data-is-stored-on-premises-The-Solutions-Architect-must-automate-the-backups-and-identity-a-storage-solution-while-keeping-costs-low-Which-AWS-service-will-meet-these-requirements"><a href="#A-client-is-migrating-a-legacy-web-application-to-the-AWS-Cloud-The-current-system-uses-an-Oracle-database-as-a-relational-database-management-system-solution-Backups-occur-every-night-and-the-data-is-stored-on-premises-The-Solutions-Architect-must-automate-the-backups-and-identity-a-storage-solution-while-keeping-costs-low-Which-AWS-service-will-meet-these-requirements" class="headerlink" title="A client is migrating a legacy web application to the AWS Cloud. The current system uses an Oracle database as a relational database management system solution. Backups occur every night, and the data is stored on-premises. The Solutions Architect must automate the backups and identity a storage solution while keeping costs low. Which AWS service will meet these requirements?"></a>A client is migrating a legacy web application to the AWS Cloud. The current system uses an Oracle database as a relational database management system solution. Backups occur every night, and the data is stored on-premises. The Solutions Architect must automate the backups and identity a storage solution while keeping costs low. Which AWS service will meet these requirements?</h2><p>A. Amazon RDS<br>B. Amazon RedShift<br>C. Amazon DynamoDB Accelerator<br>D. Amazon ElastiCache</p>
+<p>Answer: A</p>
+<h2 id="争议-A-company-has-an-Amazon-RDS-database-backing-its-production-website-The-Sales-team-needs-to-run-queries-against-the-database-to-track-training-program-effectiveness-Queries-against-the-production-database-cannot-impact-performance-and-the-solution-must-be-easy-to-maintain-How-can-these-requirements-be-met"><a href="#争议-A-company-has-an-Amazon-RDS-database-backing-its-production-website-The-Sales-team-needs-to-run-queries-against-the-database-to-track-training-program-effectiveness-Queries-against-the-production-database-cannot-impact-performance-and-the-solution-must-be-easy-to-maintain-How-can-these-requirements-be-met" class="headerlink" title="(争议)A company has an Amazon RDS database backing its production website. The Sales team needs to run queries against the database to track training program effectiveness. Queries against the production database cannot impact performance, and the solution must be easy to maintain. How can these requirements be met?"></a>(争议)A company has an Amazon RDS database backing its production website. The Sales team needs to run queries against the database to track training program effectiveness. Queries against the production database cannot impact performance, and the solution must be easy to maintain. How can these requirements be met?</h2><p>A. Use an Amazon Redshift database. Copy the product database into Redshift and allow the team to query it.<br>B. Use an Amazon RDS read replica of the production database and allow the team to query against it.<br>C. Use multiple Amazon EC2 instances running replicas of the production database, placed behind a load balancer.<br>D. Use an Amazon DynamoDB table to store a copy of the data.</p>
+<p>Answer: B</p>
+<ul>
+<li>争议：原有答案给出的是A，根据题目描述看起来是一个数据仓库的需求。从easy to maintain的角度说B，更简单</li>
+</ul>
+<h2 id="A-company-must-collect-temperature-data-from-thousands-of-remote-weather-devices-The-company-must-also-store-this-data-in-a-data-warehouse-to-run-aggregations-and-visualizations-Which-services-will-meet-these-requirements-Choose-two"><a href="#A-company-must-collect-temperature-data-from-thousands-of-remote-weather-devices-The-company-must-also-store-this-data-in-a-data-warehouse-to-run-aggregations-and-visualizations-Which-services-will-meet-these-requirements-Choose-two" class="headerlink" title="A company must collect temperature data from thousands of remote weather devices. The company must also store this data in a data warehouse to run aggregations and visualizations. Which services will meet these requirements? (Choose two.)"></a>A company must collect temperature data from thousands of remote weather devices. The company must also store this data in a data warehouse to run aggregations and visualizations. Which services will meet these requirements? (Choose two.)</h2><p>A. Amazon Kinesis Data Firehouse<br>B. Amazon SQS<br>C. Amazon Redshift<br>D. Amazon SNS<br>E. Amazon DynamoDB</p>
+<p>Answer: AC</p>
+<ul>
+<li>分析：A负责接收数据并处理，C作为数据仓库存储下来</li>
+</ul>
 
     
 
