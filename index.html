@@ -204,8 +204,9 @@ var _hmt = _hmt || [];
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>本文涉及的源代码路径：<a href="https://github.com/xiaoquqi/openstackclient-demo/tree/master/tooz" target="_blank" rel="noopener">https://github.com/xiaoquqi/openstackclient-demo/tree/master/tooz</a><br><a name="WktVy"></a></p>
-<h1 id="一、目前现状及存在的问题"><a href="#一、目前现状及存在的问题" class="headerlink" title="一、目前现状及存在的问题"></a>一、目前现状及存在的问题</h1><p>在实际业务系统中，经常有需要定时执行的任务，例如任务状态的定时更新、定时发送状态信息等。在我们的云迁移产品中，允许用户可以设定周期同步规则，定期执行数据同步并调用云平台接口执行快照操作。在单机版本中，通常在同一时间点并发任务量较少的情况下，问题并不是很突出，但是随着我们将云迁移服务从单机版本改造为平台版本后，当多个用户的多台主机同时触发快照任务时，一方面传统的设计方式就成为了瓶颈，无法保证用户的同步任务在同一时间点被触发（需要排队）；另外一方面，目前Active-Passive（简称AP方式）的高可靠部署方式无法利用集群横向扩展能力，无法满足高并发的要求。<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/759715/1584913892295-5b00a815-e846-467f-9943-10521b192e7d.png#align=left&display=inline&height=217&name=%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6.png&originHeight=217&originWidth=514&size=12659&status=done&style=none&width=514" alt="未命名文件.png"><br><a name="BJ63z"></a></p>
+    <p>本文涉及的源代码路径：<a href="https://github.com/xiaoquqi/openstackclient-demo/tree/master/tooz" target="_blank" rel="noopener">https://github.com/xiaoquqi/openstackclient-demo/tree/master/tooz</a></p>
+<h1 id="一、目前现状及存在的问题"><a href="#一、目前现状及存在的问题" class="headerlink" title="一、目前现状及存在的问题"></a>一、目前现状及存在的问题</h1><p>在实际业务系统中，经常有需要定时执行的任务，例如任务状态的定时更新、定时发送状态信息等。在我们的云迁移产品中，允许用户可以设定周期同步规则，定期执行数据同步并调用云平台接口执行快照操作。在单机版本中，通常在同一时间点并发任务量较少的情况下，问题并不是很突出，但是随着我们将云迁移服务从单机版本改造为平台版本后，当多个用户的多台主机同时触发快照任务时，一方面传统的设计方式就成为了瓶颈，无法保证用户的同步任务在同一时间点被触发（需要排队）；另外一方面，目前Active-Passive（简称AP方式）的高可靠部署方式无法利用集群横向扩展能力，无法满足高并发的要求。</p>
+<img src="/images/blogs/2020-03-24/1.png" class="">
     
     <a class="article-more-a" href="/2020/03/24/Python-How-to-use-zookeeper-to-build-distribution-system/#more">more >></a>
     
