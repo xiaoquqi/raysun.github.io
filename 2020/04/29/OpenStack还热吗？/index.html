@@ -6,38 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.me">
-  <title>深度解读OpenStack Liberty国内代码贡献 | Ray&#39;s Blog</title>
+  <title>OpenStack没落了吗？ | Ray&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="又到了OpenStack 新版本发布的季节，虽然秋意寒寒，但是仍然挡不住OpenStack再次掀起全球关注的热点。这是OpenStack第12个版本，与之前的沉稳低调相比，这次的Release中一口气多了5个新模块，也创下了OpenStack项目创建以来的最高纪录。由于天然的架构优势，让OpenStack在云计算横行天下的年代游刃有余，已经逐步成为了云平台的即成标准，从OpenStack对待AWS">
+  <meta name="description" content="OpenStack回顾OpenStack在2010年7月由NASA和Rackspace宣布启动，2010年10月Austin Release后，除了Bexar、Cactus、Diablo版本外，后续版本都遵循6个月发布周期，如今正在开发的是Ussuri版本，最新的稳定版本是去年10月份发布的Train版本。  OpenStack没落了吗？我是从2012年初开始参与到OpenStack社区，这几年见">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度解读OpenStack Liberty国内代码贡献">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2015&#x2F;10&#x2F;29&#x2F;contribution-in-liberty&#x2F;index.html">
+<meta property="og:title" content="OpenStack没落了吗？">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2020&#x2F;04&#x2F;29&#x2F;OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F&#x2F;index.html">
 <meta property="og:site_name" content="Ray&#39;s Blog">
-<meta property="og:description" content="又到了OpenStack 新版本发布的季节，虽然秋意寒寒，但是仍然挡不住OpenStack再次掀起全球关注的热点。这是OpenStack第12个版本，与之前的沉稳低调相比，这次的Release中一口气多了5个新模块，也创下了OpenStack项目创建以来的最高纪录。由于天然的架构优势，让OpenStack在云计算横行天下的年代游刃有余，已经逐步成为了云平台的即成标准，从OpenStack对待AWS">
+<meta property="og:description" content="OpenStack回顾OpenStack在2010年7月由NASA和Rackspace宣布启动，2010年10月Austin Release后，除了Bexar、Cactus、Diablo版本外，后续版本都遵循6个月发布周期，如今正在开发的是Ussuri版本，最新的稳定版本是去年10月份发布的Train版本。  OpenStack没落了吗？我是从2012年初开始参与到OpenStack社区，这几年见">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-contribution-by-modules.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-contributor.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-huawei.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-99cloud.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-unitedstack.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-kylincloud.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-easystack.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-awcloud.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-letv.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-netease.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-huron.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-chinamobile.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-lenovo.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-h3c.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-complete-blueprints.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-blueprint-huawei.png">
-<meta property="article:published_time" content="2015-10-29T02:56:06.000Z">
-<meta property="article:modified_time" content="2020-04-29T15:28:53.575Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-42.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-44.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-45.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-46.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-47.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-48.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-49.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-50.png">
+<meta property="article:published_time" content="2020-04-29T13:20:37.000Z">
+<meta property="article:modified_time" content="2020-04-29T15:28:53.579Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-contribution-by-modules.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-42.png">
   
     <link rel="alternative" href="/atom.xml" title="Ray&#39;s Blog" type="application/atom+xml">
   
@@ -189,22 +181,22 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-contribution-in-liberty" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-OpenStack还热吗？" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      深度解读OpenStack Liberty国内代码贡献
+      OpenStack没落了吗？
     </h1>
   
 
 
   
   
-<a href="/2015/10/29/contribution-in-liberty/" class="archive-article-date">
-        <time datetime="2015-10-29T02:56:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-10-29</time>
+<a href="/2020/04/29/OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F/" class="archive-article-date">
+        <time datetime="2020-04-29T13:20:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
 </a>
 
   
@@ -217,7 +209,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.4k字</span>
+      <span class="post-count">1.4k字</span>
     </span>
   </span>
 
@@ -226,7 +218,7 @@ var _hmt = _hmt || [];
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">8分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -237,80 +229,26 @@ var _hmt = _hmt || [];
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>又到了OpenStack 新版本发布的季节，虽然秋意寒寒，但是仍然挡不住OpenStack再次掀起全球关注的热点。这是OpenStack第12个版本，与之前的沉稳低调相比，这次的Release中一口气多了5个新模块，也创下了OpenStack项目创建以来的最高纪录。由于天然的架构优势，让OpenStack在云计算横行天下的年代游刃有余，已经逐步成为了云平台的即成标准，从OpenStack对待AWS的API兼容的态度就能看出，OpenStack变得越来越自信。</p>
-<p>OpenStack Liberty完整版本的翻译可见：<a href="https://wiki.openstack.org/wiki/ReleaseNotes/Liberty/zh-hans" target="_blank" rel="noopener">https://wiki.openstack.org/wiki/ReleaseNotes/Liberty/zh-hans</a></p>
-<p>本次OpenStack Liberty更新日志中文版本的翻译工作由我完成。由于时间仓促，难免有很多问题，欢迎各位批评指正。</p>
-<a id="more"></a>
-
-<h2 id="社区贡献分析"><a href="#社区贡献分析" class="headerlink" title="社区贡献分析"></a>社区贡献分析</h2><p>本次统计，并没有采用Review的数量为依据，而直接采用commits的方式，也就是代码实际merge入库的数量。</p>
-<p>我们仍然要先看一下模块的贡献情况：</p>
-<img src="/images/blogs/contribution-in-liberty-contribution-by-modules.png" class="left" title="400x300">
-
-<p>与之前Release的特点相似，OpenStack早期的核心模块Nova, Keystone代码commits数量出现明显下滑状态，而Neutron, Heat, Trove, Ceilometer, Cinder等模块都保持着稳中有升的态势。值得关注的是，在排名前20名的项目中，出现了两个直接与Docker有关的项目Kolla和Magnum，一个与docker间接有关的项目Murano。可以预见，OpenStack下一步发展的热点就是在与Docker之间的勾勾搭搭。</p>
-<p>特别需要注意的是，在stackalytics.com统计的模块中，在Kilo中是259个，而到了Liberty到了389个，当然有一些项目并非完全是OpenStack的项目，但是也从一个侧面反映出OpenStack以及周边项目的蓬勃发展。</p>
-<p>从更新日志中我们也能看到，本次Release的正式项目中，变动较大的是Neutron和Heat两个模块。在经历不断锤炼后，Neutron逐渐走向成熟，但是从生产级别角度看，Neutron的确还有很长的路要走。</p>
-<h2 id="国内社区贡献分析"><a href="#国内社区贡献分析" class="headerlink" title="国内社区贡献分析"></a>国内社区贡献分析</h2><img src="/images/blogs/contribution-in-liberty-contributor.png" class="center" title="400x300">
-
-<p>从全球企业的贡献排名来看，排名状况基本变化不大，仍然是HP, Redhat, Mirantis, IBM, Rackspace, Intel, Cisco，但是非常欣喜的，国内的IT的航空母舰华为已经成功杀入前十名，这无疑是振奋人心的事情，希望华为未来能多一些对OpenStack社区的主导力，提高中国在OpenStack社区的地位，当然最好也能扶植一下国内的OpenStack创业公司，实现共同发展、共同进步。华为的主要代码贡献集中在dragonflow，magnum，heat等模块，特别是在dragonflow上，几乎全部是华为贡献的，magnum上也将近有五分之一的代码。</p>
-<p><strong><em>华为社区贡献统计</em></strong></p>
-<img src="/images/blogs/contribution-in-liberty-huawei.png" class="center" title="800x600">
-
-<p>记得在OpenStack五周年的庆祝活动上，Intel的陈绪博士说过，国内OpenStack贡献企业，就是一朵大云，四朵小云，下面让我们来看看这几朵小云在这个版本的表现。</p>
-<p><strong>* 99cloud社区贡献统计*</strong></p>
-<img src="/images/blogs/contribution-in-liberty-99cloud.png" class="center" title="800x600">
-
-<p>排名第16位的是99cloud，99cloud自上一个版本排名四朵小云之首后，本次继续强劲来袭，排名创造历史新高，第16名。通过对贡献模块的分析，我们能看出99cloud最大的贡献来自于社区文档，而在项目方面的贡献则主要来自murano-dashboard，horizon，neutron等项目上，从中可以看出99cloud对murano这个applicaton catalog的项目关注程度比较高，可能会在将来的产品中有所体现。从贡献中，我们隐约看到了九州云的副总裁李开总的提交，由此可见九州云为社区贡献的积极程度。<br>更加难能可贵的是，Horizon的全球贡献99cloud是全球前十，Tempest全球前八，Murano项目更是进入全球前三，相当给力。</p>
-<p><strong>* UnitedStack社区贡献统计 *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-unitedstack.png" class="center" title="800x600">
-
-<p>排在第30位的是UnitedStack，经过了上一个版本的短暂沉寂后，这个版本卷土重来，杀回前30。从代码贡献来看，UnitedStack的主要贡献来自python-openstackclient以及部署用到的puppet相关代码，当然对neutron、trove、kolla、heat等也有一定数量的贡献。</p>
-<p><strong>* Kylin Cloud社区贡献统计 *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-kylincloud.png" class="center" title="800x600">
-
-<p>排名第38位的是麒麟云，其实麒麟云每次Release中总是有她的身影，但好像总是被忽略的。麒麟云最大的贡献来自Horizon项目，其他模块也有一定数量的贡献。总之，我们想到OpenStack企业的时候，的确应该时常提起麒麟云。</p>
-<p><strong>* Easystack社区贡献统计 *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-easystack.png" class="center" title="800x600">
-
-<p>排名第70位的是Easystack，Easystack也属于OpenStack早期创业的公司，对于OpenStack的贡献也是持续的。Easystack最大的贡献来自nova，虽然数量不是很多，但是在国内企业里应该算名列前茅的啦。Easystack对Nova的贡献主要来自对libvirt层的bug修复。</p>
-<p><strong>* Awcloud社区贡献统计 *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-awcloud.png" class="center" title="800x600">
-
-<p>排名第75位的是海云捷迅，海云应该算是在国内发展比较迅猛的一家OpenStack早期创业公司。他们的贡献主要来自Neutron相关的项目，看起来应该是为了解决项目中出现的实际问题所做的努力。海云的马力应该是公司内部贡献排名第一的，尤其是前一段时间发布的两篇关于”Neutron &amp; OpenStack漫谈”，非常值得一读。</p>
-<p><strong>* LeTV社区贡献统计 *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-letv.png" class="center" title="800x600">
-
-<p><strong>* Netease社区贡献统计 *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-netease.png" class="center" title="800x600">
-
-<p>排名第94和95位的分别是两家互联网企业，乐视和网易，乐视是最近互联网中使用OpenStack动静最大的一家了，应该能在大规模应用中发现OpenStack很多问题吧。</p>
-<p><strong>* Huron社区贡献统计 *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-huron.png" class="center" title="800x600">
-
-<p>排名第122位的是我的公司——北京休伦科技有限公司，其实我们公司也算是国内最早一批从事OpenStack创业的公司，z早在2013年的时候就已经开始投入OpenStack私有云产品相关的研发。我们贡献的代码主要来自Nova和Murano两个模块中，都是我们在开发和项目使用中发现的问题，修复后回馈给社区的，我也希望我们能在下一个版本Release中贡献更多的力量。</p>
-<p><strong>* China Mobile社区贡献统计 *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-chinamobile.png" class="center" title="800x600">
-
-<p>排名第133位的是中国移动，之前并没有在哪一个排名上看到过中国移动在OpenStack贡献，我也是第一次发现。中国移动应该算是国内运营商领域技术实力较强的一家，也是运营商里开始从事OpenStack预研较早的一家。中国移动有大量的IT资源和设备，理应像AT&amp;T一样在OpenStack领域大有所为。纵观中国移动的社区贡献，主要来自Neutron和Ceilometer两个项目，几个Bug修复都是与Volume相关。</p>
-<p><strong>* Lenovo社区贡献统计 *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-lenovo.png" class="center" title="800x600">
-
-<p>排名第135位的是联想。不评论了。</p>
-<p>排名第139位的是清华大学医学院附属医院，这个有点意思。但是stackalytics.com有Bug，他们的具体统计显示不出来。</p>
-<p><strong>* H3C社区贡献统计 *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-h3c.png" class="center" title="800x600">
-
-<p>排名第143位的是H3C。贡献是Nova中的关于VMware的Bug Fix。</p>
-<p>由于stackalytics并没有按照区域统计的功能，所以本次统计完全是全自动统计(全靠我自己手动)，所以难免遗漏了为OpenStack贡献的国内企业，如果发生该情况请及时告知。</p>
-<h2 id="社区贡献内容分析"><a href="#社区贡献内容分析" class="headerlink" title="社区贡献内容分析"></a>社区贡献内容分析</h2><img src="/images/blogs/contribution-in-liberty-complete-blueprints.png" class="center" title="800x600">
-
-<p>从贡献的commits的类型来区分，国内贡献出的代码主要还是以bug为主，这可能也与我们使用的都是OpenStack较成熟的模块有关，本身这些模块成熟程度较高，所以想做blueprint很难。另外一个很重要的原因是和OpenStack管理流程有关的，现在像Nova, Cinder等项目都是需要先Review Specs的，其实就是所谓的设计文档，语言成为国内很多工程师贡献的最大障碍，所以这也导致了Blueprint的贡献度在国内并不高。</p>
-<p><strong>* Huawei社区贡献——完成Blueprint *</strong></p>
-<img src="/images/blogs/contribution-in-liberty-blueprint-huawei.png" class="center" title="800x600">
-
-<p>纵观整个Blueprint的完成统计情况，华为作为国内最有实力的企业，高居全球第五名，完成最多的模块为cinder和mistral。</p>
-<p>之后能完成Blueprint的企业还包括UnitedStack、中国移动、麒麟云、海云捷迅和九州云，但是相比来说数量较少，都是个位数字。</p>
-<p>OpenStack在国内发展已经超过了四年的时间，但是遗憾的一点，尽管我们拥有世界上最多的开发人员，但是我们对社区仍然没有话语权，国内的用户的需求无法对社区上游形成影响，导致很多本地化定制的需求无法真正的在社区版本代码得到体现。所以如何让中国的声音出现在社区，是我们所有OpenStack人需要思考的问题。欣喜的一点，本土的巨头华为已经身先士卒，投入很大的力量搞OpenStack的社区贡献，我们更希望越来越多的国内传统IT巨头能够意识到这个问题，投身于开源的事业中，否则我们又在起跑线上输给了别人。</p>
-<p>以上仅代表个人观点，如有任何异议，欢迎批评指正。</p>
+    <h1 id="OpenStack回顾"><a href="#OpenStack回顾" class="headerlink" title="OpenStack回顾"></a>OpenStack回顾</h1><p>OpenStack在2010年7月由NASA和Rackspace宣布启动，2010年10月Austin Release后，除了Bexar、Cactus、Diablo版本外，后续版本都遵循6个月发布周期，如今正在开发的是Ussuri版本，最新的稳定版本是去年10月份发布的Train版本。</p>
+<p><img src="/images/pasted-42.png" alt="upload successful"></p>
+<h1 id="OpenStack没落了吗？"><a href="#OpenStack没落了吗？" class="headerlink" title="OpenStack没落了吗？"></a>OpenStack没落了吗？</h1><p>我是从2012年初开始参与到OpenStack社区，这几年见证了OpenStack从一个开源项目逐渐成为开源产品的全过程。大概在两三年前每次发布前都会写一些关于OpenStack新版本功能和社区分析的文章，但是随着我的工作重心转移，对OpenStack社区关注逐渐减少。</p>
+<p>随着容器、K8S等新兴技术的崛起，OpenStack无疑受到了很大的冲击，在之前两年经常看到一些唱衰OpenStack的文章。但是不可否认，目前OpenStack已经进入到了一个稳定阶段，很多私有云、专有云项目都是基于OpenStack提供解决方案。所以我认为并不存在OpenStack没落一说，只是技术发展的必经阶段：当底层逐渐稳定后，关注度往上发展。</p>
+<p>同时，我们也看到，OpenStack基金会也在通过吸纳更多的项目来维持自身的影响力，比如：安全容器项目Kata Container，边缘计算项目StarlingX。</p>
+<p>这是我对目前国内云计算市场的一张不完全总结，从这张图中我们应该可以很清晰的看到OpenStack对国内云计算市场深远的影响。同时，大家也能看出来谁才是真正的OpenStack这个开源项目的既得利益者。</p>
+<p><img src="/images/pasted-44.png" alt="upload successful"></p>
+<h1 id="OpenStack社区大数据"><a href="#OpenStack社区大数据" class="headerlink" title="OpenStack社区大数据"></a>OpenStack社区大数据</h1><p>从A版本开始到今天（2020年4月29日），总共有442家公司为OpenStack社区贡献过代码。排名前三位的分别是：Red Hat, Rackspace和Mirantis。中国唯一入选前十的是华为。</p>
+<p><img src="/images/pasted-45.png" alt="upload successful"></p>
+<p>OpenStack总共出现了706个Official项目，提交代码次数最多的是nova, neutron和cinder项目。</p>
+<p><img src="/images/pasted-46.png" alt="upload successful"></p>
+<p>总共有8523名开发者成功提交过1个以上的commits。从名字分析，前十名中有两位中国人：Zhong Shengping（麒麟云，主要贡献在自动化安装OpenStack相关项目puppet和ansible）和Qiming Teng（IBM 滕启明博士，主要贡献在senlin项目）。当然，我知道国内为OpenStack项目贡献的人很多，在这就不一一列举了。</p>
+<p><img src="/images/pasted-47.png" alt="upload successful"></p>
+<h1 id="OpenStack社区贡献变化趋势"><a href="#OpenStack社区贡献变化趋势" class="headerlink" title="OpenStack社区贡献变化趋势"></a>OpenStack社区贡献变化趋势</h1><p>参与贡献的公司已经呈现明显下降趋势，从国内情况来看，很多OpenStack初创公司也在积极投身K8S相关项目的研究，产品上提供基于容器的PaaS平台，丰富自己的解决方案。<br>从图中可以看到，OpenStack参与公司最多的是在Ocata Release中，参与公司达到了210家，从时间看是在2016年到2017年之间的时间点。这也是国内客户对OpenStack普遍接受的时间点。<br>另外从C版本开始一直到O版本（2011年到2017年）基本每个版本迭代维持20%以上的增长，可见在这个阶段绝大多数公司都看好OpenStack的未来。国内开源领域在这个阶段感觉也是最活跃的，毕竟只有当商业利益和开源目标相吻合时，这个开源项目才能得到最大的支持力度。<br>从O版本之后，参与的公司呈现小幅度下降趋势，不是很明显，大概在10%以内，下跌最明显的阶段是在S版本到T版本，也就是2019年。S版本有161家公司提交代码，而T版本只有126家，而目前U版本已经下降到了119家公司。</p>
+<p><img src="/images/pasted-48.png" alt="upload successful"></p>
+<p>从开发者数量看也呈现出相同的趋势，参与人数最多的是N版本，有2422人提交了commit。而到了S版本开发者仅为1189人，下降了一半还多。</p>
+<p><img src="/images/pasted-49.png" alt="upload successful"></p>
+<p>最后一张图，我们来看一下OpenStack模块数量。在早期OpenStack中一个新的项目获得批准是需要技术委员会批准的，也就是TC Approved，这样的项目到今天为止一共只有20个，主要是OpenStack基础的计算、存储和网络服务，包括：Nova, Neutron, Cinder, Heat, Horizon, Keystone, Ironic, Swift, Ceilometer, Glance, Sahara, Trove, Designate, neutron-lib, sahara的各种插件。<br>但是在2015年，社区决定采用Big Tent模式。Big Tent模式本意是基于OpenStack底层的计算、存储和网络等基础组件，构建更庞大的云原生应用场景，类似AWS。但是由于OpenStack自身部署、升级的复杂性，是社区力量更加分散，这样的设计并没有带来意料之中的效果。我个人理解，这样的生态建设更适合K8S。<br>在A版本中仅有8个模块，到了最新的T版本中，模块数量变为609个，还没有Release的U版本中，模块数量增长为627个。</p>
+<p><img src="/images/pasted-50.png" alt="upload successful"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>由于OpenStack提供的服务属于基础架构层，从生态角度看，团结了各个层面的公司。从硬件的服务器、处理器、网络、存储厂商，到操作系统厂商，再到OpenStack创业公司，应用厂商，直到最终用户。<br>之前我们总说OpenStack是仅次于Linux的世界上第二大开源社区，不知道现在这种说法是否还准确。但是不可否认，OpenStack出现给了原来默默耕耘的开发者们走道前台充分展现的机会，也将国内开源的热潮推向了一个新的高度。</p>
 
     
 
@@ -357,7 +295,7 @@ var _hmt = _hmt || [];
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://sunqi.me/2015/10/29/contribution-in-liberty/" title="深度解读OpenStack Liberty国内代码贡献" target="_blank">http://sunqi.me/2015/10/29/contribution-in-liberty/</a>
+          <a href="http://sunqi.me/2020/04/29/OpenStack还热吗？/" title="OpenStack没落了吗？" target="_blank">http://sunqi.me/2020/04/29/OpenStack还热吗？/</a>
         </li>
         
         <li>
@@ -375,21 +313,6 @@ var _hmt = _hmt || [];
     
     
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack//" class="article-tag-list-link color5">OpenStack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
 
@@ -439,7 +362,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.me/2015/10/29/contribution-in-liberty/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.me/2020/04/29/OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -454,18 +377,9 @@ var _hmt = _hmt || [];
 
 <nav id="article-nav">
   
-    <a href="/2015/11/30/use-grafana-to-monitor-your-cluster/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          使用Grafana+Diamond+Graphite构造完美监控面板
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/09/08/ubuntu-14-dot-04-installation-guide-for-developer/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Ubuntu 14.04 Server开发者安装指南</div>
+    <a href="/2020/04/14/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%BD%BF%E7%94%A8DataQuotient-%E7%94%BB%E5%83%8F%E5%88%86%E6%9E%90%E7%AD%9B%E9%80%89%E4%BC%98%E8%B4%A8%E5%9F%BA%E9%87%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[阿里云]使用DataQuotient 画像分析筛选优质基金</div>
       <i class="icon-circle-right"></i>
     </a>
   
