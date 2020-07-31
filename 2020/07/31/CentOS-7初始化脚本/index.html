@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.me">
-  <title>OpenStack虚拟机的高可靠 | Ray&#39;s Blog</title>
+  <title>CentOS 7和Docker初始化安装 | Ray&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="译者注：OpenStack虚拟机级别的HA是在企业私有云中必须提及的话题，换句话说如果没有此机制，很多企业级用户根本不会考虑使用OpenStack+开源云平台的解决方案。这一点也得益于VMware等大公司孜孜不倦、持之以恒、长年累月的对用户的洗脑，这样的洗脑让用户觉得一些VMware的功能成为了“云”的标准(HA&#x2F;FT&#x2F;DRS&#x2F;DPM等)。个人认为，OpenStack这部分功能的缺失也直接的阻碍了">
+  <meta name="description" content="CentOS 7初始化123456789101112131415161718# Set SELinux in permissive mode (effectively disabling it)setenforce 0#sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;permissive&#x2F;&#39; &#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenStack虚拟机的高可靠">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2015&#x2F;03&#x2F;03&#x2F;openstack-instance-ha-high-availability&#x2F;index.html">
+<meta property="og:title" content="CentOS 7和Docker初始化安装">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2020&#x2F;07&#x2F;31&#x2F;CentOS-7%E5%88%9D%E5%A7%8B%E5%8C%96%E8%84%9A%E6%9C%AC&#x2F;index.html">
 <meta property="og:site_name" content="Ray&#39;s Blog">
-<meta property="og:description" content="译者注：OpenStack虚拟机级别的HA是在企业私有云中必须提及的话题，换句话说如果没有此机制，很多企业级用户根本不会考虑使用OpenStack+开源云平台的解决方案。这一点也得益于VMware等大公司孜孜不倦、持之以恒、长年累月的对用户的洗脑，这样的洗脑让用户觉得一些VMware的功能成为了“云”的标准(HA&#x2F;FT&#x2F;DRS&#x2F;DPM等)。个人认为，OpenStack这部分功能的缺失也直接的阻碍了">
+<meta property="og:description" content="CentOS 7初始化123456789101112131415161718# Set SELinux in permissive mode (effectively disabling it)setenforce 0#sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;permissive&#x2F;&#39; &#x2F;">
 <meta property="og:locale" content="zh">
-<meta property="article:published_time" content="2015-03-03T04:58:19.000Z">
-<meta property="article:modified_time" content="2020-07-31T01:38:28.720Z">
+<meta property="article:published_time" content="2020-07-31T01:34:49.000Z">
+<meta property="article:modified_time" content="2020-07-31T01:38:28.724Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
   
@@ -172,22 +172,22 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-openstack-instance-ha-high-availability" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CentOS-7初始化脚本" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      OpenStack虚拟机的高可靠
+      CentOS 7和Docker初始化安装
     </h1>
   
 
 
   
   
-<a href="/2015/03/03/openstack-instance-ha-high-availability/" class="archive-article-date">
-        <time datetime="2015-03-03T04:58:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-03</time>
+<a href="/2020/07/31/CentOS-7%E5%88%9D%E5%A7%8B%E5%8C%96%E8%84%9A%E6%9C%AC/" class="archive-article-date">
+        <time datetime="2020-07-31T01:34:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
 </a>
 
   
@@ -200,7 +200,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.9k字</span>
+      <span class="post-count">305字</span>
     </span>
   </span>
 
@@ -209,7 +209,7 @@ var _hmt = _hmt || [];
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">10分</span>
+      <span class="post-count">1分</span>
     </span>
   </span>
 </div>
@@ -220,44 +220,9 @@ var _hmt = _hmt || [];
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>译者注：OpenStack虚拟机级别的HA是在企业私有云中必须提及的话题，换句话说如果没有此机制，很多企业级用户根本不会考虑使用OpenStack+开源云平台的解决方案。这一点也得益于VMware等大公司孜孜不倦、持之以恒、长年累月的对用户的洗脑，这样的洗脑让用户觉得一些VMware的功能成为了“云”的标准(HA/FT/DRS/DPM等)。个人认为，OpenStack这部分功能的缺失也直接的阻碍了OpenStack进入中国行业用户的步伐，记得在夏天的时候，华为曾经为社区提供了一个HA的解决方案(用C语言实现)，打算贡献给社区，但是经过社区激烈的讨论，终于不了了之。</p>
-<p>在我所经历的私有云项目中，也尝试了一些虚拟机级别的HA解决方案，我的个人观点是，如果将OpenStack作为一个项目，可以不提供HA，但是作为产品，必须要提供HA的解决方案(私有云)。这篇文章中提到HA实现的过程，也恰恰是我们在实际中遇到的状况，下面让我们来看一看OpenStack社区是如何设想实现该问题的。感谢 @陈沙克 微博提供的资料。</p>
-<a id="more"></a>
+    <h1 id="CentOS-7初始化"><a href="#CentOS-7初始化" class="headerlink" title="CentOS 7初始化"></a>CentOS 7初始化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Set SELinux in permissive mode (effectively disabling it)</span><br><span class="line">setenforce 0</span><br><span class="line">#sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;permissive&#x2F;&#39; &#x2F;etc&#x2F;selinux&#x2F;config</span><br><span class="line">sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;disabled&#x2F;&#39; &#x2F;etc&#x2F;selinux&#x2F;config</span><br><span class="line"> </span><br><span class="line">systemctl stop NetworkManager</span><br><span class="line">systemctl disable NetworkManager</span><br><span class="line"> </span><br><span class="line">systemctl status firewalld</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br><span class="line">systemctl status firewalld</span><br><span class="line">firewall-cmd --state</span><br><span class="line"> </span><br><span class="line">curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line">curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo</span><br><span class="line">yum clean all &amp;&amp; yum makecache</span><br><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
 
-<p>原文地址：<a href="http://blog.russellbryant.net/2014/10/15/openstack-instance-ha-proposal/" target="_blank" rel="noopener">http://blog.russellbryant.net/2014/10/15/openstack-instance-ha-proposal/</a></p>
-<p>在一个完美世界中(不是那个游戏公司)，OpenStack承载的云主机上运行的应用都应当具备天然的横向扩展能力和容灾能力。但是现实世界却并不是这样。我们一直看到在OpenStack运行传统负载的需求积极伴随而来的HA的需求。</p>
-<p>传统应用运行在OpenStack在大多数情况下是没有问题的。一些需要可靠性要求的应用部署在OpenStack上是没有自动提供这种能力的。如果虚拟化软件挂掉了，没人会去拯救运行在上面的虚拟机。OpenStack中有手动拯救的能力，但是这需要云平台的运维人员或者外部的工具完成。</p>
-<p>这篇文章主要讨论如何在虚拟化程序失败后自动侦测并拯救运行在上面的虚拟机于水火之中。对于不同的虚拟机化软件有不同的解决方案。我这里主要关注libivrt/kvm，下面的部分也主要围绕着它进行。除非特别提及libvirt，我想所有提及的一切也同样适用于xenserver驱动。</p>
-<p>这是OpenStack社区的定期讨论的话题。已经有反对将这个功能放到OpenStack。无论哪个功能组件被使用，我想我们应该提供一个针对问题的解决方案。我想使用现有的软件来解决这个问题。</p>
-<h3 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h3><p>我们主要针对基础架构层的故障。也有其他的一些因素会影响应用的可靠性。客户机的操作系统或者软件自身出现故障。对于这种故障的恢复，我们主要留给应用的开发者或部署者。</p>
-<p>值得注意的是，OpenStack中的libvirt/kvm驱动并不包含于客户机操作系统故障相关的功能。在Icehouse版本中的Nova实现了一个libvirt-watchdog的blueprint。这个功能允许你设置hw_watchdog_action属性在image或是flavor中。合法的值包含：poweroff，rest，pause和none。当选项被打开时，libvirt会为客户机开启i7300esb watchdog驱动，并且当watchdog被出发时发送动作。这可能是对你客户机故障恢复策略很有帮助的部件。</p>
-<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p>解决这个问题需要一些关键的部件：</p>
-<ul>
-<li>监控(Monitoring) - 系统检测到虚拟化层的故障</li>
-<li>隔离(或是围栏，Fencing) - 系统隔离故障计算节点</li>
-<li>恢复(Recovery) - 从故障的虚拟化上恢复虚拟机</li>
-</ul>
-<h3 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h3><p>针对这种解决方案的监控部件有两个主要需求：</p>
-<ul>
-<li>检测主机是否已经失败</li>
-<li>针对错误出发自动的相应(隔离和恢复)</li>
-</ul>
-<p>通常建议这个解决方案应该是OpenStack的一部分。很多人建议这个功能应该在Nova中实现。将这个部分放在Nova中主要是因为，Nova已经能过获知运行环境下的基础架构的健康状况。servicegroup API能够提供基础的组的成员信息。特别是他持续跟踪计算节点的活跃状态。然而，这只能提供你nova-compute服务本身的状态。对于客户的虚拟机而言(即使nova-compute不再运行)，他们也能运行良好。将基础架构层的状态信息放入Nova之中，有违Nova的层级。无论如何，这将对Nova有一个重大的(管理)范围的扩大，所以我也不指望Nova团队会同意这么做。</p>
-<p>还有一种建议是将功能做进Heat里。最重要的功能问题是，我们不该让云平台用户去使用Heat重启他们出现故障的虚拟机。另外一种建议是用其他的(可能是全新的)OpenStack模块来做这件事情。像我不喜欢这些放在Nova的理由一样，我也不认为他们该放在新的模块一样( I don’t like that for many of the same reasons I don’t think it should be in Nova.)。我觉得这件事情应该是基础架构层需要支持的，而不是OpenStack自己。</p>
-<p>放弃将这部分功能放入OpenStack的想法，我认为应当从基础架构的角度入手支持OpenStack部署。许多OpenStack部署中已经使用了Pacemaker提供部署中的高可靠。从历史的角度来看，由于集群中横向限制，Pacemaker并不会用在计算节点上，因为他们太多了。这个限制其实在Corosync而不是Pacemaker本身。最近，Pacemaker提供了一个新功能叫做pacemaker_remote，允许将一台主机作为Pacemaker集群的一部分，而不需要作为Corosync集群的一部分。这样看起来可以被作为OpenStack计算节点的一个合适的解决方案。</p>
-<p>许多OpenStack部署中也使用监控工具像Nagios来监控他们的计算节点。这也很合理。</p>
-<h3 id="隔离-Fencing"><a href="#隔离-Fencing" class="headerlink" title="隔离(Fencing)"></a>隔离(Fencing)</h3><p>概括一下，隔离就是将故障的计算节点完全隔离(isolates)。举个例子，这个可能由IPMI保证失败的节点已经关机了。隔离非常重要，有以下几点原有。很多原因都会造成节点故障，我们在将同样的虚拟机恢复之前，完全确认它确实不在(completely gone)啦。我们不想让我们的虚拟机跑两份。用户也肯定不想看到。更糟糕的是，处理自动疏散(evacuate)时，OpenStack的部署可能是基于共享存储的，跑两个一样的虚拟机可能会引起数据损坏，因为两个虚拟机尝试使用同一块磁盘。另外一个问题就是，在网络上产生两个相同的IP。</p>
-<p>用Pacemaker最大的好处就是他内建隔离，因为这正是HA解决方案中的一个核心组件。如果你使用Nagios，隔离的集成需要你自己实现。</p>
-<h3 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h3><p>一旦故障被检测到并且计算节点被隔离，需要触发疏散(evacuate)。概括一下，所谓疏散就是将一台故障节点的虚拟机实例在另外一个节点上启动起来。Nova提供了API去疏散一个实例。这个功能正常工作的前提是需要虚拟机磁盘文件在共享存储上。或者是从卷启动的。有意思的是，即使疏散中没有以上两个条件，API仍然可以运行。结果就是用基础镜像重新启动一个新的实例而没有任何数据。这样的唯一好处就是你得到一个和你之前虚拟机相同UUID的实例。</p>
-<p>一个通用的疏散用例是“从一个指定的Host上疏散所有虚拟机”。因为这个太通用了，所以这个功能在novalcient库中实现了(译者：Juno更新日志提到了这一点)。所以监控工具可以通过novaclient触发这个功能。</p>
-<p>如果这个功能在你的OpenStack的部署上用于所有虚拟机，那么我们的解决方案还是挺好的。许多人有了额外的需求：用户应该可以自行对每一个虚拟机做(HA)的设定。这个的确很合理，但是却带来了一个额外的问题。我们在OpenStack中该如何让用户指定哪台虚拟机需要被自动恢复？</p>
-<p>通常的方式就是用镜像的属性或者规格的extra-specs。这样当然可以工作，但是对于我好像并不太灵活。我并不认为用户应该创建一个新的镜像叫做“让这个虚拟机一直运行”。Flavor的extra-specs还行，如果你觉得为你所有虚拟机使用特殊的flavor或者是flavor类。在任何一种情况下，都需要修改novaclient的”疏散一个Host”来支持他。</p>
-<p>另外一种潜在的解决方案是使用一个用户自定义的特殊标记。已经有一个正在review的功能提供一个API来给虚拟机打标签(tagging)。对于我们的讨论，我们假设标签是“自动回复”。我们也需要更新novaclient来支持“将所有带指定标记的虚拟机从Host疏散”。监控工具也会触发这个功能，让novalcient将带有“自动恢复“标记的所有虚拟机从Host疏散。</p>
-<h3 id="结论和下一步计划"><a href="#结论和下一步计划" class="headerlink" title="结论和下一步计划"></a>结论和下一步计划</h3><p>虚拟机的HA显然是许多部署需要提供的功能。我相信可以通过在部署中将现有软件进行集成方式实现，特别是Pacemaker。下一步就是提供具体的信息，如何建立已经如何测试。</p>
-<p>我希望有人可能说”但是我已经使用系统Foo(Nagios或其他的什么)来监控我的计算节点“。你也可以按照这条路尝试。我不确认如何将Nagios之类的监控软件和隔离部分进行整合。如果在这个解决方案中跳过隔离，你要在失败时保持和平(keep the pieces when it breaks，译者：就是上面提到的fencing出现的问题)。除此之外，你的监控系统能够像Pacemaker一样出发novalcient的疏散功能。</p>
-<p>未来非常好的开发方向可能是将这个功能集成到OpenStack管理界面。我希望通过部署的控制面板告诉我哪些失败了，出发了哪些响应动作。这个需要pcsd提供REST API(WIP)来导出这些信息。</p>
-<p>最后，值得思考一下TripleO在这个问题的内容。如果你使用OpenStack部署OpenStack，解决方案是不是不同呢？在那个世界里，你所有的裸金属节点都是通过OpenStack Ironic管理的资源。Ceilometer可以被用于监控这些资源。如果是那样，OpenStack本身就有足够的信息来支持基础设施完成这个功能。再次强调，为了避免对OpenStack的改造，我们在这种条件小也应该使用更通用的Pacemaker解决方案。</p>
-
+<h1 id="Docker国内源安装"><a href="#Docker国内源安装" class="headerlink" title="Docker国内源安装"></a>Docker国内源安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># Install Docker</span><br><span class="line">curl -sSL https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker | sh -s -- &quot;--mirror&quot; &quot;Aliyun&quot;</span><br><span class="line"> </span><br><span class="line"># Replace docker repo</span><br><span class="line">mkdir -p &#x2F;etc&#x2F;docker</span><br><span class="line">cat &gt; &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;6m7d428u.mirror.aliyuncs.com&quot;],</span><br><span class="line">  &quot;dns&quot;: [&quot;114.114.114.114&quot;],</span><br><span class="line">  &quot;exec-opts&quot;: [&quot;native.cgroupdriver&#x3D;systemd&quot;],</span><br><span class="line">  &quot;log-driver&quot;: &quot;json-file&quot;,</span><br><span class="line">  &quot;log-opts&quot;: &#123;</span><br><span class="line">    &quot;max-size&quot;: &quot;100m&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;storage-driver&quot;: &quot;overlay2&quot;,</span><br><span class="line">  &quot;storage-opts&quot;: [</span><br><span class="line">    &quot;overlay2.override_kernel_check&#x3D;true&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"> </span><br><span class="line">systemctl enable docker &amp;&amp; systemctl daemon-reload &amp;&amp; systemctl restart docker</span><br><span class="line"> </span><br><span class="line">curl -L https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker&#x2F;compose&#x2F;releases&#x2F;download&#x2F;1.25.4&#x2F;docker-compose-&#96;uname -s&#96;-&#96;uname -m&#96; &gt; &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose</span><br><span class="line">chmod +x &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose</span><br></pre></td></tr></table></figure>
     
 
     
@@ -303,7 +268,7 @@ var _hmt = _hmt || [];
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://sunqi.me/2015/03/03/openstack-instance-ha-high-availability/" title="OpenStack虚拟机的高可靠" target="_blank">http://sunqi.me/2015/03/03/openstack-instance-ha-high-availability/</a>
+          <a href="http://sunqi.me/2020/07/31/CentOS-7初始化脚本/" title="CentOS 7和Docker初始化安装" target="_blank">http://sunqi.me/2020/07/31/CentOS-7初始化脚本/</a>
         </li>
         
         <li>
@@ -321,33 +286,6 @@ var _hmt = _hmt || [];
     
     
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack//" class="article-tag-list-link color5">OpenStack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/HA//" class="article-tag-list-link color3">HA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/HA/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/HA/Cloud-Computing/Enterprise//" class="article-tag-list-link color1">Enterprise</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/HA/Cloud-Computing/Enterprise/VMWare//" class="article-tag-list-link color2">VMWare</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
 
@@ -397,7 +335,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.me/2015/03/03/openstack-instance-ha-high-availability/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.me/2020/07/31/CentOS-7%E5%88%9D%E5%A7%8B%E5%8C%96%E8%84%9A%E6%9C%AC/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -412,18 +350,9 @@ var _hmt = _hmt || [];
 
 <nav id="article-nav">
   
-    <a href="/2015/03/03/ceph-reliability/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Ceph可靠性的量化分析
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/02/22/use-mongodb-to-store-salt-pillar/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用MongoDB作为Salt Pillar后端存储数据</div>
+    <a href="/2020/04/29/OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OpenStack没落了吗？</div>
       <i class="icon-circle-right"></i>
     </a>
   
