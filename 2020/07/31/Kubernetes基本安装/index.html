@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.me">
-  <title>OpenStack培训的用户体验 | Ray&#39;s Blog</title>
+  <title>Kubernetes All-in-One环境安装 | Ray&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="尽管在云计算领域仍然有很大的争议，但是OpenStack事实上已经成为Iaas云平台的事实标准和首选的平台。从培训市场的火热也证明了这一点，现在的OpenStack培训有很多，讲的内容也不尽相同，那么哪一种培训才是用户最需要的呢？ 这篇文章并不是要评价任何一个OpenStack培训，只是想从用户体验的角度分析一下，到底什么才是用户真正需要的。如果文章观点有任何不妥，还请各位前辈和大牛们多多海涵。">
+  <meta name="description" content="Kubernetes安装及初始化CentOS 7初始化123456789101112131415161718# Set SELinux in permissive mode (effectively disabling it)setenforce 0#sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;permissive&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenStack培训的用户体验">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2016&#x2F;03&#x2F;27&#x2F;openstack-training-user-experience&#x2F;index.html">
+<meta property="og:title" content="Kubernetes All-in-One环境安装">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2020&#x2F;07&#x2F;31&#x2F;Kubernetes%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85&#x2F;index.html">
 <meta property="og:site_name" content="Ray&#39;s Blog">
-<meta property="og:description" content="尽管在云计算领域仍然有很大的争议，但是OpenStack事实上已经成为Iaas云平台的事实标准和首选的平台。从培训市场的火热也证明了这一点，现在的OpenStack培训有很多，讲的内容也不尽相同，那么哪一种培训才是用户最需要的呢？ 这篇文章并不是要评价任何一个OpenStack培训，只是想从用户体验的角度分析一下，到底什么才是用户真正需要的。如果文章观点有任何不妥，还请各位前辈和大牛们多多海涵。">
+<meta property="og:description" content="Kubernetes安装及初始化CentOS 7初始化123456789101112131415161718# Set SELinux in permissive mode (effectively disabling it)setenforce 0#sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;permissive&amp;#">
 <meta property="og:locale" content="zh">
-<meta property="article:published_time" content="2016-03-27T02:42:38.000Z">
+<meta property="article:published_time" content="2020-07-31T01:38:24.000Z">
 <meta property="article:modified_time" content="2020-07-31T01:43:58.637Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
@@ -172,22 +172,22 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-openstack-training-user-experience" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Kubernetes基本安装" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      OpenStack培训的用户体验
+      Kubernetes All-in-One环境安装
     </h1>
   
 
 
   
   
-<a href="/2016/03/27/openstack-training-user-experience/" class="archive-article-date">
-        <time datetime="2016-03-27T02:42:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-27</time>
+<a href="/2020/07/31/Kubernetes%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85/" class="archive-article-date">
+        <time datetime="2020-07-31T01:38:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
 </a>
 
   
@@ -200,7 +200,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">3k字</span>
+      <span class="post-count">775字</span>
     </span>
   </span>
 
@@ -209,7 +209,7 @@ var _hmt = _hmt || [];
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">10分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -220,57 +220,22 @@ var _hmt = _hmt || [];
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>尽管在云计算领域仍然有很大的争议，但是OpenStack事实上已经成为Iaas云平台的事实标准和首选的平台。从培训市场的火热也证明了这一点，现在的OpenStack培训有很多，讲的内容也不尽相同，那么哪一种培训才是用户最需要的呢？</p>
-<p>这篇文章并不是要评价任何一个OpenStack培训，只是想从用户体验的角度分析一下，到底什么才是用户真正需要的。如果文章观点有任何不妥，还请各位前辈和大牛们多多海涵。</p>
-<a id="more"></a>
+    <h1 id="Kubernetes安装及初始化"><a href="#Kubernetes安装及初始化" class="headerlink" title="Kubernetes安装及初始化"></a>Kubernetes安装及初始化</h1><h2 id="CentOS-7初始化"><a href="#CentOS-7初始化" class="headerlink" title="CentOS 7初始化"></a>CentOS 7初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Set SELinux in permissive mode (effectively disabling it)</span><br><span class="line">setenforce 0</span><br><span class="line">#sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;permissive&#x2F;&#39; &#x2F;etc&#x2F;selinux&#x2F;config</span><br><span class="line">sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;disabled&#x2F;&#39; &#x2F;etc&#x2F;selinux&#x2F;config</span><br><span class="line"> </span><br><span class="line">systemctl stop NetworkManager</span><br><span class="line">systemctl disable NetworkManager</span><br><span class="line"> </span><br><span class="line">systemctl status firewalld</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br><span class="line">systemctl status firewalld</span><br><span class="line">firewall-cmd --state</span><br><span class="line"> </span><br><span class="line">curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line">curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo</span><br><span class="line">yum clean all &amp;&amp; yum makecache</span><br><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
 
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>简单来说，我带过OpenStack产品的研发团队，谈过OpenStack的合作，做过OpenStack培训讲师，也卖过OpenStack的私有云产品，也和大量的用户聊过OpenStack，所以还算是对OpenStack这个行业整体上有个清晰认识。</p>
-<h2 id="OpenStack培训的目标群体"><a href="#OpenStack培训的目标群体" class="headerlink" title="OpenStack培训的目标群体"></a>OpenStack培训的目标群体</h2><p>我做过的OpenStack培训大体上分为两类，内训和外训。</p>
-<p>内训是面向公司内部，因为我曾经带过的两个团队都是以开发OpenStack私有云产品为主的，所以我的培训对象主要是研发、运维、售前和销售人员。</p>
-<p>外训的对象很多，包括知名的国企、外企和民营企业以及学校，行业大部分以传统行业为主，涉及通讯、金融、系统集成等，面向的群体主要是研发、IT和售前，培训的内容以OpenStack的基础和研发为主。</p>
-<p>所以我把OpenStack培训的目标群体定义为：研发人员、系统工程师和运维人员、售前、销售人员、学生。</p>
-<h2 id="针对不同的群体，到底需要哪些培训？"><a href="#针对不同的群体，到底需要哪些培训？" class="headerlink" title="针对不同的群体，到底需要哪些培训？"></a>针对不同的群体，到底需要哪些培训？</h2><h3 id="销售人员"><a href="#销售人员" class="headerlink" title="销售人员"></a>销售人员</h3><p>现在做OpenStack生意的无外乎两种：产品和服务。无论是哪一种，对传统的销售人员都是一种极大的挑战。云平台并不像传统软件一样，能够一眼看明白他到底是做什么的，解决了用户的哪些痛点。并且在企业中，能够做决策的人往往并不全是技术出身，所以想和他们解释清楚OpenStack到底能做什么，又是难上艰难。</p>
-<p>所以对于销售人员来讲，培训的重点应该有以下几点：</p>
-<ul>
-<li>使用培训：我觉得无论为哪一类群体培训，演示如何使用OpenStack，都是最有效的帮助人理解的方式。但是这里的演示，必须要设定场景，即传统的业务形态下我们的业务系统是什么样子的，迁移到云平台后该如何部署，从这种比较中，加深对OpenStack的理解。销售人员通过对OpenStack操作，加深对OpenStack或OpenStack产品的理解。毕竟图形是最高效的一种记忆方式。</li>
-<li>理解什么是开源软件：开源软件一定是未来的发展趋势，如果无法对开源软件有一个清晰的认识，也就无法理解清楚OpenStack这个项目出现的价值和意义。</li>
-<li>了解OpenStack的发展历史、OpenStack基金会以及OpenStack社区的运营方式：学习这些的目的是为了给用户讲故事，让用户了解为什么要选择OpenStack，为什么OpenStack项目有持续的生命力，让用户相信使用了OpenStack能够保证未来的基础架构灵活面对业务层面敏捷性的需求。</li>
-<li>案例学习：案例最大的价值就是教育用户，VMWare花了十几年的时间教育了用户，OpenStack不可能在短短的几年时间内就改变这样的局面，所以“学会用别人的案例来教育自己的用户”，是在销售人员OpenStack培训中非常重要的一课。</li>
-</ul>
-<h3 id="售前人员"><a href="#售前人员" class="headerlink" title="售前人员"></a>售前人员</h3><p>售前人员不但要从技术层面让用户信服产品，而且还要结合用户的业务系统需求提供建设方案，外企中的很多售前工程师还要承担搭建POC环境的职责。售前人员沟通的主要对象是企业中有实际需求的业务部门，也是最有可能落地的部门，沟通的成败决定了是否能签单，所以需要更多的专业知识来满足和用户的沟通需要。 培训的重点应该是：</p>
-<ul>
-<li>使用培训：理由同上，但是我觉得售前人员还需要站在用户的角度来思考一下，我的用户到底会如何使用云平台？业务系统迁移到平台后，会有哪些问题？</li>
-<li>如何部署：部署培训向来是各大OpenStack培训必讲的内容，而且90%的内容都是围绕部署展开的，例如某知名企业的OpenStack授证培训。对于售前人员，我认为OpenStack部署训练还是很有必要的。一方面，能够帮助培训对象快速理解OpenStack的架构；另一方面，也能在未来的方案设计上提供参考和依据。由于云平台在使用上与企业传统的IT环境有较大的区别，所以售前人员在学习过程中，应该更多的了解OpenStack部署的特点，服务和服务之间的关系，云平台高可靠等和生产环境部署息息相关的问题。另外还要关注，用户的业务系统迁移到云平台后，可能带来的变化以及应对方式。例如：OpenStack里的网络分为fixed ip和floating ip，但是用户原有的业务系统只会有一个IP，这时候就需要考虑如何为用户选择适当的部署方案。</li>
-<li>OpenStack架构：掌握OpenStack模块的基本工作原理和模块的详细作用。学习这些内容，是为了帮助售前人员在和用户后续交流中，帮助用户选择适当的模块解决用户的需求。</li>
-<li>OpenStack的发展趋势：这部分内容就是能够引导客户未来的项目需求。例如在分布式存储，NFV和SDN方面。</li>
-</ul>
-<h3 id="系统工程师和运维人员"><a href="#系统工程师和运维人员" class="headerlink" title="系统工程师和运维人员"></a>系统工程师和运维人员</h3><p>Iaas云平台不但是对传统的企业IT架构进行了变革，也从管理上对企业原有的流程形成了冲击。需要培训的用户往往集中在自用OpenStack云平台的企业。</p>
-<ul>
-<li>使用培训，不同于上面两种简单的使用，运维人员要求对OpenStack管理部分的使用也要有很深的理解，而且还需要掌握命令行方式的相关操作。</li>
-<li>OpenStack架构，了解OpenStack内部的工作原理，有助于快速定位问题，对系统进行维护。这部分包含的内容比较多，从OpenStack自身的原理到虚拟机，存储，再到虚拟网络的实现都需要有一个系统的了解才可以。</li>
-<li>部署培训，要求详细掌握安装的过程，了解全部配置文件的功能及常用选项和参数。</li>
-<li>自动化部署培训，手动部署即耗费时间又不能保证准确，所以作为运维人员，必须要掌握至少一种自动化部署的方法。这方面的方案有很多，从TripleO、Fuel到Puppet，Salt，Ansible。个人还是推崇应该选择Salt或者Ansible的一种进行学习和掌握。</li>
-<li>运维培训，要求就是在云平台出现问题之后快速定位问题。</li>
-<li>自动化运维培训，DevOps作为未来运维的趋势，反复被提到。云平台自动化运维的内容很多，部署、监控、告警、自动巡检、健康检查等等，使用的工具无外乎上面提到的Salt或者Ansible这样的工具。自动化运维不仅仅是云平台未来培训的一大趋势，也是企业有需求的培训内容。</li>
-</ul>
-<h3 id="开发人员"><a href="#开发人员" class="headerlink" title="开发人员"></a>开发人员</h3><p>开发人员对OpenStack培训的需求主要和未来的工作有关（除了是公司强制或者兴趣之外），从我的经验来看：一种是基于OpenStack API开发，一种是开发OpenStack。所以针对两种不同的需求，培训内容需要单独进行设计，总体来说后一种包含前一种培训。</p>
-<p>与之前几种培训不同，我认为部署培训对开发人员并不是必须的，因为在实际工作中，开发人员很难有机会真正接触到安装过程，这部分工作往往由公司的IT人员去完成，并且其中涉及到大量的Linux基础命令，很多研发人员其实对这部分并不是十分熟悉，所以即使学习了安装内容，也还是一知半解。与其在安装上浪费时间，不如多了解一些架构方面的细节。</p>
-<ul>
-<li>使用培训，帮助开发人员快速了解OpenStack。</li>
-<li>了解社区的开发流程，OpenStack之所以发展到今天的程度，和社区的代码的管理流程密不可分，所以这部分是值得每一名开发人员学习的。</li>
-<li>搭建研发环境，既然要开发OpenStack就应该按照开发的方式搭建研发环境，这样屏蔽了很多安装上的细节，并且让开发人员有个快速能使用和开发的环境。</li>
-<li>基于OpenStack API开发，这部分应该是个重点，我通常会设定一个具体的用户需求，通过解决用户需求来了解API的使用。例如：作为一名用户，我想给我的虚拟机挂卷并自动分区，挂载到/mnt目录。这里的内容包含API文档的使用，通过浏览器REST Client插件详细了解OpenStack API的调用过程，学习使用OpenStack SDK。</li>
-<li>OpenStack编排服务，将API开发中的场景，用编排服务加以实现，还可以包含Scaling和Auto Scaling的场景。这部分很可能是开发人员在未来开发中非常需要的一部分内容。</li>
-<li>OpenStack发展方向，OpenStack的大帐篷展现了对未来的野心，所以了解OpenStack未来的发展方向是很有必要的。</li>
-</ul>
-<p>针对于以后开发OpenStack的研发人员，还需要根据实际的开发内容增加以下的培训内容：</p>
-<ul>
-<li>OpenStack通用技术，学习OpenStack的通用技术有助于理解OpenStack的所有模块，这部分内容主要包括：Eventlet，REST和WSGI，Taskflow，OSLO项目等诸多重要的类库。</li>
-<li>典型模块的架构及开发入门，这里面推荐的模块包含：Nova/Neutron/Horizon/Ceilometer，这几种模块几乎涵盖了OpenStack大部分模块的架构，所以重点理解这些模块的架构和工作原理，对于理解整个OpenStack项目都非常有帮助。直接将代码其实真的很困难，我习惯于使用场景的方式追踪代码的运行轨迹，从而整理出时序图的方式讲解。</li>
-</ul>
-<h3 id="学生"><a href="#学生" class="headerlink" title="学生"></a>学生</h3><p>学生群体事实上是相当有潜力的市场，现在国内OpenStack人才紧缺，所以OpenStack一定要从大学抓起。学生对OpenStack的学习不能仅仅停留在OpenStack本身，与之相关的内容都要学习，但是又不建议完全理论化的学习，强调动手的能力是关键。例如：对Python的学习，虚拟化软件的学习，OpenStack的安装，OpenStack的开发进行循序渐进的学习。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我认为培训中很重要的一环就是让学员动手，否则培训的效果不会很好。以上就是我对OpenStack培训的粗浅认识，还请各位多多指教。</p>
+<h2 id="Docker国内源安装"><a href="#Docker国内源安装" class="headerlink" title="Docker国内源安装"></a>Docker国内源安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># Install Docker</span><br><span class="line">curl -sSL https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker | sh -s -- &quot;--mirror&quot; &quot;Aliyun&quot;</span><br><span class="line"> </span><br><span class="line"># Replace docker repo</span><br><span class="line">mkdir -p &#x2F;etc&#x2F;docker</span><br><span class="line">cat &gt; &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;6m7d428u.mirror.aliyuncs.com&quot;],</span><br><span class="line">  &quot;dns&quot;: [&quot;114.114.114.114&quot;],</span><br><span class="line">  &quot;exec-opts&quot;: [&quot;native.cgroupdriver&#x3D;systemd&quot;],</span><br><span class="line">  &quot;log-driver&quot;: &quot;json-file&quot;,</span><br><span class="line">  &quot;log-opts&quot;: &#123;</span><br><span class="line">    &quot;max-size&quot;: &quot;100m&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;storage-driver&quot;: &quot;overlay2&quot;,</span><br><span class="line">  &quot;storage-opts&quot;: [</span><br><span class="line">    &quot;overlay2.override_kernel_check&#x3D;true&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"> </span><br><span class="line">systemctl enable docker &amp;&amp; systemctl daemon-reload &amp;&amp; systemctl restart docker</span><br><span class="line"> </span><br><span class="line">curl -L https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker&#x2F;compose&#x2F;releases&#x2F;download&#x2F;1.25.4&#x2F;docker-compose-&#96;uname -s&#96;-&#96;uname -m&#96; &gt; &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose</span><br><span class="line">chmod +x &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose</span><br></pre></td></tr></table></figure>
 
+<h2 id="安装Kubernetes软件"><a href="#安装Kubernetes软件" class="headerlink" title="安装Kubernetes软件"></a>安装Kubernetes软件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># step1 Installation Process</span><br><span class="line">cat &lt;&lt;EOF &gt; &#x2F;etc&#x2F;yum.repos.d&#x2F;kubernetes.repo</span><br><span class="line">[kubernetes]</span><br><span class="line">name&#x3D;Kubernetes</span><br><span class="line">baseurl&#x3D;https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;kubernetes&#x2F;yum&#x2F;repos&#x2F;kubernetes-el7-x86_64&#x2F;</span><br><span class="line">enabled&#x3D;1</span><br><span class="line">gpgcheck&#x3D;1</span><br><span class="line">repo_gpgcheck&#x3D;1</span><br><span class="line">gpgkey&#x3D;https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;kubernetes&#x2F;yum&#x2F;doc&#x2F;yum-key.gpg https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;kubernetes&#x2F;yum&#x2F;doc&#x2F;rpm-package-key.gpg</span><br><span class="line">exclude&#x3D;kube*</span><br><span class="line">EOF</span><br><span class="line"> </span><br><span class="line">yum install -y kubelet kubeadm kubectl --disableexcludes&#x3D;kubernetes</span><br><span class="line"> </span><br><span class="line">systemctl enable kubelet</span><br><span class="line"> </span><br><span class="line"># for CentOS 7</span><br><span class="line">cat &lt;&lt;EOF &gt;  &#x2F;etc&#x2F;sysctl.d&#x2F;k8s.conf</span><br><span class="line">net.bridge.bridge-nf-call-ip6tables &#x3D; 1</span><br><span class="line">net.bridge.bridge-nf-call-iptables &#x3D; 1</span><br><span class="line">vm.swappiness&#x3D;0</span><br><span class="line">EOF</span><br><span class="line">sysctl --system</span><br><span class="line"> </span><br><span class="line"># from k8s 1.8, swap need to be cloased, otherwise k8s could not be started</span><br><span class="line"># swapoff -a</span><br><span class="line"># Modify &#x2F;etc&#x2F;fstab, comment swap mount</span><br></pre></td></tr></table></figure>
+
+<h2 id="初始化Kubernetes集群"><a href="#初始化Kubernetes集群" class="headerlink" title="初始化Kubernetes集群"></a>初始化Kubernetes集群</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Step2 initialization</span><br><span class="line"># Specify kubernetes-version if mirror do not contain latest kubernetes container. ex: if kubeadm is version 1.18.5, you can only</span><br><span class="line"># install kubernetes &#x3D; 1.18.x</span><br><span class="line">kubeadm init --pod-network-cidr&#x3D;10.244.0.0&#x2F;16 --image-repository registry.aliyuncs.com&#x2F;google_containers --kubernetes-version&#x3D;1.18.0</span><br><span class="line"> </span><br><span class="line"># Response from output</span><br><span class="line"># You should now deploy a pod network to the cluster.</span><br><span class="line"># Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:</span><br><span class="line">#   https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;cluster-administration&#x2F;addons&#x2F;</span><br><span class="line"># Then you can join any number of worker nodes by running the following on each as root:</span><br><span class="line"># kubeadm join 192.168.10.111:6443 --token 1odaru.0by05advhbu7edgt \</span><br><span class="line">#     --discovery-token-ca-cert-hash sha256:3efb71c40cce36c5ed90fc8b5831233aba06eec26576088e8e7a7a892d272776</span><br><span class="line"> </span><br><span class="line"># Step3 flannel Network</span><br><span class="line">sysctl net.bridge.bridge-nf-call-iptables&#x3D;1</span><br><span class="line">kubectl apply -f https:&#x2F;&#x2F;gitee.com&#x2F;xiaoquqi&#x2F;flannel&#x2F;raw&#x2F;master&#x2F;Documentation&#x2F;kube-flannel.yml</span><br><span class="line"> </span><br><span class="line"># Step4 To use cluster</span><br><span class="line">mkdir -p $HOME&#x2F;.kube</span><br><span class="line">sudo cp -i &#x2F;etc&#x2F;kubernetes&#x2F;admin.conf $HOME&#x2F;.kube&#x2F;config</span><br><span class="line">sudo chown $(id -u):$(id -g) $HOME&#x2F;.kube&#x2F;config</span><br></pre></td></tr></table></figure>
+
+<h1 id="允许Master节点运行Pods"><a href="#允许Master节点运行Pods" class="headerlink" title="允许Master节点运行Pods"></a>允许Master节点运行Pods</h1><p>···<br>kubectl taint nodes –all node-role.kubernetes.io/master-<br>···</p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="安装Wordpress和MySQL"><a href="#安装Wordpress和MySQL" class="headerlink" title="安装Wordpress和MySQL"></a>安装Wordpress和MySQL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -LO https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;xiaoquqi&#x2F;k8s_demo&#x2F;master&#x2F;wordpress&#x2F;mysql-deployment.yaml</span><br><span class="line">curl -LO https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;xiaoquqi&#x2F;k8s_demo&#x2F;master&#x2F;wordpress&#x2F;wordpress-deployment.yaml</span><br><span class="line">curl -LO https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;xiaoquqi&#x2F;k8s_demo&#x2F;master&#x2F;wordpress&#x2F;kustomization.yaml</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行安装"><a href="#执行安装" class="headerlink" title="执行安装"></a>执行安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -k .&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get secrets</span><br><span class="line">kubectl get pvc</span><br><span class="line">kubectl get pods</span><br><span class="line">kubectl get services wordpress</span><br></pre></td></tr></table></figure>
+
+<h2 id="资源清理"><a href="#资源清理" class="headerlink" title="资源清理"></a>资源清理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl delete -k .&#x2F;</span><br></pre></td></tr></table></figure>
     
 
     
@@ -316,7 +281,7 @@ var _hmt = _hmt || [];
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://sunqi.me/2016/03/27/openstack-training-user-experience/" title="OpenStack培训的用户体验" target="_blank">http://sunqi.me/2016/03/27/openstack-training-user-experience/</a>
+          <a href="http://sunqi.me/2020/07/31/Kubernetes基本安装/" title="Kubernetes All-in-One环境安装" target="_blank">http://sunqi.me/2020/07/31/Kubernetes基本安装/</a>
         </li>
         
         <li>
@@ -334,17 +299,6 @@ var _hmt = _hmt || [];
     
     
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack//" class="article-tag-list-link color5">openstack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
 
@@ -394,7 +348,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.me/2016/03/27/openstack-training-user-experience/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.me/2020/07/31/Kubernetes%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -409,18 +363,9 @@ var _hmt = _hmt || [];
 
 <nav id="article-nav">
   
-    <a href="/2016/04/07/contribution-in-mitaka/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          深度解读OpenStack Mitaka国内代码贡献
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/12/24/use-consul/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Consul主要使用场景</div>
+    <a href="/2020/07/31/CentOS-7%E5%88%9D%E5%A7%8B%E5%8C%96%E8%84%9A%E6%9C%AC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CentOS 7和Docker初始化安装</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -175,6 +175,95 @@ var _hmt = _hmt || [];
             
 
   
+    <article id="post-Kubernetes基本安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/07/31/Kubernetes%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85/">Kubernetes All-in-One环境安装</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/07/31/Kubernetes%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85/" class="archive-article-date">
+        <time datetime="2020-07-31T01:38:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Kubernetes安装及初始化"><a href="#Kubernetes安装及初始化" class="headerlink" title="Kubernetes安装及初始化"></a>Kubernetes安装及初始化</h1><h2 id="CentOS-7初始化"><a href="#CentOS-7初始化" class="headerlink" title="CentOS 7初始化"></a>CentOS 7初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Set SELinux in permissive mode (effectively disabling it)</span><br><span class="line">setenforce 0</span><br><span class="line">#sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;permissive&#x2F;&#39; &#x2F;etc&#x2F;selinux&#x2F;config</span><br><span class="line">sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;disabled&#x2F;&#39; &#x2F;etc&#x2F;selinux&#x2F;config</span><br><span class="line"> </span><br><span class="line">systemctl stop NetworkManager</span><br><span class="line">systemctl disable NetworkManager</span><br><span class="line"> </span><br><span class="line">systemctl status firewalld</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br><span class="line">systemctl status firewalld</span><br><span class="line">firewall-cmd --state</span><br><span class="line"> </span><br><span class="line">curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line">curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo</span><br><span class="line">yum clean all &amp;&amp; yum makecache</span><br><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker国内源安装"><a href="#Docker国内源安装" class="headerlink" title="Docker国内源安装"></a>Docker国内源安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># Install Docker</span><br><span class="line">curl -sSL https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker | sh -s -- &quot;--mirror&quot; &quot;Aliyun&quot;</span><br><span class="line"> </span><br><span class="line"># Replace docker repo</span><br><span class="line">mkdir -p &#x2F;etc&#x2F;docker</span><br><span class="line">cat &gt; &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;6m7d428u.mirror.aliyuncs.com&quot;],</span><br><span class="line">  &quot;dns&quot;: [&quot;114.114.114.114&quot;],</span><br><span class="line">  &quot;exec-opts&quot;: [&quot;native.cgroupdriver&#x3D;systemd&quot;],</span><br><span class="line">  &quot;log-driver&quot;: &quot;json-file&quot;,</span><br><span class="line">  &quot;log-opts&quot;: &#123;</span><br><span class="line">    &quot;max-size&quot;: &quot;100m&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;storage-driver&quot;: &quot;overlay2&quot;,</span><br><span class="line">  &quot;storage-opts&quot;: [</span><br><span class="line">    &quot;overlay2.override_kernel_check&#x3D;true&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"> </span><br><span class="line">systemctl enable docker &amp;&amp; systemctl daemon-reload &amp;&amp; systemctl restart docker</span><br><span class="line"> </span><br><span class="line">curl -L https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker&#x2F;compose&#x2F;releases&#x2F;download&#x2F;1.25.4&#x2F;docker-compose-&#96;uname -s&#96;-&#96;uname -m&#96; &gt; &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose</span><br><span class="line">chmod +x &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Kubernetes软件"><a href="#安装Kubernetes软件" class="headerlink" title="安装Kubernetes软件"></a>安装Kubernetes软件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># step1 Installation Process</span><br><span class="line">cat &lt;&lt;EOF &gt; &#x2F;etc&#x2F;yum.repos.d&#x2F;kubernetes.repo</span><br><span class="line">[kubernetes]</span><br><span class="line">name&#x3D;Kubernetes</span><br><span class="line">baseurl&#x3D;https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;kubernetes&#x2F;yum&#x2F;repos&#x2F;kubernetes-el7-x86_64&#x2F;</span><br><span class="line">enabled&#x3D;1</span><br><span class="line">gpgcheck&#x3D;1</span><br><span class="line">repo_gpgcheck&#x3D;1</span><br><span class="line">gpgkey&#x3D;https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;kubernetes&#x2F;yum&#x2F;doc&#x2F;yum-key.gpg https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;kubernetes&#x2F;yum&#x2F;doc&#x2F;rpm-package-key.gpg</span><br><span class="line">exclude&#x3D;kube*</span><br><span class="line">EOF</span><br><span class="line"> </span><br><span class="line">yum install -y kubelet kubeadm kubectl --disableexcludes&#x3D;kubernetes</span><br><span class="line"> </span><br><span class="line">systemctl enable kubelet</span><br><span class="line"> </span><br><span class="line"># for CentOS 7</span><br><span class="line">cat &lt;&lt;EOF &gt;  &#x2F;etc&#x2F;sysctl.d&#x2F;k8s.conf</span><br><span class="line">net.bridge.bridge-nf-call-ip6tables &#x3D; 1</span><br><span class="line">net.bridge.bridge-nf-call-iptables &#x3D; 1</span><br><span class="line">vm.swappiness&#x3D;0</span><br><span class="line">EOF</span><br><span class="line">sysctl --system</span><br><span class="line"> </span><br><span class="line"># from k8s 1.8, swap need to be cloased, otherwise k8s could not be started</span><br><span class="line"># swapoff -a</span><br><span class="line"># Modify &#x2F;etc&#x2F;fstab, comment swap mount</span><br></pre></td></tr></table></figure>
+
+<h2 id="初始化Kubernetes集群"><a href="#初始化Kubernetes集群" class="headerlink" title="初始化Kubernetes集群"></a>初始化Kubernetes集群</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Step2 initialization</span><br><span class="line"># Specify kubernetes-version if mirror do not contain latest kubernetes container. ex: if kubeadm is version 1.18.5, you can only</span><br><span class="line"># install kubernetes &#x3D; 1.18.x</span><br><span class="line">kubeadm init --pod-network-cidr&#x3D;10.244.0.0&#x2F;16 --image-repository registry.aliyuncs.com&#x2F;google_containers --kubernetes-version&#x3D;1.18.0</span><br><span class="line"> </span><br><span class="line"># Response from output</span><br><span class="line"># You should now deploy a pod network to the cluster.</span><br><span class="line"># Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:</span><br><span class="line">#   https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;cluster-administration&#x2F;addons&#x2F;</span><br><span class="line"># Then you can join any number of worker nodes by running the following on each as root:</span><br><span class="line"># kubeadm join 192.168.10.111:6443 --token 1odaru.0by05advhbu7edgt \</span><br><span class="line">#     --discovery-token-ca-cert-hash sha256:3efb71c40cce36c5ed90fc8b5831233aba06eec26576088e8e7a7a892d272776</span><br><span class="line"> </span><br><span class="line"># Step3 flannel Network</span><br><span class="line">sysctl net.bridge.bridge-nf-call-iptables&#x3D;1</span><br><span class="line">kubectl apply -f https:&#x2F;&#x2F;gitee.com&#x2F;xiaoquqi&#x2F;flannel&#x2F;raw&#x2F;master&#x2F;Documentation&#x2F;kube-flannel.yml</span><br><span class="line"> </span><br><span class="line"># Step4 To use cluster</span><br><span class="line">mkdir -p $HOME&#x2F;.kube</span><br><span class="line">sudo cp -i &#x2F;etc&#x2F;kubernetes&#x2F;admin.conf $HOME&#x2F;.kube&#x2F;config</span><br><span class="line">sudo chown $(id -u):$(id -g) $HOME&#x2F;.kube&#x2F;config</span><br></pre></td></tr></table></figure>
+
+<h1 id="允许Master节点运行Pods"><a href="#允许Master节点运行Pods" class="headerlink" title="允许Master节点运行Pods"></a>允许Master节点运行Pods</h1><p>···<br>kubectl taint nodes –all node-role.kubernetes.io/master-<br>···</p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="安装Wordpress和MySQL"><a href="#安装Wordpress和MySQL" class="headerlink" title="安装Wordpress和MySQL"></a>安装Wordpress和MySQL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -LO https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;xiaoquqi&#x2F;k8s_demo&#x2F;master&#x2F;wordpress&#x2F;mysql-deployment.yaml</span><br><span class="line">curl -LO https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;xiaoquqi&#x2F;k8s_demo&#x2F;master&#x2F;wordpress&#x2F;wordpress-deployment.yaml</span><br><span class="line">curl -LO https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;xiaoquqi&#x2F;k8s_demo&#x2F;master&#x2F;wordpress&#x2F;kustomization.yaml</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行安装"><a href="#执行安装" class="headerlink" title="执行安装"></a>执行安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -k .&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get secrets</span><br><span class="line">kubectl get pvc</span><br><span class="line">kubectl get pods</span><br><span class="line">kubectl get services wordpress</span><br></pre></td></tr></table></figure>
+
+<h2 id="资源清理"><a href="#资源清理" class="headerlink" title="资源清理"></a>资源清理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl delete -k .&#x2F;</span><br></pre></td></tr></table></figure>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/07/31/Kubernetes%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CentOS-7初始化脚本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -992,106 +1081,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-contricution-in-newton" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2016/09/30/contricution-in-newton/">深度解读OpenStack Newton国内代码贡献</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2016/09/30/contricution-in-newton/" class="archive-article-date">
-        <time datetime="2016-09-30T17:00:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-01</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>今天是十一黄金周开始的第一天，在2016年10月6日，OpenStack马上要迎来第14个版本的发布，也是Big Tent后的第三个版本，计划Release项目达到32个，比Mitaka版本多了3个。</p>
-<p>这是继OpenStack Liberty贡献分析后的第三篇系列文章，我们很欣喜的看到在每次的OpenStack Release之后，我们总是可以发现有很多新的中国企业投身于OpenStack生态圈中，无论如何，随着时间的推移，像OpenStack这样的开源软件势必在企业市场中有越来越多的应用。在当今房价飞速增长的今天，整个的社会充满了浮躁，能出现一个像OpenStack一样的项目实属不易。我们的国家、我们的民族太需要一些脚踏实地的人做一些真正的“自主可控”的技术积累，否则我们的未来仍然摆脱不了表面强大的现实。</p>
-<p>最近一段时间一直在接触客户，也在思考为什么OpenStack无法像苹果手机那样轻松落地、供不应求，当然这个对比并不恰当。记得寄云科技的时博士曾经说过：越接近于用户底层的应用越难落地。现实也的确如此，就好像用户盖了一栋大楼，这时候你告诉用户，我这有个地基比你原来的好，来我给你换了；又或者你告诉用户说，我这个地基比你以前的好，我给你重新搭个地基，你再盖个楼。我想如果我是用户，我也不会答应的。所以，在用户基础架构已经非常成熟的企业中，OpenStack在落地过程中势必会遇到痛点不痛，落地困难的问题。我觉得解决这个问题无外乎几个方面：第一，有一位高瞻远瞩的领导，像携程的叶总、恒丰银行的张总；第二，把OpenStack的解决方案做的像VMWare一样完整，比如用户原来的业务系统怎么无缝迁移过来，用户原有资产怎么重新利用，怎么让OpenStack适用用户现有的网络架构，怎么让OpenStack适用用户现有的管理流程；第三，将OpenStack和刺中用户痛点的应用结合起来，进而推进OpenStack在企业中的应用，这也是我一直在寻找的方向。这仅仅是我在从事四年多OpenStack研发、销售过程中的一点点思考，也欢迎各位一起进行讨论。</p>
-<p>还是那句话，排名并不是这篇文章的真正目的。我们希望能有更多的用户看到，我们中国企业在OpenStack上的影响力，让更多的用户了解OpenStack，从而能够在未来的应用中使用OpenStack，形成真正的OpenStack的生态圈。</p>
-<p>OpenStack Liberty深度解读请见：<a href="http://xiaoquqi.github.io/blog/2015/10/29/contribution-in-liberty/" target="_blank" rel="noopener">http://xiaoquqi.github.io/blog/2015/10/29/contribution-in-liberty/</a></p>
-<p>OpenStack Mitaka深度解读请见：<a href="http://xiaoquqi.github.io/blog/2016/04/07/contribution-in-mitaka/" target="_blank" rel="noopener">http://xiaoquqi.github.io/blog/2016/04/07/contribution-in-mitaka/</a></p>
-    
-    <a class="article-more-a" href="/2016/09/30/contricution-in-newton/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack//" class="article-tag-list-link color5">OpenStack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2016/09/30/contricution-in-newton/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
