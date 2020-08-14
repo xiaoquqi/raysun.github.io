@@ -175,6 +175,98 @@ var _hmt = _hmt || [];
             
 
   
+    <article id="post-ubuntu-14-dot-04-installation-guide-for-developer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2015/09/08/ubuntu-14-dot-04-installation-guide-for-developer/">Ubuntu 14.04 Server开发者安装指南</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2015/09/08/ubuntu-14-dot-04-installation-guide-for-developer/" class="archive-article-date">
+        <time datetime="2015-09-08T21:50:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="为什么会写这篇Blog"><a href="#为什么会写这篇Blog" class="headerlink" title="为什么会写这篇Blog"></a>为什么会写这篇Blog</h2><p>近期，接触了一些OpenStack的入门者，很多人对Linux系统并不是很熟悉，导致安装出来的系统五花八门，间接地影响了后面的开发与调试，所以这里给出我的安装流程，供初学者们参考。我使用的是Ubuntu 14.04 64bit Server版本的ISO进行安装，其他版本方法类似。</p>
+    
+    <a class="article-more-a" href="/2015/09/08/ubuntu-14-dot-04-installation-guide-for-developer/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/openstack//" class="article-tag-list-link color5">openstack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/openstack/ubuntu//" class="article-tag-list-link color2">ubuntu</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2015/09/08/ubuntu-14-dot-04-installation-guide-for-developer/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-devstack-guide" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1023,111 +1115,6 @@ var _hmt = _hmt || [];
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2015/03/03/ceph-reliability/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-openstack-instance-ha-high-availability" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2015/03/03/openstack-instance-ha-high-availability/">OpenStack虚拟机的高可靠</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2015/03/03/openstack-instance-ha-high-availability/" class="archive-article-date">
-        <time datetime="2015-03-03T04:58:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-03</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>译者注：OpenStack虚拟机级别的HA是在企业私有云中必须提及的话题，换句话说如果没有此机制，很多企业级用户根本不会考虑使用OpenStack+开源云平台的解决方案。这一点也得益于VMware等大公司孜孜不倦、持之以恒、长年累月的对用户的洗脑，这样的洗脑让用户觉得一些VMware的功能成为了“云”的标准(HA/FT/DRS/DPM等)。个人认为，OpenStack这部分功能的缺失也直接的阻碍了OpenStack进入中国行业用户的步伐，记得在夏天的时候，华为曾经为社区提供了一个HA的解决方案(用C语言实现)，打算贡献给社区，但是经过社区激烈的讨论，终于不了了之。</p>
-<p>在我所经历的私有云项目中，也尝试了一些虚拟机级别的HA解决方案，我的个人观点是，如果将OpenStack作为一个项目，可以不提供HA，但是作为产品，必须要提供HA的解决方案(私有云)。这篇文章中提到HA实现的过程，也恰恰是我们在实际中遇到的状况，下面让我们来看一看OpenStack社区是如何设想实现该问题的。感谢 @陈沙克 微博提供的资料。</p>
-    
-    <a class="article-more-a" href="/2015/03/03/openstack-instance-ha-high-availability/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack//" class="article-tag-list-link color5">OpenStack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/HA//" class="article-tag-list-link color3">HA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/HA/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/HA/Cloud-Computing/Enterprise//" class="article-tag-list-link color1">Enterprise</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/HA/Cloud-Computing/Enterprise/VMWare//" class="article-tag-list-link color2">VMWare</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2015/03/03/openstack-instance-ha-high-availability/">展开全文 >></a>
     </p>
     
 
