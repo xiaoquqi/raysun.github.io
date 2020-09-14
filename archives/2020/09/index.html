@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.me">
-  <title>Ceph集群磁盘没有剩余空间的解决方法 | Ray&#39;s Blog</title>
+  <title>Archives: 2020/9 | Ray&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="故障描述OpenStack + Ceph集群在使用过程中，由于虚拟机拷入大量新的数据，导致集群的磁盘迅速消耗，没有空余空间，虚拟机无法操作，Ceph集群所有操作都无法执行。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Ceph集群磁盘没有剩余空间的解决方法">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2015&#x2F;05&#x2F;11&#x2F;ceph-osd-is-full&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Ray&#39;s Blog">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;archives&#x2F;2020&#x2F;09&#x2F;index.html">
 <meta property="og:site_name" content="Ray&#39;s Blog">
-<meta property="og:description" content="故障描述OpenStack + Ceph集群在使用过程中，由于虚拟机拷入大量新的数据，导致集群的磁盘迅速消耗，没有空余空间，虚拟机无法操作，Ceph集群所有操作都无法执行。">
 <meta property="og:locale" content="zh">
-<meta property="article:published_time" content="2015-05-11T17:21:42.000Z">
-<meta property="article:modified_time" content="2020-09-14T02:28:12.426Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
   
@@ -172,303 +168,54 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ceph-osd-is-full" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/09/12/%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BACeph%E9%9B%86%E7%BE%A4/" class="archive-article-date">
+        <time datetime="2020-09-12T09:05:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-12</time>
+</a>
+
+        </div>
+    	 
   
-  
-    <h1 class="article-title" itemprop="name">
-      Ceph集群磁盘没有剩余空间的解决方法
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/2020/09/12/%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BACeph%E9%9B%86%E7%BE%A4/">快速构建Ceph集群</a>
+	
     </h1>
   
 
 
-  
-  
-<a href="/2015/05/11/ceph-osd-is-full/" class="archive-article-date">
-        <time datetime="2015-05-11T17:21:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-05-12</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.7k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">8分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="故障描述"><a href="#故障描述" class="headerlink" title="故障描述"></a>故障描述</h2><p>OpenStack + Ceph集群在使用过程中，由于虚拟机拷入大量新的数据，导致集群的磁盘迅速消耗，没有空余空间，虚拟机无法操作，Ceph集群所有操作都无法执行。</p>
-<a id="more"></a>
-
-<h2 id="故障现象"><a href="#故障现象" class="headerlink" title="故障现象"></a>故障现象</h2><ul>
-<li>尝试使用OpenStack重启虚拟机无效</li>
-<li>尝试直接用rbd命令直接删除块失败</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]# rbd -p volumes rm volume-c55fd052-212d-4107-a2ac-cf53bfc049be</span><br><span class="line">2015-04-29 05:31:31.719478 7f5fb82f7760  0 client.4781741.objecter  FULL, paused modify 0xe9a9e0 tid 6</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看ceph健康状态</li>
-</ul>
-<figure class="highlight plain"><figcaption><span>ceph -s</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cluster 059f27e8-a23f-4587-9033-3e3679d03b31</span><br><span class="line"> health HEALTH_ERR 20 pgs backfill_toofull; 20 pgs degraded; 20 pgs stuck unclean; recovery 7482&#x2F;129081 objects degraded (5.796%); 2 full osd(s); 1 near full osd(s)</span><br><span class="line"> monmap e6: 4 mons at &#123;node-5e40.cloud.com&#x3D;10.10.20.40:6789&#x2F;0,node-6670.cloud.com&#x3D;10.10.20.31:6789&#x2F;0,node-66c4.cloud.com&#x3D;10.10.20.36:6789&#x2F;0,node-fb27.cloud.com&#x3D;10.10.20.41:6789&#x2F;0&#125;, election epoch 886, quorum 0,1,2,3 node-6670.cloud.com,node-66c4.cloud.com,node-5e40.cloud.com,node-fb27.cloud.com</span><br><span class="line"> osdmap e2743: 3 osds: 3 up, 3 in</span><br><span class="line">        flags full</span><br><span class="line">  pgmap v6564199: 320 pgs, 4 pools, 262 GB data, 43027 objects</span><br><span class="line">        786 GB used, 47785 MB &#x2F; 833 GB avail</span><br><span class="line">        7482&#x2F;129081 objects degraded (5.796%)</span><br><span class="line">             300 active+clean</span><br><span class="line">              20 active+degraded+remapped+backfill_toofull</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><figcaption><span>ceph health detail</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">HEALTH_ERR 20 pgs backfill_toofull; 20 pgs degraded; 20 pgs stuck unclean; recovery 7482&#x2F;129081 objects degraded (5.796%); 2 full osd(s); 1 near full osd(s)</span><br><span class="line">pg 3.8 is stuck unclean for 7067109.597691, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.7d is stuck unclean for 1852078.505139, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.21 is stuck unclean for 7072842.637848, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.22 is stuck unclean for 7070880.213397, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.a is stuck unclean for 7067057.863562, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.7f is stuck unclean for 7067122.493746, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.5 is stuck unclean for 7067088.369629, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.1e is stuck unclean for 7073386.246281, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.19 is stuck unclean for 7068035.310269, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.5d is stuck unclean for 1852078.505949, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.1a is stuck unclean for 7067088.429544, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.1b is stuck unclean for 7072773.771385, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.3 is stuck unclean for 7067057.864514, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.15 is stuck unclean for 7067088.825483, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.11 is stuck unclean for 7067057.862408, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.6d is stuck unclean for 7067083.634454, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.6e is stuck unclean for 7067098.452576, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.c is stuck unclean for 5658116.678331, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.e is stuck unclean for 7067078.646953, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.20 is stuck unclean for 7067140.530849, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.7d is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.7f is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.6d is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.6e is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.5d is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.20 is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.21 is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.22 is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.1e is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.19 is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.1a is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.1b is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.15 is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.11 is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.c is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.e is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.8 is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.a is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.5 is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.3 is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">recovery 7482&#x2F;129081 objects degraded (5.796%)</span><br><span class="line">osd.0 is full at 95%</span><br><span class="line">osd.2 is full at 95%</span><br><span class="line">osd.1 is near full at 93%</span><br></pre></td></tr></table></figure>
-<h2 id="解决方案一-已验证"><a href="#解决方案一-已验证" class="headerlink" title="解决方案一(已验证)"></a>解决方案一(已验证)</h2><p>增加OSD节点，这也是官方文档中推荐的做法，增加新的节点后，Ceph开始重新平衡数据，OSD使用空间开始下降</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2015-04-29 06:51:58.623262 osd.1 [WRN] OSD near full (91%)</span><br><span class="line">2015-04-29 06:52:01.500813 osd.2 [WRN] OSD near full (92%)</span><br></pre></td></tr></table></figure>
-
-<h2 id="解决方案二-理论上，没有进行验证"><a href="#解决方案二-理论上，没有进行验证" class="headerlink" title="解决方案二(理论上，没有进行验证)"></a>解决方案二(理论上，没有进行验证)</h2><p>如果在没有新的硬盘的情况下，只能采用另外一种方式。在当前状态下，Ceph不允许任何的读写操作，所以此时任何的Ceph命令都不好使，解决的方案就是尝试降低Ceph对于full的比例定义，我们从上面的日志中可以看到Ceph的full的比例为95%，我们需要做的就是提高full的比例，之后尽快尝试删除数据，将比例下降。</p>
-<ul>
-<li>尝试直接用命令设置，但是失败了，Ceph集群并没有重新同步数据，怀疑可能仍然需要重启服务本身</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ceph mon tell \* injectargs &#39;--mon-osd-full-ratio 0.98&#39;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改配置文件，之后重启monitor服务，但是担心出问题，所以没有敢尝试该方法，后续经过在邮件列表确认，该方法应该不会对数据产生影响，但是前提是在恢复期间，所有的虚拟机不要向Ceph再写入任何数据。</li>
-</ul>
-<p>默认情况下full的比例是95%，而near full的比例是85%，所以需要根据实际情况对该配置进行调整。</p>
-<figure class="highlight plain"><figcaption><span>/etc/ceph/ceph.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">    mon osd full ratio &#x3D; .98</span><br><span class="line">    mon osd nearfull ratio &#x3D; .80</span><br></pre></td></tr></table></figure>
-
-<h2 id="分析总结"><a href="#分析总结" class="headerlink" title="分析总结"></a>分析总结</h2><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>根据Ceph官方文档中的描述，当一个OSD full比例达到95%时，集群将不接受任何Ceph Client端的读写数据的请求。所以导致虚拟机在重启时，无法启动的情况。</p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>从官方的推荐来看，应该比较支持添加新的OSD的方式，当然临时的提高比例是一个解决方案，但是并不推荐，因为需要手动的删除数据去解决，而且一旦再有一个新的节点出现故障，仍然会出现比例变满的状况，所以解决之道最好是扩容。</p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>在这次故障过程中，有两点是值得思考的：</p>
-<ul>
-<li>监控：由于当时服务器在配置过程中DNS配置错误，导致监控邮件无法正常发出，从而没有收到Ceph WARN的提示信息</li>
-<li>云平台本身： 由于Ceph的机制，在OpenStack平台中分配中，大多时候是超分的，从用户角度看，拷贝大量数据的行为并没有不妥之处，但是由于云平台并没有相应的预警机制，导致了该问题的发生</li>
-</ul>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
-<li><a href="http://ceph.com/docs/master/rados/configuration/mon-config-ref/#storage-capacity" target="_blank" rel="noopener">http://ceph.com/docs/master/rados/configuration/mon-config-ref/#storage-capacity</a></li>
-</ul>
-
-    
-
-    
-    <div class="page-reward">
-      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/images/alipay.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
-                  
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/images/weixin.jpg">
-                    <span class="reward-type">微信</span>
-                  </div>
-                  
-                </div>
-              </span>
-            </span>
-          </span>
-        </div>
-      </a>
-    </div>
-    
-
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          孙琦(Ray)
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="http://sunqi.me/2015/05/11/ceph-osd-is-full/" title="Ceph集群磁盘没有剩余空间的解决方法" target="_blank">http://sunqi.me/2015/05/11/ceph-osd-is-full/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
+        <div class="article-info info-on-right">
           
-          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
-    
+          
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack//" class="article-tag-list-link color5">openstack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack/ceph//" class="article-tag-list-link color5">ceph</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-
-    
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.me/2015/05/11/ceph-osd-is-full/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-    
-    <div class="clearfix"></div>
-  </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2015/06/27/ceph-performance-optimization-summary/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Ceph性能优化总结(v0.94)
-        
-      </div>
-    </a>
   
   
-    <a href="/2015/05/10/best-localrc-for-devstack-kilo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">(Kilo)Devstack Kilo版本localrc推荐</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-<section id="comments">
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname =
-    'true'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-      var dsq = document.createElement('script');
-      dsq.type = 'text/javascript';
-      dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by
-      Disqus.</a></noscript>
-</section>
-
-
-
-
-
-
+    
 
 
           </div>
@@ -494,8 +241,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
