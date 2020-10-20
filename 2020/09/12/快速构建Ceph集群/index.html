@@ -17,13 +17,13 @@
 <meta property="og:site_name" content="Ray&#39;s Blog">
 <meta property="og:description" content="虽然安装环境并不是属于研发人员的本质工作，甚至有些研发人员抵触一些环境的搭建工作。在一些大型企业中，由于分工明确，造成了一些研发人员在这一方面能力的严重缺失。其实环境安装对于开发人员从整体上掌握软件架构师非常有益的，同时随着云计算、云原生的发展，对于DevOps的软件开发模式也越来越被企业接受，可以预见的是，未来DevOps将是所有研发人员必备的技能之一。 本文主要目标是帮助研发人员用最小成本搭建">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-58.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-59.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-58-1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-59-1.png">
 <meta property="article:published_time" content="2020-09-12T09:05:53.000Z">
-<meta property="article:modified_time" content="2020-10-11T06:37:54.117Z">
+<meta property="article:modified_time" content="2020-10-20T23:38:47.987Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-58.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-58-1.png">
   
     <link rel="alternative" href="/atom.xml" title="Ray&#39;s Blog" type="application/atom+xml">
   
@@ -515,7 +515,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.9k字</span>
+      <span class="post-count">1.7k字</span>
     </span>
   </span>
 
@@ -524,7 +524,7 @@ var _hmt = _hmt || [];
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">8分</span>
+      <span class="post-count">7分</span>
     </span>
   </span>
 </div>
@@ -540,7 +540,7 @@ var _hmt = _hmt || [];
 <a id="more"></a>
 
 <h1 id="部署架构"><a href="#部署架构" class="headerlink" title="部署架构"></a>部署架构</h1><p>我们准备四台服务器，其中一台作为部署发起节点和后续Client节点使用。另外三台作为Ceph节点使用，其中第一台节点node01上，除了monitor和osd外，还将运行Manager, MDS和RGW服务，用于提供文件及对象存储服务。每一台Ceph节点都另外挂载了一块单独的磁盘，由于我使用的是虚拟机环境，所以挂载节点为/dev/vdb，如果使用是其他环境需要注意挂载点名称。</p>
-<p><img src="/images/pasted-58.png" alt="upload successful"></p>
+<p><img src="/images/pasted-58-1.png" alt="upload successful"></p>
 <h1 id="部署时序图"><a href="#部署时序图" class="headerlink" title="部署时序图"></a>部署时序图</h1><p>使用Ceph Deploy将大幅度简化安装过程，大体上分为以下安装步骤：</p>
 <ul>
 <li>节点初始化配置</li>
@@ -550,7 +550,7 @@ var _hmt = _hmt || [];
 <li>CephFS安装，部署Metadata服务</li>
 <li>Ceph RGW安装，部署RGW服务</li>
 </ul>
-<p><img src="/images/pasted-59.png" alt="upload successful"></p>
+<p><img src="/images/pasted-59-1.png" alt="upload successful"></p>
 <h1 id="（全部节点）环境准备"><a href="#（全部节点）环境准备" class="headerlink" title="（全部节点）环境准备"></a>（全部节点）环境准备</h1><p>这是我非常常用的针对CentOS 7的设置，为了测试方便，关闭了防火墙、SELINUX，同时更新了系统和EPEL源为阿里源，最后进行系统更新，保证系统软件包更新到最新版本后，再进行环境安装。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Set SELinux in permissive mode (effectively disabling it)</span><br><span class="line">setenforce 0</span><br><span class="line">#sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;permissive&#x2F;&#39; &#x2F;etc&#x2F;selinux&#x2F;config</span><br><span class="line">sed -i &#39;s&#x2F;^SELINUX&#x3D;enforcing$&#x2F;SELINUX&#x3D;disabled&#x2F;&#39; &#x2F;etc&#x2F;selinux&#x2F;config</span><br><span class="line"> </span><br><span class="line">systemctl stop NetworkManager</span><br><span class="line">systemctl disable NetworkManager</span><br><span class="line"> </span><br><span class="line">systemctl status firewalld</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br><span class="line">systemctl status firewalld</span><br><span class="line">firewall-cmd --state</span><br><span class="line"> </span><br><span class="line">curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;Centos-7.repo</span><br><span class="line">curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo</span><br><span class="line">yum clean all &amp;&amp; yum makecache</span><br><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
 
@@ -567,6 +567,9 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id root@node1</span><br><span class="line">ssh-copy-id root@node2</span><br><span class="line">ssh-copy-id root@node3</span><br></pre></td></tr></table></figure>
 
 <h1 id="Ceph集群安装"><a href="#Ceph集群安装" class="headerlink" title="Ceph集群安装"></a>Ceph集群安装</h1><h2 id="（Ceph-Deploy节点）Ceph块存储服务安装"><a href="#（Ceph-Deploy节点）Ceph块存储服务安装" class="headerlink" title="（Ceph Deploy节点）Ceph块存储服务安装"></a>（Ceph Deploy节点）Ceph块存储服务安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">export CEPH_DEPLOY_REPO_URL&#x3D;https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ceph&#x2F;rpm-octopus&#x2F;el7</span><br><span class="line">export CEPH_DEPLOY_GPG_URL&#x3D;https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ceph&#x2F;keys&#x2F;release.asc</span><br><span class="line"></span><br><span class="line"># 集群初始化，这一步会生成初始化的ceph.conf，可以配置网络等信息</span><br><span class="line">ceph-deploy new node01</span><br><span class="line">ceph-deploy install node01 node02 node03</span><br><span class="line"></span><br><span class="line"># 初始化monitor，并收集keys</span><br><span class="line">ceph-deploy mon create-initial</span><br><span class="line">ceph-deploy admin node01 node02 node03</span><br><span class="line"></span><br><span class="line">ceph-deploy mgr create node01</span><br><span class="line"></span><br><span class="line">ceph-deploy osd create --data &#x2F;dev&#x2F;vdb node01</span><br><span class="line">ceph-deploy osd create --data &#x2F;dev&#x2F;vdb node02</span><br><span class="line">ceph-deploy osd create --data &#x2F;dev&#x2F;vdb node03</span><br><span class="line"></span><br><span class="line"># 检查集群状态</span><br><span class="line">ceph -s</span><br></pre></td></tr></table></figure>
+
+<p>由于默认采用了Bluestore安装方式，如果想使用SSD作为block.db和block.wal，可以这样创建OSD</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ceph-deploy osd create --data &#x2F;dev&#x2F;vdb --block-db &#x2F;dev&#x2F;vdc --block-wal &#x2F;dev&#x2F;vdc node01</span><br></pre></td></tr></table></figure>
 
 <p>在Ceph Deploy节点，将Ceph相关配置文件拷贝至系统的/etc/ceph目录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &#x2F;etc&#x2F;ceph</span><br><span class="line">cp ceph.conf &#x2F;etc&#x2F;ceph</span><br><span class="line">cp ceph.client.admin.keyring &#x2F;etc&#x2F;ceph</span><br></pre></td></tr></table></figure>
@@ -588,28 +591,16 @@ var _hmt = _hmt || [];
 
 <h2 id="（Ceph-Deploy节点）Ceph对象存储服务安装"><a href="#（Ceph-Deploy节点）Ceph对象存储服务安装" class="headerlink" title="（Ceph Deploy节点）Ceph对象存储服务安装"></a>（Ceph Deploy节点）Ceph对象存储服务安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ceph-deploy rgw create node01</span><br></pre></td></tr></table></figure>
 
-<h1 id="与OpenStack对接"><a href="#与OpenStack对接" class="headerlink" title="与OpenStack对接"></a>与OpenStack对接</h1><p>OpenStack支持与多个不同的Ceph资源池进行对接，通过cinder的volume type与backend进行对应，创建时只需要选择不同的volume type就可以实现指定资源池创建。配置OpenStack对接分为两个部分：</p>
-<ul>
-<li>Cinder配置：主要配置存储资源池与Volume Type和Backend对应关系</li>
-<li>Libvirt配置：配置与Ceph之间的鉴权关系</li>
-</ul>
-<h2 id="Cinder配置"><a href="#Cinder配置" class="headerlink" title="Cinder配置"></a>Cinder配置</h2><p>其中rbd_secret_uuid可以使用uuidgen命令生成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># &#x2F;etc&#x2F;cinder&#x2F;cinder.conf</span><br><span class="line">[DEFAULT]</span><br><span class="line">......</span><br><span class="line"># 与下面的段落对应</span><br><span class="line">enabled_backends &#x3D; rbd-1, rbd-2</span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">[rbd-1]</span><br><span class="line">volume_driver &#x3D; cinder.volume.drivers.rbd.RBDDriver</span><br><span class="line"></span><br><span class="line"># 与上面的enabled_backends对应</span><br><span class="line">volume_backend_name &#x3D; rbd-1</span><br><span class="line"></span><br><span class="line">rbd_pool &#x3D; volumes</span><br><span class="line"></span><br><span class="line"># 需要从Ceph集群拷贝这两个配置文件到相应目录</span><br><span class="line">rbd_ceph_conf &#x3D; &#x2F;etc&#x2F;ceph&#x2F;ceph-1.conf</span><br><span class="line">rbd_keyring_conf &#x3D; &#x2F;etc&#x2F;ceph&#x2F;ceph.client.cinder1.keyring</span><br><span class="line"></span><br><span class="line">rbd_flatten_volume_from_snapshot &#x3D; false</span><br><span class="line">rbd_max_clone_depth &#x3D; 5</span><br><span class="line">rbd_store_chunk_size &#x3D; 4</span><br><span class="line">rados_connect_timeout &#x3D; 4</span><br><span class="line">rbd_user &#x3D; admin</span><br><span class="line">rbd_secret_uuid &#x3D; 5774b929-0690-4513-a1f7-41aac49cbb31</span><br><span class="line">report_discard_supported &#x3D; True</span><br><span class="line">image_upload_use_cinder_backend &#x3D; True</span><br><span class="line"> </span><br><span class="line">[rbd-2]</span><br><span class="line">volume_driver &#x3D; cinder.volume.drivers.rbd.RBDDriver</span><br><span class="line">volume_backend_name &#x3D; rbd-2</span><br><span class="line">rbd_pool &#x3D; volumes</span><br><span class="line">rbd_ceph_conf &#x3D; &#x2F;etc&#x2F;ceph&#x2F;ceph-2.conf</span><br><span class="line">rbd_keyring_conf &#x3D; &#x2F;etc&#x2F;ceph&#x2F;ceph.client.cinder2.keyring</span><br><span class="line">rbd_flatten_volume_from_snapshot &#x3D; false</span><br><span class="line">rbd_max_clone_depth &#x3D; 5</span><br><span class="line">rbd_store_chunk_size &#x3D; 4</span><br><span class="line">rados_connect_timeout &#x3D; 4</span><br><span class="line">rbd_user &#x3D; admin</span><br><span class="line">rbd_secret_uuid &#x3D; 0563c419-bc4c-4794-972a-685498248869</span><br><span class="line">report_discard_supported &#x3D; True</span><br><span class="line">image_upload_use_cinder_backend &#x3D; True</span><br></pre></td></tr></table></figure>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="块存储测试"><a href="#块存储测试" class="headerlink" title="块存储测试"></a>块存储测试</h2><h3 id="建立存储空间"><a href="#建立存储空间" class="headerlink" title="建立存储空间"></a>建立存储空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="建立与Volume-Type对应关系"><a href="#建立与Volume-Type对应关系" class="headerlink" title="建立与Volume Type对应关系"></a>建立与Volume Type对应关系</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cinder type-create rbd-1</span><br><span class="line">cinder type-key rbd-1 set volume_backend_name&#x3D;rbd-1</span><br><span class="line">cinder extra-specs-list</span><br><span class="line"></span><br><span class="line">cinder type-create rbd-2</span><br><span class="line">cinder type-key rbd-2 set volume_backend_name&#x3D;rbd-2</span><br><span class="line">cinder extra-specs-list</span><br></pre></td></tr></table></figure>
+<h3 id="挂载使用"><a href="#挂载使用" class="headerlink" title="挂载使用"></a>挂载使用</h3><h2 id="文件系统测试"><a href="#文件系统测试" class="headerlink" title="文件系统测试"></a>文件系统测试</h2><h3 id="建立存储空间-1"><a href="#建立存储空间-1" class="headerlink" title="建立存储空间"></a>建立存储空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ceph osd pool create cephfs_data 16</span><br><span class="line">ceph osd pool create cephfs_metadata 16</span><br><span class="line"></span><br><span class="line"># ceph fs new &lt;fs_name&gt; &lt;metadata&gt; &lt;data&gt;</span><br><span class="line">ceph fs new cephfs cephfs_metadata cephfs_data</span><br><span class="line">ceph fs ls</span><br></pre></td></tr></table></figure>
 
-<h2 id="Libvirt配置"><a href="#Libvirt配置" class="headerlink" title="Libvirt配置"></a>Libvirt配置</h2><p>在/etc/libvirt/secretes建立与上述rbd_secret_uuid同名的两个文件，后缀为.xml和.base64，两个文件的内容为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 5774b929-0690-4513-a1f7-41aac49cbb31.xml</span><br><span class="line">&lt;secret ephemeral&#x3D;&#39;no&#39; private&#x3D;&#39;no&#39;&gt;</span><br><span class="line">  &lt;uuid&gt;5774b929-0690-4513-a1f7-41aac49cbb31&lt;&#x2F;uuid&gt;</span><br><span class="line">  &lt;usage type&#x3D;&#39;ceph&#39;&gt;</span><br><span class="line">    &lt;name&gt;client.cinder1 secret&lt;&#x2F;name&gt;</span><br><span class="line">  &lt;&#x2F;usage&gt;</span><br><span class="line">&lt;&#x2F;secret&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="内核方式挂载"><a href="#内核方式挂载" class="headerlink" title="内核方式挂载"></a>内核方式挂载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &#x2F;mnt&#x2F;mycephfs</span><br><span class="line">mount -t ceph 192.168.10.11:6789:&#x2F; &#x2F;mnt&#x2F;mycephfs -o name&#x3D;admin,secretfile&#x3D;&#x2F;etc&#x2F;ceph&#x2F;admin.secret</span><br></pre></td></tr></table></figure>
 
-<p>其中base64文件的内容就是keyring文件中key的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[client.admin]</span><br><span class="line">	key &#x3D; AQB&#x2F;E15f42WdABAAR32oTiidCbVGpwhYbWcKAw&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
+<h3 id="Fuse方式挂载"><a href="#Fuse方式挂载" class="headerlink" title="Fuse方式挂载"></a>Fuse方式挂载</h3><p>确保/etc/ceph下面已经拷贝了ceph.conf和keyring文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &#x2F;mnt&#x2F;mycephfs</span><br><span class="line">ceph-fuse -m 192.168.10.11:6789 &#x2F;mnt&#x2F;mycephfs</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 5774b929-0690-4513-a1f7-41aac49cbb31.xml</span><br><span class="line">AQB&#x2F;E15f42WdABAAR32oTiidCbVGpwhYbWcKAw&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
-
-<p>最后执行如下命令完成配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">virsh secret-define --file 5774b929-0690-4513-a1f7-41aac49cbb31.xml</span><br><span class="line">virsh secret-set-value --secret 5774b929-0690-4513-a1f7-41aac49cbb31 --base64 $(cat 5774b929-0690-4513-a1f7-41aac49cbb31.base64)</span><br><span class="line">systemctl restart libvirtd</span><br></pre></td></tr></table></figure>
-
-
+<h2 id="对象存储测试"><a href="#对象存储测试" class="headerlink" title="对象存储测试"></a>对象存储测试</h2>
     
 
     
@@ -736,6 +727,15 @@ var _hmt = _hmt || [];
 
 
 <nav id="article-nav">
+  
+    <a href="/2020/09/14/OpenStack%E5%AF%B9%E6%8E%A5%E5%A4%9ACeph%E8%B5%84%E6%BA%90%E6%B1%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          OpenStack对接多Ceph资源池
+        
+      </div>
+    </a>
   
   
     <a href="/2020/08/11/%E4%B8%80%E6%AC%BE%E4%BA%91%E8%BF%81%E7%A7%BB%E4%BA%A7%E5%93%81%E7%9A%84%E6%88%90%E9%95%BF%E5%8F%B2/" id="article-nav-older" class="article-nav-link-wrap">
