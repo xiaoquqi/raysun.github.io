@@ -5,41 +5,41 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://sunqi.me">
-  <title>深度解读OpenStack Liberty国内代码贡献 | Ray&#39;s Blog</title>
+  <link rel="dns-prefetch" href="http://sunqi.site">
+  <title>深度解读OpenStack Liberty国内代码贡献 | 孙琦的技术人生</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="又到了OpenStack 新版本发布的季节，虽然秋意寒寒，但是仍然挡不住OpenStack再次掀起全球关注的热点。这是OpenStack第12个版本，与之前的沉稳低调相比，这次的Release中一口气多了5个新模块，也创下了OpenStack项目创建以来的最高纪录。由于天然的架构优势，让OpenStack在云计算横行天下的年代游刃有余，已经逐步成为了云平台的即成标准，从OpenStack对待AWS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度解读OpenStack Liberty国内代码贡献">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2015&#x2F;10&#x2F;29&#x2F;contribution-in-liberty&#x2F;index.html">
-<meta property="og:site_name" content="Ray&#39;s Blog">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2015&#x2F;10&#x2F;29&#x2F;contribution-in-liberty&#x2F;index.html">
+<meta property="og:site_name" content="孙琦的技术人生">
 <meta property="og:description" content="又到了OpenStack 新版本发布的季节，虽然秋意寒寒，但是仍然挡不住OpenStack再次掀起全球关注的热点。这是OpenStack第12个版本，与之前的沉稳低调相比，这次的Release中一口气多了5个新模块，也创下了OpenStack项目创建以来的最高纪录。由于天然的架构优势，让OpenStack在云计算横行天下的年代游刃有余，已经逐步成为了云平台的即成标准，从OpenStack对待AWS">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-contribution-by-modules.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-contributor.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-huawei.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-99cloud.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-unitedstack.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-kylincloud.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-easystack.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-awcloud.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-letv.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-netease.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-huron.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-chinamobile.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-lenovo.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-h3c.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-complete-blueprints.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-blueprint-huawei.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-contribution-by-modules.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-contributor.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-huawei.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-99cloud.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-unitedstack.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-kylincloud.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-easystack.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-awcloud.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-letv.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-netease.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-huron.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-chinamobile.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-lenovo.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-h3c.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-complete-blueprints.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-blueprint-huawei.png">
 <meta property="article:published_time" content="2015-10-29T02:56:06.000Z">
-<meta property="article:modified_time" content="2020-10-31T00:08:24.584Z">
+<meta property="article:modified_time" content="2020-10-31T00:33:31.145Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-contribution-by-modules.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;blogs&#x2F;contribution-in-liberty-contribution-by-modules.png">
   
-    <link rel="alternative" href="/atom.xml" title="Ray&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="孙琦的技术人生" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -669,7 +669,7 @@ var _hmt = _hmt || [];
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://sunqi.me/2015/10/29/contribution-in-liberty/" title="深度解读OpenStack Liberty国内代码贡献" target="_blank">http://sunqi.me/2015/10/29/contribution-in-liberty/</a>
+          <a href="http://sunqi.site/2015/10/29/contribution-in-liberty/" title="深度解读OpenStack Liberty国内代码贡献" target="_blank">http://sunqi.site/2015/10/29/contribution-in-liberty/</a>
         </li>
         
         <li>
@@ -751,7 +751,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.me/2015/10/29/contribution-in-liberty/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2015/10/29/contribution-in-liberty/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -841,7 +841,10 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2012-2020 <a href="http://sunqi.me/" target="_blank">孙琦(Ray)</a>
+    		&copy; 2012-2020 <a href="http://sunqi.site/" target="_blank">孙琦(Ray)</a>
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502042680" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/images/beian.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010502042680号</p></a>
+        </div>
     	</div>
       	<div class="footer-right">
         Hosted By <a href="https://cloud.tencent.com/product/wh?from=12331" target="_blank">云开发 Cloudbase</a>

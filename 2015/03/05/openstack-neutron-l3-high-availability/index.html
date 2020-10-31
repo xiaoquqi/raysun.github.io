@@ -5,24 +5,24 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://sunqi.me">
-  <title>(Juno)OpenStack Neutron L3高可靠 | Ray&#39;s Blog</title>
+  <link rel="dns-prefetch" href="http://sunqi.site">
+  <title>(Juno)OpenStack Neutron L3高可靠 | 孙琦的技术人生</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="L3层Agent的低可靠解决方案当前，你可以通过多网络节点的方式解决负载分担，但是这并非高可靠和冗余的解决方案。假设你有三个网络节点，当你创建新的路由时，会自动的将新路由规划和分布在这三个网络节点中的一个上。但是，如果一个节点坏掉，上面运行的所有路由将无法提供服务，路由转发也无法正常进行。在Neutron的IceHouse版本中，没有提供任何内置的解决方案。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(Juno)OpenStack Neutron L3高可靠">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2015&#x2F;03&#x2F;05&#x2F;openstack-neutron-l3-high-availability&#x2F;index.html">
-<meta property="og:site_name" content="Ray&#39;s Blog">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2015&#x2F;03&#x2F;05&#x2F;openstack-neutron-l3-high-availability&#x2F;index.html">
+<meta property="og:site_name" content="孙琦的技术人生">
 <meta property="og:description" content="L3层Agent的低可靠解决方案当前，你可以通过多网络节点的方式解决负载分担，但是这并非高可靠和冗余的解决方案。假设你有三个网络节点，当你创建新的路由时，会自动的将新路由规划和分布在这三个网络节点中的一个上。但是，如果一个节点坏掉，上面运行的所有路由将无法提供服务，路由转发也无法正常进行。在Neutron的IceHouse版本中，没有提供任何内置的解决方案。">
 <meta property="og:locale" content="zh">
 <meta property="article:published_time" content="2015-03-05T04:53:57.000Z">
-<meta property="article:modified_time" content="2020-10-31T00:08:24.580Z">
+<meta property="article:modified_time" content="2020-10-31T00:33:31.145Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Ray&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="孙琦的技术人生" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -714,7 +714,7 @@ min_l3_agents_per_router = 2</code></pre><ul>
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://sunqi.me/2015/03/05/openstack-neutron-l3-high-availability/" title="(Juno)OpenStack Neutron L3高可靠" target="_blank">http://sunqi.me/2015/03/05/openstack-neutron-l3-high-availability/</a>
+          <a href="http://sunqi.site/2015/03/05/openstack-neutron-l3-high-availability/" title="(Juno)OpenStack Neutron L3高可靠" target="_blank">http://sunqi.site/2015/03/05/openstack-neutron-l3-high-availability/</a>
         </li>
         
         <li>
@@ -804,7 +804,7 @@ min_l3_agents_per_router = 2</code></pre><ul>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.me/2015/03/05/openstack-neutron-l3-high-availability/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2015/03/05/openstack-neutron-l3-high-availability/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -894,7 +894,10 @@ min_l3_agents_per_router = 2</code></pre><ul>
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2012-2020 <a href="http://sunqi.me/" target="_blank">孙琦(Ray)</a>
+    		&copy; 2012-2020 <a href="http://sunqi.site/" target="_blank">孙琦(Ray)</a>
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502042680" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/images/beian.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010502042680号</p></a>
+        </div>
     	</div>
       	<div class="footer-right">
         Hosted By <a href="https://cloud.tencent.com/product/wh?from=12331" target="_blank">云开发 Cloudbase</a>

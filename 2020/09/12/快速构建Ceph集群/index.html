@@ -5,27 +5,27 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://sunqi.me">
-  <title>快速构建Ceph集群 | Ray&#39;s Blog</title>
+  <link rel="dns-prefetch" href="http://sunqi.site">
+  <title>快速构建Ceph集群 | 孙琦的技术人生</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="虽然安装环境并不是属于研发人员的本质工作，甚至有些研发人员抵触一些环境的搭建工作。在一些大型企业中，由于分工明确，造成了一些研发人员在这一方面能力的严重缺失。其实环境安装对于开发人员从整体上掌握软件架构师非常有益的，同时随着云计算、云原生的发展，对于DevOps的软件开发模式也越来越被企业接受，可以预见的是，未来DevOps将是所有研发人员必备的技能之一。 本文主要目标是帮助研发人员用最小成本搭建">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速构建Ceph集群">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.me&#x2F;2020&#x2F;09&#x2F;12&#x2F;%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BACeph%E9%9B%86%E7%BE%A4&#x2F;index.html">
-<meta property="og:site_name" content="Ray&#39;s Blog">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2020&#x2F;09&#x2F;12&#x2F;%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BACeph%E9%9B%86%E7%BE%A4&#x2F;index.html">
+<meta property="og:site_name" content="孙琦的技术人生">
 <meta property="og:description" content="虽然安装环境并不是属于研发人员的本质工作，甚至有些研发人员抵触一些环境的搭建工作。在一些大型企业中，由于分工明确，造成了一些研发人员在这一方面能力的严重缺失。其实环境安装对于开发人员从整体上掌握软件架构师非常有益的，同时随着云计算、云原生的发展，对于DevOps的软件开发模式也越来越被企业接受，可以预见的是，未来DevOps将是所有研发人员必备的技能之一。 本文主要目标是帮助研发人员用最小成本搭建">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-58-1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-59-1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-58-1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-59-1.png">
 <meta property="article:published_time" content="2020-09-12T09:05:53.000Z">
-<meta property="article:modified_time" content="2020-10-31T00:08:24.584Z">
+<meta property="article:modified_time" content="2020-10-31T00:33:31.149Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.me&#x2F;images&#x2F;pasted-58-1.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-58-1.png">
   
-    <link rel="alternative" href="/atom.xml" title="Ray&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="孙琦的技术人生" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -646,7 +646,7 @@ var _hmt = _hmt || [];
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://sunqi.me/2020/09/12/快速构建Ceph集群/" title="快速构建Ceph集群" target="_blank">http://sunqi.me/2020/09/12/快速构建Ceph集群/</a>
+          <a href="http://sunqi.site/2020/09/12/快速构建Ceph集群/" title="快速构建Ceph集群" target="_blank">http://sunqi.site/2020/09/12/快速构建Ceph集群/</a>
         </li>
         
         <li>
@@ -713,7 +713,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.me/2020/09/12/%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BACeph%E9%9B%86%E7%BE%A4/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2020/09/12/%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BACeph%E9%9B%86%E7%BE%A4/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -803,7 +803,10 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2012-2020 <a href="http://sunqi.me/" target="_blank">孙琦(Ray)</a>
+    		&copy; 2012-2020 <a href="http://sunqi.site/" target="_blank">孙琦(Ray)</a>
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502042680" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/images/beian.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010502042680号</p></a>
+        </div>
     	</div>
       	<div class="footer-right">
         Hosted By <a href="https://cloud.tencent.com/product/wh?from=12331" target="_blank">云开发 Cloudbase</a>
