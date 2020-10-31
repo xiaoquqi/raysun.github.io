@@ -6,30 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.site">
-  <title>OpenStack没落了吗？ | 孙琦的技术人生</title>
+  <title>利用钉钉通讯录同步构建本地LDAP服务 | 孙琦的技术人生</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="OpenStack回顾OpenStack在2010年7月由NASA和Rackspace宣布启动，2010年10月Austin Release后，除了Bexar、Cactus、Diablo版本外，后续版本都遵循6个月发布周期，如今正在开发的是Ussuri版本，最新的稳定版本是去年10月份发布的Train版本。  OpenStack没落了吗？我是从2012年初开始参与到OpenStack社区，这几年见">
+  <meta name="description" content="目前钉钉已经成为很多企业日常处理流程的必备工具，但是由于钉钉并没有开放鉴权接口，无法让钉钉作为本地系统的统一鉴权系统使用，每次有同事加入或者离开时，都需要人为的对本地系统进行维护，非常繁琐。那么有没有一种方法可以让钉钉作为本地的统一鉴权系统使用呢？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenStack没落了吗？">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2020&#x2F;04&#x2F;29&#x2F;OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F&#x2F;index.html">
+<meta property="og:title" content="利用钉钉通讯录同步构建本地LDAP服务">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2020&#x2F;10&#x2F;31&#x2F;%E5%88%A9%E7%94%A8%E9%92%89%E9%92%89%E9%80%9A%E8%AE%AF%E5%BD%95%E5%90%8C%E6%AD%A5%E6%9E%84%E5%BB%BA%E6%9C%AC%E5%9C%B0LDAP%E6%9C%8D%E5%8A%A1&#x2F;index.html">
 <meta property="og:site_name" content="孙琦的技术人生">
-<meta property="og:description" content="OpenStack回顾OpenStack在2010年7月由NASA和Rackspace宣布启动，2010年10月Austin Release后，除了Bexar、Cactus、Diablo版本外，后续版本都遵循6个月发布周期，如今正在开发的是Ussuri版本，最新的稳定版本是去年10月份发布的Train版本。  OpenStack没落了吗？我是从2012年初开始参与到OpenStack社区，这几年见">
+<meta property="og:description" content="目前钉钉已经成为很多企业日常处理流程的必备工具，但是由于钉钉并没有开放鉴权接口，无法让钉钉作为本地系统的统一鉴权系统使用，每次有同事加入或者离开时，都需要人为的对本地系统进行维护，非常繁琐。那么有没有一种方法可以让钉钉作为本地的统一鉴权系统使用呢？">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-42.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-44.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-45.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-46.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-47.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-48.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-49.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-50.png">
-<meta property="article:published_time" content="2020-04-29T13:20:37.000Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-90.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-92.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-93.png">
+<meta property="article:published_time" content="2020-10-31T10:24:34.000Z">
 <meta property="article:modified_time" content="2020-10-31T12:02:19.337Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-42.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-90.png">
   
     <link rel="alternative" href="/atom.xml" title="孙琦的技术人生" type="application/atom+xml">
   
@@ -171,22 +166,22 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-OpenStack还热吗？" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-利用钉钉通讯录同步构建本地LDAP服务" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      OpenStack没落了吗？
+      利用钉钉通讯录同步构建本地LDAP服务
     </h1>
   
 
 
   
   
-<a href="/2020/04/29/OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F/" class="archive-article-date">
-        <time datetime="2020-04-29T13:20:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
+<a href="/2020/10/31/%E5%88%A9%E7%94%A8%E9%92%89%E9%92%89%E9%80%9A%E8%AE%AF%E5%BD%95%E5%90%8C%E6%AD%A5%E6%9E%84%E5%BB%BA%E6%9C%AC%E5%9C%B0LDAP%E6%9C%8D%E5%8A%A1/" class="archive-article-date">
+        <time datetime="2020-10-31T10:24:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-31</time>
 </a>
 
   
@@ -219,28 +214,61 @@ var _hmt = _hmt || [];
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="OpenStack回顾"><a href="#OpenStack回顾" class="headerlink" title="OpenStack回顾"></a>OpenStack回顾</h1><p>OpenStack在2010年7月由NASA和Rackspace宣布启动，2010年10月Austin Release后，除了Bexar、Cactus、Diablo版本外，后续版本都遵循6个月发布周期，如今正在开发的是Ussuri版本，最新的稳定版本是去年10月份发布的Train版本。</p>
-<p><img src="/images/pasted-42.png" alt="upload successful"></p>
-<h1 id="OpenStack没落了吗？"><a href="#OpenStack没落了吗？" class="headerlink" title="OpenStack没落了吗？"></a>OpenStack没落了吗？</h1><p>我是从2012年初开始参与到OpenStack社区，这几年见证了OpenStack从一个开源项目逐渐成为开源产品的全过程。大概在两三年前每次发布前都会写一些关于OpenStack新版本功能和社区分析的文章，但是随着我的工作重心转移，对OpenStack社区关注逐渐减少。</p>
+    <p>目前钉钉已经成为很多企业日常处理流程的必备工具，但是由于钉钉并没有开放鉴权接口，无法让钉钉作为本地系统的统一鉴权系统使用，每次有同事加入或者离开时，都需要人为的对本地系统进行维护，非常繁琐。那么有没有一种方法可以让钉钉作为本地的统一鉴权系统使用呢？</p>
 <a id="more"></a>
 
-<p>随着容器、K8S等新兴技术的崛起，OpenStack无疑受到了很大的冲击，在之前两年经常看到一些唱衰OpenStack的文章。但是不可否认，目前OpenStack已经进入到了一个稳定阶段，很多私有云、专有云项目都是基于OpenStack提供解决方案。所以我认为并不存在OpenStack没落一说，只是技术发展的必经阶段：当底层逐渐稳定后，关注度往上发展。</p>
-<p>同时，我们也看到，OpenStack基金会也在通过吸纳更多的项目来维持自身的影响力，比如：安全容器项目Kata Container，边缘计算项目StarlingX。</p>
-<p>这是我对目前国内云计算市场的一张不完全总结，从这张图中我们应该可以很清晰的看到OpenStack对国内云计算市场深远的影响。同时，大家也能看出来谁才是真正的OpenStack这个开源项目的既得利益者。</p>
-<p><img src="/images/pasted-44.png" alt="upload successful"></p>
-<h1 id="OpenStack社区大数据"><a href="#OpenStack社区大数据" class="headerlink" title="OpenStack社区大数据"></a>OpenStack社区大数据</h1><p>从A版本开始到今天（2020年4月29日），总共有442家公司为OpenStack社区贡献过代码。排名前三位的分别是：Red Hat, Rackspace和Mirantis。中国唯一入选前十的是华为。</p>
-<p><img src="/images/pasted-45.png" alt="upload successful"></p>
-<p>OpenStack总共出现了706个Official项目，提交代码次数最多的是nova, neutron和cinder项目。</p>
-<p><img src="/images/pasted-46.png" alt="upload successful"></p>
-<p>总共有8523名开发者成功提交过1个以上的commits。从名字分析，前十名中有两位中国人：Zhong Shengping（麒麟云，主要贡献在自动化安装OpenStack相关项目puppet和ansible）和Qiming Teng（IBM 滕启明博士，主要贡献在senlin项目）。当然，我知道国内为OpenStack项目贡献的人很多，在这就不一一列举了。</p>
-<p><img src="/images/pasted-47.png" alt="upload successful"></p>
-<h1 id="OpenStack社区贡献变化趋势"><a href="#OpenStack社区贡献变化趋势" class="headerlink" title="OpenStack社区贡献变化趋势"></a>OpenStack社区贡献变化趋势</h1><p>参与贡献的公司已经呈现明显下降趋势，从国内情况来看，很多OpenStack初创公司也在积极投身K8S相关项目的研究，产品上提供基于容器的PaaS平台，丰富自己的解决方案。<br>从图中可以看到，OpenStack参与公司最多的是在Ocata Release中，参与公司达到了210家，从时间看是在2016年到2017年之间的时间点。这也是国内客户对OpenStack普遍接受的时间点。<br>另外从C版本开始一直到O版本（2011年到2017年）基本每个版本迭代维持20%以上的增长，可见在这个阶段绝大多数公司都看好OpenStack的未来。国内开源领域在这个阶段感觉也是最活跃的，毕竟只有当商业利益和开源目标相吻合时，这个开源项目才能得到最大的支持力度。<br>从O版本之后，参与的公司呈现小幅度下降趋势，不是很明显，大概在10%以内，下跌最明显的阶段是在S版本到T版本，也就是2019年。S版本有161家公司提交代码，而T版本只有126家，而目前U版本已经下降到了119家公司。</p>
-<p><img src="/images/pasted-48.png" alt="upload successful"></p>
-<p>从开发者数量看也呈现出相同的趋势，参与人数最多的是N版本，有2422人提交了commit。而到了S版本开发者仅为1189人，下降了一半还多。</p>
-<p><img src="/images/pasted-49.png" alt="upload successful"></p>
-<p>最后一张图，我们来看一下OpenStack模块数量。在早期OpenStack中一个新的项目获得批准是需要技术委员会批准的，也就是TC Approved，这样的项目到今天为止一共只有20个，主要是OpenStack基础的计算、存储和网络服务，包括：Nova, Neutron, Cinder, Heat, Horizon, Keystone, Ironic, Swift, Ceilometer, Glance, Sahara, Trove, Designate, neutron-lib, sahara的各种插件。<br>但是在2015年，社区决定采用Big Tent模式。Big Tent模式本意是基于OpenStack底层的计算、存储和网络等基础组件，构建更庞大的云原生应用场景，类似AWS。但是由于OpenStack自身部署、升级的复杂性，是社区力量更加分散，这样的设计并没有带来意料之中的效果。我个人理解，这样的生态建设更适合K8S。<br>在A版本中仅有8个模块，到了最新的T版本中，模块数量变为609个，还没有Release的U版本中，模块数量增长为627个。</p>
-<p><img src="/images/pasted-50.png" alt="upload successful"></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>由于OpenStack提供的服务属于基础架构层，从生态角度看，团结了各个层面的公司。从硬件的服务器、处理器、网络、存储厂商，到操作系统厂商，再到OpenStack创业公司，应用厂商，直到最终用户。<br>之前我们总说OpenStack是仅次于Linux的世界上第二大开源社区，不知道现在这种说法是否还准确。但是不可否认，OpenStack出现给了原来默默耕耘的开发者们走到前台充分展现的机会，也将国内开源的热潮推向了一个新的高度。</p>
+<p>目前，在我们公司使用OpenLDAP服务作为各个服务统一鉴权的入口，使用的应用系统包括：Gerrit/Jenkins/Yapi/Wiki/进度跟踪等，目前所有的系统都支持LDAP鉴权，所以如果能将钉钉的通讯录定期同步至LDAP中就可以实现统一鉴权的需求。但是由于钉钉的密码无法同步回本地，所以密码层面仍然是独立的。</p>
+<p>本文章的实现思路参考了<a href="https://xujiwei.com/blog/2020/02/internal-authorize-based-on-dingtalk-virtual-ldap-keyclaok/" target="_blank" rel="noopener">《基于钉钉 + Virtual-LDAP + KeyCloak 的内网统一认证系统<br>》</a>，感谢原作者的思路及贡献的virtual-ldap模块，本文所有的优化都是基于此文章基础上进行的优化。</p>
+<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><p>简单来说，我们希望能通过钉钉提供的LDAP作为统一鉴权方式，但是由于钉钉没有开放这个能力，那么我们需要将钉钉模拟一个LDAP服务。模拟出的LDAP环境，在内网环境中，我们对于LDAP信息的使用基本上围绕着用户名和密码，其他的信息以钉钉为准。所以，除了开放LDAP接口外，我们还需要提供用户界面，允许用户在内网修改密码。</p>
+<p>整体的实现思路如下：</p>
+<ul>
+<li>钉钉开发者平台：需要在钉钉开发者平台新建一个程序，获取鉴权信息后，赋予通讯录同步权限，提供给VirtualLDAP进行数据同步</li>
+<li>VirtualLDAP：该组件是上面提到的作者开发的虚拟LDAP组件，主要功能为同步钉钉通讯录，并以LDAP协议对外提供服务</li>
+<li>KeyCloak：对于这个场景过重，但是暂时没有发现更好的方案，可以触发自动同步并且可以让内网用户进行密码修改</li>
+<li>本地的全部系统按照LDAP配置方式即可实现鉴权</li>
+</ul>
+<p><img src="/images/pasted-90.png" alt="upload successful"></p>
+<h2 id="钉钉开发者平台"><a href="#钉钉开发者平台" class="headerlink" title="钉钉开发者平台"></a>钉钉开发者平台</h2><p>这里我创建的是H5微应用，配置时有几点需要注意：</p>
+<ul>
+<li>IP地址白名单：需要为你未来运行VirtualLDAP配置访问IP白名单，目前钉钉开发者平台对于同一个IP只能给一个应用使用，但是可以通过通配符进行配置，例如：192.168.10.*的方式，那么192.168.10网段所有地址均可以访问</li>
+<li>权限：需要为该应用开放所有通讯录只读权限即可</li>
+</ul>
+<p><img src="/images/pasted-92.png" alt="upload successful"></p>
+<h2 id="VirtualLDAP"><a href="#VirtualLDAP" class="headerlink" title="VirtualLDAP"></a>VirtualLDAP</h2><p>这是基于Node.js开发的一款组件，主要用于同步钉钉通讯录和模拟LDAP协议。基于原作者版本，为了满足自身应用场景，进行了如下修改：</p>
+<ul>
+<li>由于作者没有提供Docker运行方式，所以在github的pull request中有人进行了改造</li>
+<li>仍然是在同一个pull request中，增加了pinyin组件，在LDAP中增加了一个pinyin属性，方便业务系统使用</li>
+<li>登录名和密码：为了防止公司人员重复，所以特别采用了全拼名称+电话号码后四位方式，作为唯一的用户名，而初始密码为全名名称+电话号码前四位，例如：张三的电话号码为13812345678，则登录名称为zhangsan5678，密码为zhangsan1381,</li>
+<li>在使用VirtualLDAP时，需要使用MySQL存储持久化数据，例如用户修改后的密码，所以对鉴权规则进行了修改，先检查数据库密码是否匹配，再检查LDAP</li>
+<li>实现了整体组件的编排，增加了docker-compose.yaml，方便用户使用，该编排文件中包含了KeyCloak、VirtualLDAP和MySQL</li>
+</ul>
+<h2 id="KeyCloak"><a href="#KeyCloak" class="headerlink" title="KeyCloak"></a>KeyCloak</h2><p>KeyCloak两部分需要进行配置：</p>
+<ul>
+<li>管理员在第一次使用时配置VirtualLDAP的信息，用于用户同步，方便新用户修改密码</li>
+<li>新用户自行修改密码</li>
+</ul>
+<p>正如之前所说，KeyCloak功能过于强大，这里用到的功能非常有限，如果有新的应用场景，欢迎留言。</p>
+<p><img src="/images/pasted-93.png" alt="upload successful"></p>
+<h1 id="搭建方式"><a href="#搭建方式" class="headerlink" title="搭建方式"></a>搭建方式</h1><p>这里提供了完整的编排文件，直接使用即可完成整套环境的快速建立。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;xiaoquqi&#x2F;virtual-ldap</span><br><span class="line">cd virtual-ldap&#x2F;docker-compose</span><br><span class="line">docker-compose up -d0</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><ul>
+<li>VirtualLDAP配置文件修改。所有配置在virtual-ldap/docker-compose/config.js中进行修改，需要修改钉钉的appKey和appSecret，以及root DN的信息，配置文件有比较详细的介绍，所以这里不再赘述。</li>
+<li>KeyCloak的默认密码修改在docker-compose.yaml中</li>
+</ul>
+<h2 id="登录相关信息"><a href="#登录相关信息" class="headerlink" title="登录相关信息"></a>登录相关信息</h2><ul>
+<li>URL: ldap://ip:1389</li>
+<li>ManageDN: cn=admin,dc=oneprocloud,dc=com</li>
+<li>ManagePassword: password</li>
+<li>User Search Base: ou=People,o=department,dc=oneprocloud,dc=com</li>
+<li>User Search Filter: uid={0}</li>
+<li>Display Name LDAP attribute: cn</li>
+<li>Email Address LDAP attribute: mail</li>
+</ul>
+<h1 id="待优化"><a href="#待优化" class="headerlink" title="待优化"></a>待优化</h1><ul>
+<li>目前对于LDAP的组没有充分利用，配置文件中允许创建特定组，并且通过用户email进行匹配，如果需要可以进行配置</li>
+<li>如果有外部用户，暂时无方法进行创建，例如：如果需要在LDAP中增加一个非钉钉用户暂时无法实现，需要进行开发实现</li>
+</ul>
 
     
 
@@ -287,7 +315,7 @@ var _hmt = _hmt || [];
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://sunqi.site/2020/04/29/OpenStack还热吗？/" title="OpenStack没落了吗？" target="_blank">http://sunqi.site/2020/04/29/OpenStack还热吗？/</a>
+          <a href="http://sunqi.site/2020/10/31/利用钉钉通讯录同步构建本地LDAP服务/" title="利用钉钉通讯录同步构建本地LDAP服务" target="_blank">http://sunqi.site/2020/10/31/利用钉钉通讯录同步构建本地LDAP服务/</a>
         </li>
         
         <li>
@@ -354,7 +382,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2020/04/29/OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2020/10/31/%E5%88%A9%E7%94%A8%E9%92%89%E9%92%89%E9%80%9A%E8%AE%AF%E5%BD%95%E5%90%8C%E6%AD%A5%E6%9E%84%E5%BB%BA%E6%9C%AC%E5%9C%B0LDAP%E6%9C%8D%E5%8A%A1/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -369,18 +397,9 @@ var _hmt = _hmt || [];
 
 <nav id="article-nav">
   
-    <a href="/2020/07/31/CentOS-7%E5%88%9D%E5%A7%8B%E5%8C%96%E8%84%9A%E6%9C%AC/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CentOS 7和Docker初始化安装
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/14/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%BD%BF%E7%94%A8DataQuotient-%E7%94%BB%E5%83%8F%E5%88%86%E6%9E%90%E7%AD%9B%E9%80%89%E4%BC%98%E8%B4%A8%E5%9F%BA%E9%87%91/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">[阿里云]使用DataQuotient 画像分析筛选优质基金</div>
+    <a href="/2020/10/30/%E4%BD%BF%E7%94%A8Kolla%E9%83%A8%E7%BD%B2OpenStack-Stein%E7%89%88%E6%9C%AC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用Kolla部署OpenStack Stein版本</div>
       <i class="icon-circle-right"></i>
     </a>
   
