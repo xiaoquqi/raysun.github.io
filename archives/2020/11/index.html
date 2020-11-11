@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.site">
-  <title>(Kilo)Devstack Kilo版本localrc推荐 | 孙琦的技术人生</title>
+  <title>Archives: 2020/11 | 孙琦的技术人生</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Devstack在Kilo版本中发生了一些变化，其中一个commit(279cfe75198c723519f1fb361b2bff3c641c6cef)的就是优化默认启动的程序，尽量减小对硬件的要求。如果不修改默认的配置进行安装，会产生一些问题，例如VNC无法打开，Heat模块没有加载等。这里给出一个个人比较常用的localrc，供大家参考。该配置在Ubuntu 14.04 Server LTS进">
-<meta property="og:type" content="article">
-<meta property="og:title" content="(Kilo)Devstack Kilo版本localrc推荐">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2015&#x2F;05&#x2F;10&#x2F;best-localrc-for-devstack-kilo&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="孙琦的技术人生">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;archives&#x2F;2020&#x2F;11&#x2F;index.html">
 <meta property="og:site_name" content="孙琦的技术人生">
-<meta property="og:description" content="Devstack在Kilo版本中发生了一些变化，其中一个commit(279cfe75198c723519f1fb361b2bff3c641c6cef)的就是优化默认启动的程序，尽量减小对硬件的要求。如果不修改默认的配置进行安装，会产生一些问题，例如VNC无法打开，Heat模块没有加载等。这里给出一个个人比较常用的localrc，供大家参考。该配置在Ubuntu 14.04 Server LTS进">
 <meta property="og:locale" content="zh">
-<meta property="article:published_time" content="2015-05-10T19:33:44.000Z">
-<meta property="article:modified_time" content="2020-11-11T12:16:03.824Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
   
@@ -162,297 +158,54 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-best-localrc-for-devstack-kilo" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/11/11/MacOS-VPN%E6%8B%A8%E5%8F%B7%E5%90%8E%E8%87%AA%E5%8A%A8%E8%AE%BE%E7%BD%AE%E8%B7%AF%E7%94%B1/" class="archive-article-date">
+        <time datetime="2020-11-11T12:04:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-11</time>
+</a>
+
+        </div>
+    	 
   
-  
-    <h1 class="article-title" itemprop="name">
-      (Kilo)Devstack Kilo版本localrc推荐
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/2020/11/11/MacOS-VPN%E6%8B%A8%E5%8F%B7%E5%90%8E%E8%87%AA%E5%8A%A8%E8%AE%BE%E7%BD%AE%E8%B7%AF%E7%94%B1/">MacOS VPN拨号后自动设置路由</a>
+	
     </h1>
   
 
 
-  
-  
-<a href="/2015/05/10/best-localrc-for-devstack-kilo/" class="archive-article-date">
-        <time datetime="2015-05-10T19:33:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-05-11</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">499字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Devstack在Kilo版本中发生了一些变化，其中一个commit(279cfe75198c723519f1fb361b2bff3c641c6cef)的就是优化默认启动的程序，尽量减小对硬件的要求。如果不修改默认的配置进行安装，会产生一些问题，例如VNC无法打开，Heat模块没有加载等。这里给出一个个人比较常用的localrc，供大家参考。该配置在Ubuntu 14.04 Server LTS进行了测试。</p>
-<a id="more"></a>
-
-<p>该配置文件中开启了所有的OpenStack的核心模块，以下几点需要注意：</p>
-<ul>
-<li>为了运行Neutron，服务器必须是双网卡，否则外网不会通</li>
-<li>我的实验网段为200.21.0.0/16，eth0的IP为200.21.1.61，eth1与eth0为同一网段</li>
-<li>eth1为公网访问网络，floating网络范围200.21.50.1/24，配置的GATEWAY为200.21.50.2</li>
-<li>保证eth1所处的网段能够连接外网，但是配置为manual模式，配置如下：</li>
-</ul>
-<figure class="highlight plain"><figcaption><span>/etc/network/interface</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">auto eth1</span><br><span class="line">iface eth1 inet manual</span><br><span class="line">up ifconfig $IFACE 0.0.0.0 up</span><br><span class="line">down ifconfig $IFACE 0.0.0.0 down</span><br></pre></td></tr></table></figure>
-<ul>
-<li>localrc的配置</li>
-</ul>
-<figure class="highlight plain"><figcaption><span>localrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># Misc</span><br><span class="line">ADMIN_PASSWORD&#x3D;sysadmin</span><br><span class="line">DATABASE_PASSWORD&#x3D;$ADMIN_PASSWORD</span><br><span class="line">RABBIT_PASSWORD&#x3D;$ADMIN_PASSWORD</span><br><span class="line">SERVICE_PASSWORD&#x3D;$ADMIN_PASSWORD</span><br><span class="line">SERVICE_TOKEN&#x3D;$ADMIN_PASSWORD</span><br><span class="line"></span><br><span class="line"># Target Path</span><br><span class="line">DEST&#x3D;&#x2F;opt&#x2F;stack.kilo</span><br><span class="line"></span><br><span class="line"># Enable Logging</span><br><span class="line">LOGFILE&#x3D;$DEST&#x2F;logs&#x2F;stack.sh.log</span><br><span class="line">VERBOSE&#x3D;True</span><br><span class="line">LOG_COLOR&#x3D;True</span><br><span class="line">SCREEN_LOGDIR&#x3D;$DEST&#x2F;logs</span><br><span class="line"></span><br><span class="line"># Nova</span><br><span class="line">enable_service n-novnc n-cauth</span><br><span class="line"></span><br><span class="line"># Neutron</span><br><span class="line">disable_service n-net</span><br><span class="line">ENABLED_SERVICES+&#x3D;,q-svc,q-agt,q-dhcp,q-l3,q-meta,neutron</span><br><span class="line">ENABLED_SERVICES+&#x3D;,q-lbaas,q-vpn,q-fwaas</span><br><span class="line"></span><br><span class="line"># Ceilometer</span><br><span class="line">enable_service ceilometer-acompute ceilometer-acentral ceilometer-anotification ceilometer-collector ceilometer-api</span><br><span class="line">enable_service ceilometer-alarm-notifier ceilometer-alarm-evaluator</span><br><span class="line"></span><br><span class="line"># Enable Heat</span><br><span class="line">enable_service heat h-api h-api-cfn h-api-cw h-eng</span><br><span class="line"></span><br><span class="line"># Trove</span><br><span class="line">enable_service trove tr-api tr-tmgr tr-cond</span><br><span class="line"></span><br><span class="line"># Sahara</span><br><span class="line">enable_service sahara</span><br><span class="line"></span><br><span class="line">#FIXED_RANGE&#x3D;10.0.0.0&#x2F;24</span><br><span class="line">HOST_IP&#x3D;200.21.1.61</span><br><span class="line">FLOATING_RANGE&#x3D;200.21.50.1&#x2F;24</span><br><span class="line">PUBLIC_NETWORK_GATEWAY&#x3D;200.21.50.2</span><br><span class="line">Q_FLOATING_ALLOCATION_POOL&#x3D;start&#x3D;200.21.50.100,end&#x3D;200.21.50.150</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>确认br-ex是否存在</p>
-<figure class="highlight plain"><figcaption><span>sudo ovs-vsctl show</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Bridge br-ex</span><br><span class="line">    Port br-ex</span><br><span class="line">        Interface br-ex</span><br><span class="line">            type: internal</span><br><span class="line">    Port &quot;qg-7ec5be02-69&quot;</span><br><span class="line">        Interface &quot;qg-7ec5be02-69&quot;</span><br><span class="line">            type: internal</span><br><span class="line">ovs_version: &quot;2.0.2&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将eth1作为br-ex的接口</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ovs-vsctl add-port br-ex eth1</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<figure class="highlight plain"><figcaption><span>sudo ovs-vsctl show</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Bridge br-ex</span><br><span class="line">    Port br-ex</span><br><span class="line">        Interface br-ex</span><br><span class="line">            type: internal</span><br><span class="line">    Port &quot;qg-7ec5be02-69&quot;</span><br><span class="line">        Interface &quot;qg-7ec5be02-69&quot;</span><br><span class="line">            type: internal</span><br><span class="line">    Port &quot;eth1&quot;</span><br><span class="line">        Interface &quot;eth1&quot;</span><br><span class="line">ovs_version: &quot;2.0.2&quot;</span><br></pre></td></tr></table></figure>
-
-    
-
-    
-    <div class="page-reward">
-      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/images/alipay.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
-                  
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/images/weixin.jpg">
-                    <span class="reward-type">微信</span>
-                  </div>
-                  
-                </div>
-              </span>
-            </span>
-          </span>
-        </div>
-      </a>
-    </div>
-    
-
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          孙琦(Ray)
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="http://sunqi.site/2015/05/10/best-localrc-for-devstack-kilo/" title="(Kilo)Devstack Kilo版本localrc推荐" target="_blank">http://sunqi.site/2015/05/10/best-localrc-for-devstack-kilo/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
+        <div class="article-info info-on-right">
           
-          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
-    
+          
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack//" class="article-tag-list-link color5">openstack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack/cloud-computing//" class="article-tag-list-link color1">cloud computing</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack/cloud-computing/devstack//" class="article-tag-list-link color4">devstack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack/cloud-computing/devstack/kilo//" class="article-tag-list-link color5">kilo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-
-    
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2015/05/10/best-localrc-for-devstack-kilo/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-    
-    <div class="clearfix"></div>
-  </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2015/05/11/ceph-osd-is-full/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Ceph集群磁盘没有剩余空间的解决方法
-        
-      </div>
-    </a>
   
   
-    <a href="/2015/05/03/what-is-new-in-kilo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">OpenStack Kilo版本新功能分析</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-<section id="comments">
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname =
-    'true'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-      var dsq = document.createElement('script');
-      dsq.type = 'text/javascript';
-      dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by
-      Disqus.</a></noscript>
-</section>
-
-
-
-
-
-
+    
 
 
           </div>
@@ -481,8 +234,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
