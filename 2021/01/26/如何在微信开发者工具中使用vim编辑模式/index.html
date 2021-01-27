@@ -6,21 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.site">
-  <title>老孙正经胡说</title>
+  <title>如何在微信开发者工具中使用vim编辑模式 | 老孙正经胡说</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="老孙正经胡说">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;page&#x2F;3&#x2F;index.html">
+  <meta name="description" content="随着云计算技术的发展特别是无服务化的发展，在业务系统的研发上，前端和后端的边界逐步被打破。微信小程序便是这一方面的典型代表，特别是结合了腾讯Serverless云开发的套件后，小程序融会贯通成为业务开发非常重要的载体。今年疫情期间，基于小程序开发的健康码充分发挥了小程序这一方面的特点。小程序上手开发难度不高，基本都是基于Javascript生态构建，对于前端开发或者后端开发来说，无疑都是福音，让大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在微信开发者工具中使用vim编辑模式">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2021&#x2F;01&#x2F;26&#x2F;%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E4%B8%AD%E4%BD%BF%E7%94%A8vim%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F&#x2F;index.html">
 <meta property="og:site_name" content="老孙正经胡说">
+<meta property="og:description" content="随着云计算技术的发展特别是无服务化的发展，在业务系统的研发上，前端和后端的边界逐步被打破。微信小程序便是这一方面的典型代表，特别是结合了腾讯Serverless云开发的套件后，小程序融会贯通成为业务开发非常重要的载体。今年疫情期间，基于小程序开发的健康码充分发挥了小程序这一方面的特点。小程序上手开发难度不高，基本都是基于Javascript生态构建，对于前端开发或者后端开发来说，无疑都是福音，让大">
 <meta property="og:locale" content="zh">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-116.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-117.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-118.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-119.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-121.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-120.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-122.png">
+<meta property="article:published_time" content="2021-01-26T23:52:10.000Z">
+<meta property="article:modified_time" content="2021-01-27T00:11:50.145Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-116.png">
   
     <link rel="alternative" href="/atom.xml" title="老孙正经胡说" type="application/atom+xml">
   
@@ -204,82 +212,208 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-AWS-Certified-Solutions-Architect-Associate-Exam" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-如何在微信开发者工具中使用vim编辑模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/31/AWS-Certified-Solutions-Architect-Associate-Exam/">AWS Certified Solutions Architect - Associate Exam(Q1-Q100)</a>
-	
+    <h1 class="article-title" itemprop="name">
+      如何在微信开发者工具中使用vim编辑模式
     </h1>
   
 
 
   
   
-<a href="/2019/12/31/AWS-Certified-Solutions-Architect-Associate-Exam/" class="archive-article-date">
-        <time datetime="2019-12-31T01:11:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-31</time>
+<a href="/2021/01/26/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E4%B8%AD%E4%BD%BF%E7%94%A8vim%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2021-01-26T23:52:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-27</time>
 </a>
 
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">610字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>参考链接：<a href="https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate/view/" target="_blank" rel="noopener">https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate/view/</a></p>
-<p>一直对AWS情有独钟，也想尝试考取最高认证，但是苦于无法集中精力学习。2019年由于和AWS合作的原因，所以痛下决心一定要考取AWS各种认证。另外，在AWS的学习过程中，也逐渐帮我梳理了以前在OpenStack开发过程中不是很清晰的设计理念。并且AWS的文档和最佳实践堪称各个公有云的典范，非常具有学习价值。考试不是最终的目的，学以致用才是。</p>
-<p>由于备考AWS ACA考试，所以从网上看到这套模拟试题，在学习过程中对试题进行系统性分析和记录。发现有很多问题答案并非十分准确，所以也尝试做出分析和更正。</p>
-    
-    <a class="article-more-a" href="/2019/12/31/AWS-Certified-Solutions-Architect-Associate-Exam/#more">more >></a>
-    
-    
+    <p>随着云计算技术的发展特别是无服务化的发展，在业务系统的研发上，前端和后端的边界逐步被打破。微信小程序便是这一方面的典型代表，特别是结合了腾讯Serverless云开发的套件后，小程序融会贯通成为业务开发非常重要的载体。今年疫情期间，基于小程序开发的健康码充分发挥了小程序这一方面的特点。小程序上手开发难度不高，基本都是基于Javascript生态构建，对于前端开发或者后端开发来说，无疑都是福音，让大家真正的做一次全栈开发。</p>
+<p>作为一名10多年的开发人员，vim是我最常使用的编辑器，但是在微信开发者工具中并没有直接提供vim的开发模式。经过不断的探索，终于发现微信开发者工具对VS Code插件的兼容模式，于是按照文档将VS Code vim插件安装在微信开发者工具中。果然，我熟悉的vim模式又回来了，这篇文章就为大家简单分享一下。</p>
+<a id="more"></a>
+
+<h1 id="在VS-Code安装vim插件"><a href="#在VS-Code安装vim插件" class="headerlink" title="在VS Code安装vim插件"></a>在VS Code安装vim插件</h1><p>首先在VS Code中安装vim模拟器，如图所示，我安装的是1.18.5版本。我使用的是mac系统，安装完成后，插件会存放在用户HOME目录下的$HOME/.vscode/extensions/vscodevim.vim-1.18.5中。</p>
+<p><img src="/images/pasted-116.png" alt="upload successful"></p>
+<h1 id="在微信开发者工具安装VS-Code插件"><a href="#在微信开发者工具安装VS-Code插件" class="headerlink" title="在微信开发者工具安装VS Code插件"></a>在微信开发者工具安装VS Code插件</h1><p>1、在微信开发者工具中点击“设置”-&gt;”扩展设置”</p>
+<p><img src="/images/pasted-117.png" alt="upload successful"></p>
+<p>2、在打开的窗口中选择“编辑器自定义扩展”，因为我已经安装过了，所以截图中已经包含了vscode.vim插件</p>
+<p><img src="/images/pasted-118.png" alt="upload successful"></p>
+<p>3、点击上方的“打开扩展文件夹”，此时会打开微信开发者插件目录，而你要做的就是将vscode插件拷贝过去。</p>
+<p><img src="/images/pasted-119.png" alt="upload successful"></p>
+<p>但是由于从Finder中无法直接访问隐藏目录，先在左侧选择HOME目录。</p>
+<p><img src="/images/pasted-121.png" alt="upload successful"></p>
+<p>使用“前往文件夹”选项，填入.vscode/extensions。将.vscode/extensions/vscodevim.vim-1.18.5拷贝之刚才打开的微信开发者工具的扩展目录中。</p>
+<p><img src="/images/pasted-120.png" alt="upload successful"></p>
+<p>4、重启微信开发者工具后，就能在“编辑器自定义扩展”中看到vim插件，启动插件后，再次退出重启，此时编辑器里已经可以使用vim模式了。</p>
+<p><img src="/images/pasted-122.png" alt="upload successful"></p>
 
     
 
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/images/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/images/weixin.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          孙琦(Ray)
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://sunqi.site/2021/01/26/如何在微信开发者工具中使用vim编辑模式/" title="如何在微信开发者工具中使用vim编辑模式" target="_blank">http://sunqi.site/2021/01/26/如何在微信开发者工具中使用vim编辑模式/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AWS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACA Exam</a>
-        		</li>
-      		
-		</ul>
-	</div>
+    
 
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/31/AWS-Certified-Solutions-Architect-Associate-Exam/">展开全文 >></a>
-    </p>
     
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2021/01/26/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E4%B8%AD%E4%BD%BF%E7%94%A8vim%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/25/%E4%BD%BF%E7%94%A8%E9%95%9C%E5%83%8F%E6%BA%90%E5%8A%A0%E9%80%9FGithub-Clone%E9%80%9F%E5%BA%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用镜像源加速Github Clone速度</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -300,854 +434,35 @@ var _hmt = _hmt || [];
 
 
 
-  
-    <article id="post-how-to-use-aliyun-function-service-to-implement-mini-program" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/19/how-to-use-aliyun-function-service-to-implement-mini-program/">使用阿里云函数计算构建小程序</a>
-	
-    </h1>
-  
 
 
-  
-  
-<a href="/2019/12/19/how-to-use-aliyun-function-service-to-implement-mini-program/" class="archive-article-date">
-        <time datetime="2019-12-19T15:19:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
-</a>
 
-  
-  
-    
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname =
+    'true'; // required: replace example with your forum shortname
 
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="1、需求"><a href="#1、需求" class="headerlink" title="1、需求"></a>1、需求</h1><p>在用户使用HyperMotion产品过程中，用户可以通过扫描产品中二维码方式，自助进行Licnese申请。用户提交申请后，请求将发送到钉钉流程中。完成审批后，后台服务将自动根据用户的特征码、申请的数量、可使用的时间将生成好的正式Licnese发送到客户的邮箱中。</p>
-    
-    <a class="article-more-a" href="/2019/12/19/how-to-use-aliyun-function-service-to-implement-mini-program/#more">more >></a>
-    
-    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
 
-    
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by
+      Disqus.</a></noscript>
+</section>
 
-    
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">阿里云</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Serverless</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-    
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/19/how-to-use-aliyun-function-service-to-implement-mini-program/">展开全文 >></a>
-    </p>
-    
 
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-contricution-in-newton" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2016/09/30/contricution-in-newton/">深度解读OpenStack Newton国内代码贡献</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2016/09/30/contricution-in-newton/" class="archive-article-date">
-        <time datetime="2016-09-30T17:00:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-01</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>今天是十一黄金周开始的第一天，在2016年10月6日，OpenStack马上要迎来第14个版本的发布，也是Big Tent后的第三个版本，计划Release项目达到32个，比Mitaka版本多了3个。</p>
-<p>这是继OpenStack Liberty贡献分析后的第三篇系列文章，我们很欣喜的看到在每次的OpenStack Release之后，我们总是可以发现有很多新的中国企业投身于OpenStack生态圈中，无论如何，随着时间的推移，像OpenStack这样的开源软件势必在企业市场中有越来越多的应用。在当今房价飞速增长的今天，整个的社会充满了浮躁，能出现一个像OpenStack一样的项目实属不易。我们的国家、我们的民族太需要一些脚踏实地的人做一些真正的“自主可控”的技术积累，否则我们的未来仍然摆脱不了表面强大的现实。</p>
-<p>最近一段时间一直在接触客户，也在思考为什么OpenStack无法像苹果手机那样轻松落地、供不应求，当然这个对比并不恰当。记得寄云科技的时博士曾经说过：越接近于用户底层的应用越难落地。现实也的确如此，就好像用户盖了一栋大楼，这时候你告诉用户，我这有个地基比你原来的好，来我给你换了；又或者你告诉用户说，我这个地基比你以前的好，我给你重新搭个地基，你再盖个楼。我想如果我是用户，我也不会答应的。所以，在用户基础架构已经非常成熟的企业中，OpenStack在落地过程中势必会遇到痛点不痛，落地困难的问题。我觉得解决这个问题无外乎几个方面：第一，有一位高瞻远瞩的领导，像携程的叶总、恒丰银行的张总；第二，把OpenStack的解决方案做的像VMWare一样完整，比如用户原来的业务系统怎么无缝迁移过来，用户原有资产怎么重新利用，怎么让OpenStack适用用户现有的网络架构，怎么让OpenStack适用用户现有的管理流程；第三，将OpenStack和刺中用户痛点的应用结合起来，进而推进OpenStack在企业中的应用，这也是我一直在寻找的方向。这仅仅是我在从事四年多OpenStack研发、销售过程中的一点点思考，也欢迎各位一起进行讨论。</p>
-<p>还是那句话，排名并不是这篇文章的真正目的。我们希望能有更多的用户看到，我们中国企业在OpenStack上的影响力，让更多的用户了解OpenStack，从而能够在未来的应用中使用OpenStack，形成真正的OpenStack的生态圈。</p>
-<p>OpenStack Liberty深度解读请见：<a href="http://xiaoquqi.github.io/blog/2015/10/29/contribution-in-liberty/" target="_blank" rel="noopener">http://xiaoquqi.github.io/blog/2015/10/29/contribution-in-liberty/</a></p>
-<p>OpenStack Mitaka深度解读请见：<a href="http://xiaoquqi.github.io/blog/2016/04/07/contribution-in-mitaka/" target="_blank" rel="noopener">http://xiaoquqi.github.io/blog/2016/04/07/contribution-in-mitaka/</a></p>
-    
-    <a class="article-more-a" href="/2016/09/30/contricution-in-newton/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack//" class="article-tag-list-link color5">OpenStack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2016/09/30/contricution-in-newton/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-deploy-ceph-using-china-mirror" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2016/06/19/deploy-ceph-using-china-mirror/">使用国内源部署Ceph</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2016/06/19/deploy-ceph-using-china-mirror/" class="archive-article-date">
-        <time datetime="2016-06-19T01:25:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>由于网络方面的原因，Ceph的部署经常受到干扰，通常为了加速部署，基本上大家都是将Ceph的源同步到本地进行安装。根据Ceph中国社区的统计，当前已经有国内的网站定期将Ceph安装源同步，极大的方便了我们的测试。本文就是介绍如何使用国内源，加速ceph-deploy部署Ceph集群。</p>
-    
-    <a class="article-more-a" href="/2016/06/19/deploy-ceph-using-china-mirror/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ceph//" class="article-tag-list-link color5">Ceph</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2016/06/19/deploy-ceph-using-china-mirror/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bootstrap-your-ceph-cluster-in-docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2016/06/12/bootstrap-your-ceph-cluster-in-docker/">使用Docker部署Ceph</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2016/06/12/bootstrap-your-ceph-cluster-in-docker/" class="archive-article-date">
-        <time datetime="2016-06-12T23:20:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-13</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>这篇文章是根据Sébastien Han的<a href="https://www.youtube.com/watch?v=FUSTjTBA8f8&feature=youtu.be" target="_blank" rel="noopener">演示视频</a>进行整理的，对过程中有问题的部分进行了修复。</p>
-<p>Docker作为持久化集成的最佳工具，特别是在部署中有着得天独厚的优势。Ceph作为开源的分布式存储得到越来越多的使用，但是作为分布式系统，Ceph在部署和运维上仍然有不小的难度,本文重点介绍利用Docker快速的进行Ceph集群的创建，以及各个组件的安装。</p>
-    
-    <a class="article-more-a" href="/2016/06/12/bootstrap-your-ceph-cluster-in-docker/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ceph//" class="article-tag-list-link color5">Ceph</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Ceph/Docker//" class="article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2016/06/12/bootstrap-your-ceph-cluster-in-docker/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-contribution-in-mitaka" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2016/04/07/contribution-in-mitaka/">深度解读OpenStack Mitaka国内代码贡献</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2016/04/07/contribution-in-mitaka/" class="archive-article-date">
-        <time datetime="2016-04-07T07:19:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-07</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>转眼间，OpenStack又迎来了新版本发布的日子，这是OpenStack第13个版本，也是Big Tent后的第二个版本，秉承“公开公正”的原则，OpenStack Release的项目达到了29个，比Liberty多出了8个。</p>
-<p>去年的时候，对国内的OpenStack Liberty贡献进行了深度解读后引起了广泛的关注，在今年Mitaka版本发布之后，类似的解读已经遍布朋友圈，但是在看过后，发现并非国内贡献的全部统计，所以决定还是自己写一篇完整的深度解读系列文章，来帮助国内用户对国内OpenStack的现状有一个全面的了解和认识。</p>
-<p>这几天一直在思考写这篇文章的目的和意义，我们搞分析也好，搞排名也罢，到底是为了什么？Mitaka版本更新后，各个公司也以排名作为企业宣传的最好的武器，我觉得这些都无可厚非。但是我觉得更重要的一点是在当前去IOEV的大形势下，我们应该告诉国内的企业用户，有一批热衷于追求Geek精神的年轻人在为中国未来的IT产业变革做着不懈的努力，他们用数字证明了国外公司能做到的我们国内公司也能做到，这个世界上不仅有IOEV，还有中国制造的OpenStack。</p>
-<p>对于友商们已经分析的数据，这里不再赘述，本文主要通过stackalytics.com提供的API对国内社区贡献进行一次深度挖掘和整理。</p>
-<p>OpenStack Liberty深度解读请见：<a href="http://xiaoquqi.github.io/blog/2015/10/29/contribution-in-liberty/" target="_blank" rel="noopener">http://xiaoquqi.github.io/blog/2015/10/29/contribution-in-liberty/</a></p>
-    
-    <a class="article-more-a" href="/2016/04/07/contribution-in-mitaka/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack//" class="article-tag-list-link color5">OpenStack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2016/04/07/contribution-in-mitaka/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-openstack-training-user-experience" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2016/03/27/openstack-training-user-experience/">OpenStack培训的用户体验</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2016/03/27/openstack-training-user-experience/" class="archive-article-date">
-        <time datetime="2016-03-27T02:42:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-27</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>尽管在云计算领域仍然有很大的争议，但是OpenStack事实上已经成为Iaas云平台的事实标准和首选的平台。从培训市场的火热也证明了这一点，现在的OpenStack培训有很多，讲的内容也不尽相同，那么哪一种培训才是用户最需要的呢？</p>
-<p>这篇文章并不是要评价任何一个OpenStack培训，只是想从用户体验的角度分析一下，到底什么才是用户真正需要的。如果文章观点有任何不妥，还请各位前辈和大牛们多多海涵。</p>
-    
-    <a class="article-more-a" href="/2016/03/27/openstack-training-user-experience/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack//" class="article-tag-list-link color5">openstack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2016/03/27/openstack-training-user-experience/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-use-consul" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2015/12/24/use-consul/">Consul主要使用场景</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2015/12/24/use-consul/" class="archive-article-date">
-        <time datetime="2015-12-24T02:07:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-24</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>假设你已经按照之前的Consul安装方法部署了一套具备环境，具体方法可以参考：<a href="http://xiaoquqi.github.io/blog/2015/12/07/consul-installation/" target="_blank" rel="noopener">http://xiaoquqi.github.io/blog/2015/12/07/consul-installation/</a></p>
-<p>这篇文章里主要介绍Consul的使用场景，服务和健康检查。</p>
-    
-    <a class="article-more-a" href="/2015/12/24/use-consul/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Cloud-Computing/Docker//" class="article-tag-list-link color2">Docker</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Cloud-Computing/Docker/Consul//" class="article-tag-list-link color2">Consul</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2015/12/24/use-consul/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-consul-installation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2015/12/06/consul-installation/">Consul的安装方法</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2015/12/06/consul-installation/" class="archive-article-date">
-        <time datetime="2015-12-06T18:00:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-07</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="什么是Consul"><a href="#什么是Consul" class="headerlink" title="什么是Consul?"></a>什么是Consul?</h2><p>Consul拥有众多的组件，简言之，就是一个用于在你的基础设施中，发现和配置服务的工具。包含以下关键功能：服务发现、健康检查、键值存储和多数据中心支持。再说的通俗一点，就是用于管理分布式系统的利器。</p>
-    
-    <a class="article-more-a" href="/2015/12/06/consul-installation/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Cloud-Computing/Docker//" class="article-tag-list-link color2">Docker</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Cloud-Computing/Docker/Consul//" class="article-tag-list-link color2">Consul</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2015/12/06/consul-installation/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-use-grafana-to-monitor-your-cluster" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2015/11/30/use-grafana-to-monitor-your-cluster/">使用Grafana+Diamond+Graphite构造完美监控面板</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2015/11/30/use-grafana-to-monitor-your-cluster/" class="archive-article-date">
-        <time datetime="2015-11-30T15:59:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-11-30</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>服务器监控软件五花八门，没有一个是对的，但是总有一款是适合你的，本文中将使用Grafana+Dimaond+Graphite构造一款漂亮的监控面板，你可以独自欣赏，也可以让他们和你的应用勾勾搭搭。</p>
-<p>本文中的安装测试，主要在CentOS 6.5下完成。先来张Grafna效果图，左边是我们的数据源Graphite，右边是我们的Grafna的效果图：</p>
-<img src="/images/blogs/grafana-screenshot.png" class="center" title="800x600">
-    
-    <a class="article-more-a" href="/2015/11/30/use-grafana-to-monitor-your-cluster/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2015/11/30/use-grafana-to-monitor-your-cluster/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1175,8 +490,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
