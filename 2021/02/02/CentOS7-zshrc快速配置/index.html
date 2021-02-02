@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.site">
-  <title>MacOS VPN拨号后自动设置路由 | 老孙正经胡说</title>
+  <title>CentOS7 zshrc快速配置 | 老孙正经胡说</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="目的公司使用的VPN是L2TP协议的，平时在家远程工作时需要VPN拨入，但是又不想所有的流量都经过VPN，需要使用路由表来路由指定的网段。">
+  <meta name="description" content="大部分时间里，我还是习惯于ssh到远程的CentOS7服务器上工作，因为Mac配置了漂亮zsh的缘故，所以也想把我的CentOS7切换到zsh模式。这是最终配置好的效果：  原理部分不再赘述，有兴趣可以参照MacOS的zsh配置篇。 CentOS7配置zsh与Mac上还是有一定区别的，因为版本要求，zsh需要自己安装编译，字体也需要自己安装，接下来是详细的步骤。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MacOS VPN拨号后自动设置路由">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2020&#x2F;11&#x2F;11&#x2F;MacOS-VPN%E6%8B%A8%E5%8F%B7%E5%90%8E%E8%87%AA%E5%8A%A8%E8%AE%BE%E7%BD%AE%E8%B7%AF%E7%94%B1&#x2F;index.html">
+<meta property="og:title" content="CentOS7 zshrc快速配置">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2021&#x2F;02&#x2F;02&#x2F;CentOS7-zshrc%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE&#x2F;index.html">
 <meta property="og:site_name" content="老孙正经胡说">
-<meta property="og:description" content="目的公司使用的VPN是L2TP协议的，平时在家远程工作时需要VPN拨入，但是又不想所有的流量都经过VPN，需要使用路由表来路由指定的网段。">
+<meta property="og:description" content="大部分时间里，我还是习惯于ssh到远程的CentOS7服务器上工作，因为Mac配置了漂亮zsh的缘故，所以也想把我的CentOS7切换到zsh模式。这是最终配置好的效果：  原理部分不再赘述，有兴趣可以参照MacOS的zsh配置篇。 CentOS7配置zsh与Mac上还是有一定区别的，因为版本要求，zsh需要自己安装编译，字体也需要自己安装，接下来是详细的步骤。">
 <meta property="og:locale" content="zh">
-<meta property="article:published_time" content="2020-11-11T12:04:07.000Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-124.png">
+<meta property="article:published_time" content="2021-02-02T09:15:02.000Z">
 <meta property="article:modified_time" content="2021-02-02T10:06:02.390Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-124.png">
   
     <link rel="alternative" href="/atom.xml" title="老孙正经胡说" type="application/atom+xml">
   
@@ -204,22 +206,22 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-MacOS-VPN拨号后自动设置路由" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CentOS7-zshrc快速配置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      MacOS VPN拨号后自动设置路由
+      CentOS7 zshrc快速配置
     </h1>
   
 
 
   
   
-<a href="/2020/11/11/MacOS-VPN%E6%8B%A8%E5%8F%B7%E5%90%8E%E8%87%AA%E5%8A%A8%E8%AE%BE%E7%BD%AE%E8%B7%AF%E7%94%B1/" class="archive-article-date">
-        <time datetime="2020-11-11T12:04:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-11</time>
+<a href="/2021/02/02/CentOS7-zshrc%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+        <time datetime="2021-02-02T09:15:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-02</time>
 </a>
 
   
@@ -232,7 +234,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">250字</span>
+      <span class="post-count">805字</span>
     </span>
   </span>
 
@@ -241,7 +243,7 @@ var _hmt = _hmt || [];
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -252,27 +254,48 @@ var _hmt = _hmt || [];
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>公司使用的VPN是L2TP协议的，平时在家远程工作时需要VPN拨入，但是又不想所有的流量都经过VPN，需要使用路由表来路由指定的网段。</p>
+    <p>大部分时间里，我还是习惯于ssh到远程的CentOS7服务器上工作，因为Mac配置了漂亮zsh的缘故，所以也想把我的CentOS7切换到zsh模式。这是最终配置好的效果：</p>
+<p><img src="/images/pasted-124.png" alt="upload successful"></p>
+<p>原理部分不再赘述，有兴趣可以参照MacOS的zsh配置篇。</p>
+<p>CentOS7配置zsh与Mac上还是有一定区别的，因为版本要求，zsh需要自己安装编译，字体也需要自己安装，接下来是详细的步骤。</p>
 <a id="more"></a>
 
-<h1 id="允许L2TP共享密钥为空"><a href="#允许L2TP共享密钥为空" class="headerlink" title="允许L2TP共享密钥为空"></a>允许L2TP共享密钥为空</h1><p>公司L2TP共享密钥为空，默认MacOS是不支持的，所以需要在配置文件中特殊设定，在/etc/ppp下生成options文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo tee &#x2F;etc&#x2F;ppp&#x2F;options &lt;&lt; EOF</span><br><span class="line">plugin L2TP.ppp</span><br><span class="line">l2tpnoipsec</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h1><p>虽然通过yum方式可以安装zsh，但是无法满足powerlevel10k的要求，所以先使用zsh源码进行编译后安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">WORKSPACE&#x3D;$HOME&#x2F;workspace&#x2F;zsh</span><br><span class="line">mkdir -p $WORKSPACE</span><br><span class="line"></span><br><span class="line">cd $WORKSPACE</span><br><span class="line">curl -o zsh.tar.xz https:&#x2F;&#x2F;jaist.dl.sourceforge.net&#x2F;project&#x2F;zsh&#x2F;zsh&#x2F;5.8&#x2F;zsh-5.8.tar.xz</span><br><span class="line">tar -xvf zsh-5.8.tar.xz</span><br><span class="line"></span><br><span class="line">cd zsh</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
 
-<h1 id="自动路由设置"><a href="#自动路由设置" class="headerlink" title="自动路由设置"></a>自动路由设置</h1><p>原理很简单，在连接VPN后将指定网段的IP经过VPN虚拟接口即可，具体的实现如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo touch &#x2F;etc&#x2F;ppp&#x2F;ip-up</span><br><span class="line">sudo chmod 0755 &#x2F;etc&#x2F;ppp&#x2F;ip-up</span><br></pre></td></tr></table></figure>
+<p>zsh会安装在用户目录中/usr/local/bin/zsh中，将zsh设置为默认的系统shell，配置成功后，需要关闭Terminal重新登陆。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;zsh</span><br></pre></td></tr></table></figure>
 
-<p>ip-up的内容如下，只需要修改SUBNET网段即可，例如：192.168.10.0/24</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh</span><br><span class="line">&#x2F;sbin&#x2F;route add &lt;SUBNET&gt; -interface $1</span><br></pre></td></tr></table></figure>
-
-<p>其余可利用参数如下：</p>
+<h2 id="安装流程"><a href="#安装流程" class="headerlink" title="安装流程"></a>安装流程</h2><p>接下来的流程与MacOS上安装类似，由于以上各个项目帮我们做了大量的优化，所以让zsh的安装过程变得简单了很多，大体的流程为：</p>
 <ul>
-<li>$1: VPN接口(例如：ppp0)</li>
-<li>$2: 未知</li>
-<li>$3: VPN服务器地址</li>
-<li>$4: VPN网关地址</li>
-<li>$5: 非VPN网关，本地使用</li>
+<li>安装oh-my-zsh，其实就是clone回来</li>
+<li>安装powerlevel10k，其实也是clone回来</li>
+<li>powerlevel10k的基本配置，根据我们喜欢进行定制</li>
+<li>最后是zsh的配置，也就是修改.zshrc文件</li>
 </ul>
+<h1 id="oh-my-zsh安装"><a href="#oh-my-zsh安装" class="headerlink" title="oh-my-zsh安装"></a>oh-my-zsh安装</h1><p>官方的方法是通过curl或wget，执行github上的install.sh文件，但是由于raw.githubusercontent.com已经属于常年被墙的状态，所以并不推荐这种方式，这里采用的方式是将oh-my-zsh下载回来后，再执行install.sh。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export WORKSPACE&#x3D;$HOME&#x2F;workspace&#x2F;zsh</span><br><span class="line">mkdir -p $WORKSPACE</span><br><span class="line"></span><br><span class="line">cd $WORKSPACE</span><br><span class="line">git clone https:&#x2F;&#x2F;e.coding.net&#x2F;xiaoquqi&#x2F;github&#x2F;ohmyzsh.git</span><br></pre></td></tr></table></figure>
 
+<p>安装脚本在ohmyzsh/tools/install.sh中，这里我们通过环境变量设置本地源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export REMOTE&#x3D;https:&#x2F;&#x2F;e.coding.net&#x2F;xiaoquqi&#x2F;github&#x2F;ohmyzsh.git</span><br><span class="line"></span><br><span class="line">$WORKSPACE&#x2F;ohmyzsh&#x2F;tools&#x2F;install.sh</span><br></pre></td></tr></table></figure>
+
+<h1 id="powerlevel10k安装"><a href="#powerlevel10k安装" class="headerlink" title="powerlevel10k安装"></a>powerlevel10k安装</h1><p>powerlevel10k已经被gitee缓存了，所以我就没再做单独的缓存源，直接利用官方提供的命令获取。powerlevel10k会被clone到ohmyzsh的custom路径中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --depth&#x3D;1 https:&#x2F;&#x2F;gitee.com&#x2F;romkatv&#x2F;powerlevel10k.git $&#123;ZSH_CUSTOM:-$HOME&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;themes&#x2F;powerlevel10k</span><br></pre></td></tr></table></figure>
+
+<p>替换默认的zsh主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &quot;s&#x2F;^ZSH_THEME&#x3D;.*&#x2F;ZSH_THEME&#x3D;\&quot;powerlevel10k\&#x2F;powerlevel10k\&quot;&#x2F;g&quot; $HOME&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>在正式启用主题前，还需要对powerlevel下载字体的文件进行优化。由于是从github下载字体，所以powerlevel10k配置一定会失败，必须要进行替换后，才能安装正常。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &quot;s#^local -r font_base_url&#x3D;.*#local -r font_base_url&#x3D;&#39;https:&#x2F;&#x2F;xiaoquqi.coding.net&#x2F;p&#x2F;github&#x2F;d&#x2F;powerlevel10k-media&#x2F;git&#x2F;raw&#x2F;master&#39;#g&quot; $HOME&#x2F;.oh-my-zsh&#x2F;custom&#x2F;themes&#x2F;powerlevel10k&#x2F;internal&#x2F;wizard.zsh</span><br></pre></td></tr></table></figure>
+
+<p>source zshrc会自动触发配置，按照向导和喜欢的样式来就好，这里就不再赘述了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>如果想重新配置，也可以使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p10k configure</span><br></pre></td></tr></table></figure>
+
+<h1 id="加载插件"><a href="#加载插件" class="headerlink" title="加载插件"></a>加载插件</h1><p>通过修改.zshrc中的plugins变量可以实现插件加载的效果，比如使用virtualenv插件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins&#x3D;(git virtualenv)</span><br></pre></td></tr></table></figure>
     
 
     
@@ -318,7 +341,7 @@ var _hmt = _hmt || [];
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://sunqi.site/2020/11/11/MacOS-VPN拨号后自动设置路由/" title="MacOS VPN拨号后自动设置路由" target="_blank">http://sunqi.site/2020/11/11/MacOS-VPN拨号后自动设置路由/</a>
+          <a href="http://sunqi.site/2021/02/02/CentOS7-zshrc快速配置/" title="CentOS7 zshrc快速配置" target="_blank">http://sunqi.site/2021/02/02/CentOS7-zshrc快速配置/</a>
         </li>
         
         <li>
@@ -385,7 +408,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2020/11/11/MacOS-VPN%E6%8B%A8%E5%8F%B7%E5%90%8E%E8%87%AA%E5%8A%A8%E8%AE%BE%E7%BD%AE%E8%B7%AF%E7%94%B1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2021/02/02/CentOS7-zshrc%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -400,18 +423,9 @@ var _hmt = _hmt || [];
 
 <nav id="article-nav">
   
-    <a href="/2020/11/13/Docker%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A9%BA%E9%97%B4%E5%8D%A0%E6%BB%A1%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Docker构建服务器空间占满问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/31/%E5%88%A9%E7%94%A8%E9%92%89%E9%92%89%E9%80%9A%E8%AE%AF%E5%BD%95%E5%90%8C%E6%AD%A5%E6%9E%84%E5%BB%BA%E6%9C%AC%E5%9C%B0LDAP%E6%9C%8D%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">利用钉钉通讯录同步构建本地LDAP服务</div>
+    <a href="/2021/02/02/Mac-zshrc%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac iTerm2 zshrc快速配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
