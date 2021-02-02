@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.site">
-  <title>老孙正经胡说</title>
+  <title>Mac iTerm2 zshrc快速配置 | 老孙正经胡说</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="老孙正经胡说">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="zsh基本上已经成为Mac上的标配了，界面美观还有点缀的小图标，非常漂亮。但是网上配置zsh文章很多，配置方法也是五花八门，并且由于github被墙的原因，经过由于网络问题安装失败。经过反复测试，在国内的代码托管网站进行了Github部分关键项目定时缓存后，提高配置效率。这里写一篇自用的配置方法，留给有需要的人。 我的环境：iTerm2 + oh-my-zsh + powerlevel10k，这是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac iTerm2 zshrc快速配置">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2021&#x2F;02&#x2F;02&#x2F;Mac-zshrc%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE&#x2F;index.html">
 <meta property="og:site_name" content="老孙正经胡说">
+<meta property="og:description" content="zsh基本上已经成为Mac上的标配了，界面美观还有点缀的小图标，非常漂亮。但是网上配置zsh文章很多，配置方法也是五花八门，并且由于github被墙的原因，经过由于网络问题安装失败。经过反复测试，在国内的代码托管网站进行了Github部分关键项目定时缓存后，提高配置效率。这里写一篇自用的配置方法，留给有需要的人。 我的环境：iTerm2 + oh-my-zsh + powerlevel10k，这是">
 <meta property="og:locale" content="zh">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-123.png">
+<meta property="article:published_time" content="2021-02-02T03:26:14.000Z">
+<meta property="article:modified_time" content="2021-02-02T05:22:15.665Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-123.png">
   
     <link rel="alternative" href="/atom.xml" title="老孙正经胡说" type="application/atom+xml">
   
@@ -204,88 +206,231 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-OpenStack对接多Ceph资源池" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Mac-zshrc快速配置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/14/OpenStack%E5%AF%B9%E6%8E%A5%E5%A4%9ACeph%E8%B5%84%E6%BA%90%E6%B1%A0/">OpenStack对接多Ceph资源池</a>
-	
+    <h1 class="article-title" itemprop="name">
+      Mac iTerm2 zshrc快速配置
     </h1>
   
 
 
   
   
-<a href="/2020/09/14/OpenStack%E5%AF%B9%E6%8E%A5%E5%A4%9ACeph%E8%B5%84%E6%BA%90%E6%B1%A0/" class="archive-article-date">
-        <time datetime="2020-09-14T08:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-14</time>
+<a href="/2021/02/02/Mac-zshrc%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+        <time datetime="2021-02-02T03:26:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-02</time>
 </a>
 
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">904字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>OpenStack支持与多个不同的Ceph资源池进行对接，通过cinder的volume type与backend进行对应，创建时只需要选择不同的volume type就可以实现指定资源池创建。配置OpenStack对接分为两个部分：</p>
+    <p>zsh基本上已经成为Mac上的标配了，界面美观还有点缀的小图标，非常漂亮。但是网上配置zsh文章很多，配置方法也是五花八门，并且由于github被墙的原因，经过由于网络问题安装失败。经过反复测试，在国内的代码托管网站进行了Github部分关键项目定时缓存后，提高配置效率。这里写一篇自用的配置方法，留给有需要的人。</p>
+<p>我的环境：iTerm2 + oh-my-zsh + powerlevel10k，这是我的配置效果：</p>
+<p><img src="/images/pasted-123.png" alt="upload successful"></p>
+<a id="more"></a>
+
+<h1 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h1><p>我们开始配置前，还是有必要讲一下这几个项目的关系，以便了解其工作原理。</p>
 <ul>
-<li>Cinder配置：主要配置存储资源池与Volume Type和Backend对应关系</li>
-<li>Libvirt配置：配置与Ceph之间的鉴权关系</li>
+<li>iTerm2不用说了，MacOS上必备的Terminal工具，替代原有系统自带的工具。</li>
+<li>ohmyzsh(<a href="https://github.com/ohmyzsh/ohmyzsh/)是一套基于zsh深度定制的插件及主题管理的框架，方便定制适合你的zsh环境。" target="_blank" rel="noopener">https://github.com/ohmyzsh/ohmyzsh/)是一套基于zsh深度定制的插件及主题管理的框架，方便定制适合你的zsh环境。</a></li>
+<li>Nerd Fonts(<a href="https://www.nerdfonts.com/)我们在截图中看到的那些可爱的小图标就是来自这个项目，让我们原本枯燥的Terminal增添了几分乐趣。" target="_blank" rel="noopener">https://www.nerdfonts.com/)我们在截图中看到的那些可爱的小图标就是来自这个项目，让我们原本枯燥的Terminal增添了几分乐趣。</a></li>
+<li>powerlevel10k(<a href="https://github.com/romkatv/powerlevel10k)是一套zsh皮肤，也是目前我个人比较喜欢的一套皮肤，同时提供了较强的配置能力，包括字体下载，iTerm2的配置都自动完成了，所以也是目前使用最顺手的一套皮肤。" target="_blank" rel="noopener">https://github.com/romkatv/powerlevel10k)是一套zsh皮肤，也是目前我个人比较喜欢的一套皮肤，同时提供了较强的配置能力，包括字体下载，iTerm2的配置都自动完成了，所以也是目前使用最顺手的一套皮肤。</a></li>
 </ul>
-    
-    <a class="article-more-a" href="/2020/09/14/OpenStack%E5%AF%B9%E6%8E%A5%E5%A4%9ACeph%E8%B5%84%E6%BA%90%E6%B1%A0/#more">more >></a>
-    
+<h2 id="安装流程"><a href="#安装流程" class="headerlink" title="安装流程"></a>安装流程</h2><p>由于以上各个项目帮我们做了大量的优化，所以让zsh的安装过程变得简单了很多，大体的流程为：</p>
+<ul>
+<li>安装oh-my-zsh，其实就是clone回来</li>
+<li>安装powerlevel10k，其实也是clone回来</li>
+<li>powerlevel10k的基本配置，根据我们喜欢进行定制</li>
+<li>最后是zsh的配置，也就是修改.zshrc文件</li>
+</ul>
+<h1 id="oh-my-zsh安装"><a href="#oh-my-zsh安装" class="headerlink" title="oh-my-zsh安装"></a>oh-my-zsh安装</h1><p>官方的方法是通过curl或wget，执行github上的install.sh文件，但是由于raw.githubusercontent.com已经属于常年被墙的状态，所以并不推荐这种方式，这里采用的方式是将oh-my-zsh下载回来后，再执行install.sh。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export WORKSPACE&#x3D;$HOME&#x2F;workspace&#x2F;zsh</span><br><span class="line">mkdir -p $WORKSPACE</span><br><span class="line"></span><br><span class="line">cd $WORKSPACE</span><br><span class="line">git clone https:&#x2F;&#x2F;e.coding.net&#x2F;xiaoquqi&#x2F;github&#x2F;ohmyzsh.git</span><br></pre></td></tr></table></figure>
+
+<p>安装脚本在ohmyzsh/tools/install.sh中，这里我们通过环境变量设置本地源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export REPO&#x3D;&quot;github&#x2F;ohmyzsh&quot;</span><br><span class="line">export REMOTE&#x3D;&quot;https:&#x2F;&#x2F;e.coding.net&#x2F;xiaoquqi&quot;</span><br><span class="line"></span><br><span class="line">$WORKSPACE&#x2F;ohmyzsh&#x2F;tools&#x2F;install.sh</span><br></pre></td></tr></table></figure>
+
+<h1 id="powerlevel10k安装"><a href="#powerlevel10k安装" class="headerlink" title="powerlevel10k安装"></a>powerlevel10k安装</h1><p>powerlevel10k已经被gitee缓存了，所以我就没再做单独的缓存源，直接利用官方提供的命令获取。powerlevel10k会被clone到ohmyzsh的custom路径中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --depth&#x3D;1 https:&#x2F;&#x2F;gitee.com&#x2F;romkatv&#x2F;powerlevel10k.git $&#123;ZSH_CUSTOM:-$HOME&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;themes&#x2F;powerlevel10k</span><br></pre></td></tr></table></figure>
+
+<p>替换默认的zsh主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &quot;s&#x2F;^ZSH_THEME&#x3D;.*&#x2F;ZSH_THEME&#x3D;\&quot;powerlevel10k\&#x2F;powerlevel10k\&quot;&#x2F;g&quot; $HOME&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>在正式启用主题前，还需要对powerlevel下载字体的文件进行优化。由于是从github下载字体，所以powerlevel10k配置一定会失败，必须要进行替换后，才能安装正常。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &quot;s#^local -r font_base_url&#x3D;.*#local -r font_base_url&#x3D;&#39;https:&#x2F;&#x2F;xiaoquqi.coding.net&#x2F;p&#x2F;github&#x2F;d&#x2F;powerlevel10k-media&#x2F;git&#x2F;raw&#x2F;master&#39;#g&quot; $HOME&#x2F;.oh-my-zsh&#x2F;custom&#x2F;themes&#x2F;powerlevel10k&#x2F;internal&#x2F;wizard.zsh</span><br></pre></td></tr></table></figure>
+
+<p>source zshrc会自动触发配置，按照向导和喜欢的样式来就好，这里就不再赘述了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>如果想重新配置，也可以使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p10k configure</span><br></pre></td></tr></table></figure>
+
+<h1 id="加载插件"><a href="#加载插件" class="headerlink" title="加载插件"></a>加载插件</h1><p>通过修改.zshrc中的plugins变量可以实现插件加载的效果，比如使用virtualenv插件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins&#x3D;(git virtualenv)</span><br></pre></td></tr></table></figure>
     
 
     
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/images/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/images/weixin.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
 
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          孙琦(Ray)
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://sunqi.site/2021/02/02/Mac-zshrc快速配置/" title="Mac iTerm2 zshrc快速配置" target="_blank">http://sunqi.site/2021/02/02/Mac-zshrc快速配置/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">OpenStack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ceph</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">云计算</a>
-        		</li>
-      		
-		</ul>
-	</div>
+    
 
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/14/OpenStack%E5%AF%B9%E6%8E%A5%E5%A4%9ACeph%E8%B5%84%E6%BA%90%E6%B1%A0/">展开全文 >></a>
-    </p>
     
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2021/02/02/Mac-zshrc%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/26/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E4%B8%AD%E4%BD%BF%E7%94%A8vim%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何在微信开发者工具中使用vim编辑模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -306,804 +451,35 @@ var _hmt = _hmt || [];
 
 
 
-  
-    <article id="post-快速构建Ceph集群" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/12/%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BACeph%E9%9B%86%E7%BE%A4/">快速构建Ceph集群</a>
-	
-    </h1>
-  
 
 
-  
-  
-<a href="/2020/09/12/%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BACeph%E9%9B%86%E7%BE%A4/" class="archive-article-date">
-        <time datetime="2020-09-12T09:05:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-12</time>
-</a>
 
-  
-  
-    
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname =
+    'true'; // required: replace example with your forum shortname
 
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>虽然安装环境并不是属于研发人员的本质工作，甚至有些研发人员抵触一些环境的搭建工作。在一些大型企业中，由于分工明确，造成了一些研发人员在这一方面能力的严重缺失。其实环境安装对于开发人员从整体上掌握软件架构师非常有益的，同时随着云计算、云原生的发展，对于DevOps的软件开发模式也越来越被企业接受，可以预见的是，未来DevOps将是所有研发人员必备的技能之一。</p>
-<p>本文主要目标是帮助研发人员用最小成本搭建一套Ceph环境，为了降低搭建成本，使用了Ceph Deploy及国内源加速安装速度。我们选择目前Ceph Octopus最新的稳定版本进行安装。</p>
-    
-    <a class="article-more-a" href="/2020/09/12/%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BACeph%E9%9B%86%E7%BE%A4/#more">more >></a>
-    
-    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
 
-    
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by
+      Disqus.</a></noscript>
+</section>
 
-    
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/12/%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BACeph%E9%9B%86%E7%BE%A4/">展开全文 >></a>
-    </p>
-    
 
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
-
-
-
-  
-    <article id="post-一款云迁移产品的成长史" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/11/%E4%B8%80%E6%AC%BE%E4%BA%91%E8%BF%81%E7%A7%BB%E4%BA%A7%E5%93%81%E7%9A%84%E6%88%90%E9%95%BF%E5%8F%B2/">一款云迁移产品的成长史</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/11/%E4%B8%80%E6%AC%BE%E4%BA%91%E8%BF%81%E7%A7%BB%E4%BA%A7%E5%93%81%E7%9A%84%E6%88%90%E9%95%BF%E5%8F%B2/" class="archive-article-date">
-        <time datetime="2020-08-11T06:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="关于作者"><a href="#关于作者" class="headerlink" title="关于作者"></a>关于作者</h1><p>孙琦，万博智云CTO(万国数据(NASDAQ:GDS)合资子公司)，阿里云解决方案领域MVP，Ceph中国社区联合创始人，AWS Certified DevOps Professional。曾先后就职亿阳信通、摩托罗拉、瞬联软件等国内外知名企业。2013年开始创业，从事私有云领域研发工作，2016年带领团队开发云原生迁移产品HyperMotion，该产品在江苏农信、国家电网、海通证券等诸多项目得到广泛应用。2018年成功组织Ceph全球首次峰会，并帮助多家国内知名企业加入Linux Foundation旗下的Ceph基金会。</p>
-<h1 id="关于万博智云"><a href="#关于万博智云" class="headerlink" title="关于万博智云"></a>关于万博智云</h1><p>万博智云信息科技（上海）有限公司成立于上海，是国内领先的云技术和数字化架构服务商。万博智云专注于为企业提供中立/专业的云咨询、云产品、云服务；致力成为企业 IT运营、数字化发展可信耐的云服务商。公司秉持以产品驱动服务，以科技提升企业商业价值的理念，持续提供丰富的云化产品、解决方案、专业咨询服务，并联合生态体系助力企业在数字化时代全速发展。</p>
-<p>万博智云核心研发团队组建于2013年5月，2013年到2016年期间团队致力于开发基于OpenStack私有云产品，2016年后团队转型全力开发云市场细分领域产品——云迁移。2017年完成了沭阳农商行私有云平台建设及业务系统上云项目，该项目获得银监会四类科技成果奖，第二届优秀云计算开源案例二等奖；2018年完成江苏农信省联社专有云平台建设，同时利用云迁移产品完成1200多套业务系统批量上云，该项目获得银监会二类科技成果奖，第三届优秀云计算开源案例二等奖；同年，完成国家电网27个省近20000台VMware虚拟机批量上云迁移；2019年完成海通证券云管平台与云迁移产品整合，该项目也是国内首个将云管平台整合到云管平台提供自助式迁移服务的项目；2020年完成前海股权VMware虚拟机批量迁移至阿里云项目。</p>
-    
-    <a class="article-more-a" href="/2020/08/11/%E4%B8%80%E6%AC%BE%E4%BA%91%E8%BF%81%E7%A7%BB%E4%BA%A7%E5%93%81%E7%9A%84%E6%88%90%E9%95%BF%E5%8F%B2/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">趋势分析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/11/%E4%B8%80%E6%AC%BE%E4%BA%91%E8%BF%81%E7%A7%BB%E4%BA%A7%E5%93%81%E7%9A%84%E6%88%90%E9%95%BF%E5%8F%B2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Kubernetes基本安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/31/Kubernetes%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85/">Kubernetes All-in-One环境安装</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/31/Kubernetes%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85/" class="archive-article-date">
-        <time datetime="2020-07-31T01:38:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="Kubernetes安装及初始化"><a href="#Kubernetes安装及初始化" class="headerlink" title="Kubernetes安装及初始化"></a>Kubernetes安装及初始化</h1><p>研发环境搭建Kubernetes All-in-One环境搭建。</p>
-    
-    <a class="article-more-a" href="/2020/07/31/Kubernetes%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/31/Kubernetes%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CentOS-7初始化脚本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/31/CentOS-7%E5%88%9D%E5%A7%8B%E5%8C%96%E8%84%9A%E6%9C%AC/">CentOS 7和Docker初始化安装</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/31/CentOS-7%E5%88%9D%E5%A7%8B%E5%8C%96%E8%84%9A%E6%9C%AC/" class="archive-article-date">
-        <time datetime="2020-07-31T01:34:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="CentOS-7初始化"><a href="#CentOS-7初始化" class="headerlink" title="CentOS 7初始化"></a>CentOS 7初始化</h1><p>该安装脚本为搭建研发环境常用的脚本，记录在Blog中便于查阅。</p>
-    
-    <a class="article-more-a" href="/2020/07/31/CentOS-7%E5%88%9D%E5%A7%8B%E5%8C%96%E8%84%9A%E6%9C%AC/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/31/CentOS-7%E5%88%9D%E5%A7%8B%E5%8C%96%E8%84%9A%E6%9C%AC/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-OpenStack还热吗？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/29/OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F/">OpenStack没落了吗？</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/29/OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F/" class="archive-article-date">
-        <time datetime="2020-04-29T13:20:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="OpenStack回顾"><a href="#OpenStack回顾" class="headerlink" title="OpenStack回顾"></a>OpenStack回顾</h1><p>OpenStack在2010年7月由NASA和Rackspace宣布启动，2010年10月Austin Release后，除了Bexar、Cactus、Diablo版本外，后续版本都遵循6个月发布周期，如今正在开发的是Ussuri版本，最新的稳定版本是去年10月份发布的Train版本。</p>
-<p><img src="/images/pasted-42.png" alt="upload successful"></p>
-<h1 id="OpenStack没落了吗？"><a href="#OpenStack没落了吗？" class="headerlink" title="OpenStack没落了吗？"></a>OpenStack没落了吗？</h1><p>我是从2012年初开始参与到OpenStack社区，这几年见证了OpenStack从一个开源项目逐渐成为开源产品的全过程。大概在两三年前每次发布前都会写一些关于OpenStack新版本功能和社区分析的文章，但是随着我的工作重心转移，对OpenStack社区关注逐渐减少。</p>
-    
-    <a class="article-more-a" href="/2020/04/29/OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">趋势分析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/29/OpenStack%E8%BF%98%E7%83%AD%E5%90%97%EF%BC%9F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-阿里云-使用DataQuotient-画像分析筛选优质基金" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/14/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%BD%BF%E7%94%A8DataQuotient-%E7%94%BB%E5%83%8F%E5%88%86%E6%9E%90%E7%AD%9B%E9%80%89%E4%BC%98%E8%B4%A8%E5%9F%BA%E9%87%91/">[阿里云]使用DataQuotient 画像分析筛选优质基金</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/14/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%BD%BF%E7%94%A8DataQuotient-%E7%94%BB%E5%83%8F%E5%88%86%E6%9E%90%E7%AD%9B%E9%80%89%E4%BC%98%E8%B4%A8%E5%9F%BA%E9%87%91/" class="archive-article-date">
-        <time datetime="2020-04-14T03:10:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-14</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>该教程是阿里云帮助文档一部分，这里做了进一步完善：<a href="https://help.aliyun.com/document_detail/160711.html?spm=a2c4g.11174283.6.603.682fa00bJ7AHYK" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/160711.html?spm=a2c4g.11174283.6.603.682fa00bJ7AHYK</a></p>
-<h1 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h1><p>4433法则通过对同类基金（例如股票类基金）长期和短期的表现进行分析，为您在众多基金中筛选少数优质基金。</p>
-<pre>
-4433法则如下：
-4：代表近一年收益率排名前1/4的基金。
-4：代表近两年、三年、五年以来，收益率排名前1/4的基金。
-3：指近六个月收益率排名前1/3的基金。
-3：指近三个月以来收益率排名前1/3的基金。
-</pre>
-
-<p>本教程为您演示如何从当日的1126个股票类的基金产品中，筛选出符合4433法则的69条优质基金。</p>
-    
-    <a class="article-more-a" href="/2020/04/14/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%BD%BF%E7%94%A8DataQuotient-%E7%94%BB%E5%83%8F%E5%88%86%E6%9E%90%E7%AD%9B%E9%80%89%E4%BC%98%E8%B4%A8%E5%9F%BA%E9%87%91/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/14/%E9%98%BF%E9%87%8C%E4%BA%91-%E4%BD%BF%E7%94%A8DataQuotient-%E7%94%BB%E5%83%8F%E5%88%86%E6%9E%90%E7%AD%9B%E9%80%89%E4%BC%98%E8%B4%A8%E5%9F%BA%E9%87%91/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-How-to-use-zookeeper-to-build-distribution-system" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/03/24/Python-How-to-use-zookeeper-to-build-distribution-system/">[Python]利用ZooKeeper构建分布式定时任务</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/03/24/Python-How-to-use-zookeeper-to-build-distribution-system/" class="archive-article-date">
-        <time datetime="2020-03-24T12:39:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>本文涉及的源代码路径：<a href="https://github.com/xiaoquqi/openstackclient-demo/tree/master/tooz" target="_blank" rel="noopener">https://github.com/xiaoquqi/openstackclient-demo/tree/master/tooz</a></p>
-<h1 id="一、目前现状及存在的问题"><a href="#一、目前现状及存在的问题" class="headerlink" title="一、目前现状及存在的问题"></a>一、目前现状及存在的问题</h1><p>在实际业务系统中，经常有需要定时执行的任务，例如任务状态的定时更新、定时发送状态信息等。在我们的云迁移产品中，允许用户可以设定周期同步规则，定期执行数据同步并调用云平台接口执行快照操作。在单机版本中，通常在同一时间点并发任务量较少的情况下，问题并不是很突出，但是随着我们将云迁移服务从单机版本改造为平台版本后，当多个用户的多台主机同时触发快照任务时，一方面传统的设计方式就成为了瓶颈，无法保证用户的同步任务在同一时间点被触发（需要排队）；另外一方面，目前Active-Passive（简称AP方式）的高可靠部署方式无法利用集群横向扩展能力，无法满足高并发的要求。</p>
-<img src="/images/blogs/2020-03-24/1.png" class="">
-    
-    <a class="article-more-a" href="/2020/03/24/Python-How-to-use-zookeeper-to-build-distribution-system/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Zookeeper</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">分布式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tooz</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/03/24/Python-How-to-use-zookeeper-to-build-distribution-system/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-AWS-Certified-Solutions-Architecture-Associate-Practice" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/01/30/AWS-Certified-Solutions-Architecture-Associate-Practice/">AWS Certified Solutions Architecture Associate Practice</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/01/30/AWS-Certified-Solutions-Architecture-Associate-Practice/" class="archive-article-date">
-        <time datetime="2020-01-30T13:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-30</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>该模拟题出自AWS Practice，是付费后的模拟题，一共25道题，相对来说答案比较准确，答题正确率在76%，看中文的命题相对来说对理解题目内容更简单。</p>
-<p>总得分: 76%<br>主题得分:<br>1.0. Design Resilient Architectures 89%<br>2.0. Define Performant Architectures 71%<br>3.0. Specify Secure Applications and Architectures 50%<br>4.0. Design Cost-Optimized Architectures 100%<br>5.0. Define Operationally Excellent Architectures 100%</p>
-<p>个人感觉，对于网络题目还是有些晕的，因为和OpenStack的SDN还是有一些区别，特别涉及到安全组、网络ACL特别含糊；另外一类题就是服务之间的互联互通时会比较晕。</p>
-    
-    <a class="article-more-a" href="/2020/01/30/AWS-Certified-Solutions-Architecture-Associate-Practice/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AWS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ACA Practice</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/01/30/AWS-Certified-Solutions-Architecture-Associate-Practice/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Digitalcloud-Training-AWS-CERTIFIED-SOLUTIONS-ARCHITECT-ASSOCIATE" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/01/14/Digitalcloud-Training-AWS-CERTIFIED-SOLUTIONS-ARCHITECT-ASSOCIATE/">[Digitalcloud.Training]AWS CERTIFIED SOLUTIONS ARCHITECT ASSOCIATE</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/01/14/Digitalcloud-Training-AWS-CERTIFIED-SOLUTIONS-ARCHITECT-ASSOCIATE/" class="archive-article-date">
-        <time datetime="2020-01-14T08:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-14</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>该模拟题出自DigitalCloud Training的模拟题，一共20道题，相对来说答案比较准确，第一次答正确率只有60%，看起来还有不太扎实的知识点，并且英文多了不太爱仔细阅读也是准确率低的原因。</p>
-<p>另外，今天在AWS培训官网上看到ACA考试在3月份会推出全新的试题，所以还需要抓紧时间考过。</p>
-    
-    <a class="article-more-a" href="/2020/01/14/Digitalcloud-Training-AWS-CERTIFIED-SOLUTIONS-ARCHITECT-ASSOCIATE/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AWS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACA Exam</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/01/14/Digitalcloud-Training-AWS-CERTIFIED-SOLUTIONS-ARCHITECT-ASSOCIATE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1131,8 +507,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
