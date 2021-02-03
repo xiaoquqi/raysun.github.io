@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-123.png">
 <meta property="article:published_time" content="2021-02-02T03:26:14.000Z">
-<meta property="article:modified_time" content="2021-02-02T10:06:02.390Z">
+<meta property="article:modified_time" content="2021-02-03T03:45:33.252Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-123.png">
@@ -234,7 +234,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">899字</span>
+      <span class="post-count">903字</span>
     </span>
   </span>
 
@@ -283,10 +283,10 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --depth&#x3D;1 https:&#x2F;&#x2F;gitee.com&#x2F;romkatv&#x2F;powerlevel10k.git $&#123;ZSH_CUSTOM:-$HOME&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;themes&#x2F;powerlevel10k</span><br></pre></td></tr></table></figure>
 
 <p>替换默认的zsh主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &quot;s&#x2F;^ZSH_THEME&#x3D;.*&#x2F;ZSH_THEME&#x3D;\&quot;powerlevel10k\&#x2F;powerlevel10k\&quot;&#x2F;g&quot; $HOME&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#39;&#39; &quot;s&#x2F;^ZSH_THEME&#x3D;.*&#x2F;ZSH_THEME&#x3D;\&quot;powerlevel10k\&#x2F;powerlevel10k\&quot;&#x2F;g&quot; $HOME&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
 
 <p>在正式启用主题前，还需要对powerlevel下载字体的文件进行优化。由于是从github下载字体，所以powerlevel10k配置一定会失败，必须要进行替换后，才能安装正常。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &quot;s#^local -r font_base_url&#x3D;.*#local -r font_base_url&#x3D;&#39;https:&#x2F;&#x2F;xiaoquqi.coding.net&#x2F;p&#x2F;github&#x2F;d&#x2F;powerlevel10k-media&#x2F;git&#x2F;raw&#x2F;master&#39;#g&quot; $HOME&#x2F;.oh-my-zsh&#x2F;custom&#x2F;themes&#x2F;powerlevel10k&#x2F;internal&#x2F;wizard.zsh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#39;&#39; &quot;s#^local -r font_base_url&#x3D;.*#local -r font_base_url&#x3D;&#39;https:&#x2F;&#x2F;xiaoquqi.coding.net&#x2F;p&#x2F;github&#x2F;d&#x2F;powerlevel10k-media&#x2F;git&#x2F;raw&#x2F;master&#39;#g&quot; $HOME&#x2F;.oh-my-zsh&#x2F;custom&#x2F;themes&#x2F;powerlevel10k&#x2F;internal&#x2F;wizard.zsh</span><br></pre></td></tr></table></figure>
 
 <p>source zshrc会自动触发配置，按照向导和喜欢的样式来就好，这里就不再赘述了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
