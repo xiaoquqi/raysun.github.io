@@ -22,7 +22,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-157.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-158.png">
 <meta property="article:published_time" content="2021-02-10T13:55:00.000Z">
-<meta property="article:modified_time" content="2021-02-10T15:43:38.516Z">
+<meta property="article:modified_time" content="2021-02-10T16:30:50.569Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-155.png">
@@ -263,7 +263,7 @@ var _hmt = _hmt || [];
 
 <h1 id="如何对Serverless模式成本进行估算"><a href="#如何对Serverless模式成本进行估算" class="headerlink" title="如何对Serverless模式成本进行估算"></a>如何对Serverless模式成本进行估算</h1><p>Serverless模式是一种真正的将云平台的计算、存储和网络按需付费的云计算理想模式。之前的文章中我也提到过，Serverless最大的优势就是降低了基础架构层的可见性，即“零运维”。开发人员可以更关注业务逻辑的开发，而将繁重的运维工作交由云商负责。Serverless为应用带来了良好的可扩展性、敏捷性和弹性，缩短应用上线时间，提高发布频率，加速公司收入增长。</p>
 <p>但是由于使用情况的不确定性，往往很难精准的估算Serverless的成本。在本文中对于Serverless TCO评估框架包含三个关键成本：基础设施、开发和维护。</p>
-<h1 id="案例简述"><a href="#案例简述" class="headerlink" title="案例简述"></a>案例简述</h1><p>这是一家交通运输公司的需求，用户平均在途中的时间要花费两个多小时。交通公司提供了一个应用（可能是手机APP）包含以下功能：在线顶票、连接WIFI、还可以实时监控自己行程。每年有数百万乘客、数百个目的地以及数千条线路，这些相乘之后需要一个并发量巨大的系统进行支撑。运输公司应对这种情况需要花费非常昂贵的成本，而且很难预测。这样也影响了与决策相关的数据得不到及时更新，造成机会成本的丧失。所以为了解决这个问题，这家公司在评估将订票系统运行在函数计算服务上还是EC2实例上。根据测算，这套系统需要满足每天150万笔交易。</p>
+<h1 id="案例简述"><a href="#案例简述" class="headerlink" title="案例简述"></a>案例简述</h1><p>这是一家交通运输公司的需求，用户平均在途中的时间要花费两个多小时。交通公司提供了一个应用（可能是手机APP）包含以下功能：在线订票、连接WIFI、还可以实时监控自己行程。每年有数百万乘客、数百个目的地以及数千条线路，这些相乘之后需要一个并发量巨大的系统进行支撑。运输公司应对这种情况需要花费非常昂贵的成本，而且很难预测。这样也影响了与决策相关的数据得不到及时更新，造成机会成本的丧失。所以为了解决这个问题，这家公司在评估将订票系统运行在函数计算服务上还是EC2实例上。根据测算，这套系统需要满足每天150万笔交易。</p>
 <h1 id="基础设施成本"><a href="#基础设施成本" class="headerlink" title="基础设施成本"></a>基础设施成本</h1><p>资源部分应该是最透明也是最容易比较的部分，只要根据应用运行的情况评估价格即可。</p>
 <h2 id="传统方式"><a href="#传统方式" class="headerlink" title="传统方式"></a>传统方式</h2><p>这是原文中给出的系统资源消耗情况，因为没有更细节化的信息，所以只能根据价格进行反推。</p>
 <table>
