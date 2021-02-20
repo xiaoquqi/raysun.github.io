@@ -24,7 +24,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-168.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-170.png">
 <meta property="article:published_time" content="2021-02-13T02:23:04.000Z">
-<meta property="article:modified_time" content="2021-02-16T16:41:37.881Z">
+<meta property="article:modified_time" content="2021-02-20T23:19:05.257Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-166.png">
@@ -285,18 +285,23 @@ var _hmt = _hmt || [];
 <p>同一时期，与Cloud Foundry同一类型的开源项目就是Redhat OpenShift，目前OpenShift也是国内基于Kubernetes之上的PaaS项目(CloudFoundry也开始这么定义自己了)。当然OpenShift也不是Redhat原生项目，而是在2010年收购的Makara的项目，该公司主要基于Linux Container技术实现PaaS平台。2012年5月的时候，OpenShift正式宣布开源。OpenShift v3版本开始支持Kubernetes作为容器编排引擎，Docker作为底层容器。OpenShift v4版本为了防止Docker锁定，使用CRI-O作为容器Runtime。</p>
 <h1 id="”Serverless“概念的来历"><a href="#”Serverless“概念的来历" class="headerlink" title="”Serverless“概念的来历"></a>”Serverless“概念的来历</h1><p>如果你使用中文搜索引擎搜索Serverless的历史，往往会提到一家公司叫做Iron.io，但是如果你搜索英文资料的时候却发现很少有提及此公司。经过一系列的搜索，终于梳理清楚了Serverless概念和定义的由来。</p>
 <p>2012年10月，时任Iron.io BD副总裁的Ken Fromm在ReadWrite网站(互联网科技博客)上发表了一篇名为《Why The Future Of Software And Apps Is Serverless》的文章，完整的阐述了对Serverless架构的构想，其中开篇的第一句话就是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Even with the rise of cloud computing, the world still revolves around servers. That won’t last, though. Cloud apps are moving into a serverless world, and that will bring big implications for the creation and distribution of software and applications.</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>Even with the rise of cloud computing, the world still revolves around servers. That won’t last, though. Cloud apps are moving into a serverless world, and that will bring big implications for the creation and distribution of software and applications.</p>
+</blockquote>
 <p>ThoughWorks提出了对Serverless架构的定义：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A serverless architecture approach replaces long-running virtual machines with ephemeral compute power that comes into existence on request and disappears immediately after use.</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serverless架构使用临时计算资源替代原有常态化运行的虚拟机，当有请求时资源存在，请求结束后资源自动销毁。</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>A serverless architecture approach replaces long-running virtual machines with ephemeral compute power that comes into existence on request and disappears immediately after use.</p>
+</blockquote>
+<blockquote>
+<p>Serverless架构使用临时计算资源替代原有常态化运行的虚拟机，当有请求时资源存在，请求结束后资源自动销毁。</p>
+</blockquote>
 <p>也许你觉得太复杂了，我们来看看Techopedia网站上对Serverless的定义：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serverless computing is a type of cloud computing where the customer does not have to provision servers for the back-end code to run on, but accesses services as they are needed. Instead, the cloud provider starts and stops a container platform as a service as requests come in and the provider bills accordingly.</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serverless是云计算服务的一种，用户只需要将提供服务的代码运行在云上，而无须实现其他后端服务。云商根据访问情况，启动或者停止容器来提供服务，用户只需要根据实际消费付费。</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>Serverless computing is a type of cloud computing where the customer does not have to provision servers for the back-end code to run on, but accesses services as they are needed. Instead, the cloud provider starts and stops a container platform as a service as requests come in and the provider bills accordingly.</p>
+</blockquote>
+<blockquote>
+<p>Serverless是云计算服务的一种，用户只需要将提供服务的代码运行在云上，而无须实现其他后端服务。云商根据访问情况，启动或者停止容器来提供服务，用户只需要根据实际消费付费。</p>
+</blockquote>
 <p>如果你还认为复杂，可以简单的将Serverless理解为“基于事件驱动的计算服务”。</p>
 <h1 id="Function-as-a-Service"><a href="#Function-as-a-Service" class="headerlink" title="Function-as-a-Service"></a>Function-as-a-Service</h1><p>2014年对于Serverless是具备里程碑的一年，AWS发布了Lambda服务——基于事件驱动的函数计算服务。最早发布的Lambda仅支持JavaScript和Node，但是目前几乎涵盖了所有主流编程语言，同时支持自定义方式。</p>
 <p><img src="/images/pasted-167.png" alt="upload successful"></p>
@@ -437,9 +442,18 @@ var _hmt = _hmt || [];
 
 <nav id="article-nav">
   
+    <a href="/2021/02/18/%E9%98%B2%E6%AD%A2%E4%BD%A0%E7%9A%84%E9%92%B1%E5%8C%85%E6%8E%89%E8%BF%9BServerless%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          防止你的钱包掉进Serverless使用的坑
+        
+      </div>
+    </a>
   
-    <a href="/2021/02/11/PostgreSQL%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E2%80%9Cglobal-pg-control%E2%80%9D%EF%BC%9APermission-denied/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PostgreSQL无法启动“global/pg_control”：Permission denied</div>
+  
+    <a href="/2021/02/11/AWS-Serverless%E7%8E%B0%E7%8A%B6%E4%B8%8E%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AWS Serverless现状与发展趋势</div>
       <i class="icon-circle-right"></i>
     </a>
   
