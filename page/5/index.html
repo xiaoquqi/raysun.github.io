@@ -207,6 +207,102 @@ var _hmt = _hmt || [];
             
 
   
+    <article id="post-consul-installation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2015/12/06/consul-installation/">Consul的安装方法</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2015/12/06/consul-installation/" class="archive-article-date">
+        <time datetime="2015-12-06T18:00:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-07</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="什么是Consul"><a href="#什么是Consul" class="headerlink" title="什么是Consul?"></a>什么是Consul?</h2><p>Consul拥有众多的组件，简言之，就是一个用于在你的基础设施中，发现和配置服务的工具。包含以下关键功能：服务发现、健康检查、键值存储和多数据中心支持。再说的通俗一点，就是用于管理分布式系统的利器。</p>
+    
+    <a class="article-more-a" href="/2015/12/06/consul-installation/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Cloud-Computing/Docker//" class="article-tag-list-link color2">Docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Cloud-Computing/Docker/Consul//" class="article-tag-list-link color2">Consul</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2015/12/06/consul-installation/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-use-grafana-to-monitor-your-cluster" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1056,114 +1152,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-build-openstack-source-code-to-deb-package" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2015/03/05/build-openstack-source-code-to-deb-package/">(Havana)将OpenStack Havana源代码编译为DEB包</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2015/03/05/build-openstack-source-code-to-deb-package/" class="archive-article-date">
-        <time datetime="2015-03-05T05:57:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-05</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p>我想有以下有几个原因促使我写这篇Blog：</p>
-<ul>
-<li>很多人开始OpenStack之旅是从Ubuntu开始，但是却没有一篇文章系统的介绍如何将修改后的代码重新编译回DEB包。</li>
-<li>如果我们采用源代码直接安装的方式对OpenStack模块进行管理，一致性很难保证，难以维护。</li>
-<li>Debian类系统的打包看起来比RPM包复杂很多。</li>
-</ul>
-<h2 id="Who"><a href="#Who" class="headerlink" title="Who"></a>Who</h2><p>谁需要看这篇文章呢？</p>
-<ul>
-<li>不了解如何编译DEB包</li>
-<li>想把修改过的OpenStack源代码重新发布，供内部使用</li>
-<li>希望改变直接维护源代码</li>
-</ul>
-<p>当然，如果您已经是这方面的高手，欢迎给我指正我Blog中的不足，十分感谢。</p>
-    
-    <a class="article-more-a" href="/2015/03/05/build-openstack-source-code-to-deb-package/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack//" class="article-tag-list-link color5">openstack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack/ubuntu//" class="article-tag-list-link color2">ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack/ubuntu/deb//" class="article-tag-list-link color4">deb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2015/03/05/build-openstack-source-code-to-deb-package/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
@@ -1288,15 +1276,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Cloud Computing</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Serverless</a>
               </li>
              
               <li class="article-tag-list-item">
