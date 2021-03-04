@@ -183,6 +183,112 @@ var _hmt = _hmt || [];
             
 
   
+    <article id="post-Python-How-to-use-zookeeper-to-build-distribution-system" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/03/24/Python-How-to-use-zookeeper-to-build-distribution-system/">[Python]利用ZooKeeper构建分布式定时任务</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/03/24/Python-How-to-use-zookeeper-to-build-distribution-system/" class="archive-article-date">
+        <time datetime="2020-03-24T12:39:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>本文涉及的源代码路径：<a href="https://github.com/xiaoquqi/openstackclient-demo/tree/master/tooz" target="_blank" rel="noopener">https://github.com/xiaoquqi/openstackclient-demo/tree/master/tooz</a></p>
+<h1 id="一、目前现状及存在的问题"><a href="#一、目前现状及存在的问题" class="headerlink" title="一、目前现状及存在的问题"></a>一、目前现状及存在的问题</h1><p>在实际业务系统中，经常有需要定时执行的任务，例如任务状态的定时更新、定时发送状态信息等。在我们的云迁移产品中，允许用户可以设定周期同步规则，定期执行数据同步并调用云平台接口执行快照操作。在单机版本中，通常在同一时间点并发任务量较少的情况下，问题并不是很突出，但是随着我们将云迁移服务从单机版本改造为平台版本后，当多个用户的多台主机同时触发快照任务时，一方面传统的设计方式就成为了瓶颈，无法保证用户的同步任务在同一时间点被触发（需要排队）；另外一方面，目前Active-Passive（简称AP方式）的高可靠部署方式无法利用集群横向扩展能力，无法满足高并发的要求。</p>
+<img src="/images/blogs/2020-03-24/1.png" class="">
+    
+    <a class="article-more-a" href="/2020/03/24/Python-How-to-use-zookeeper-to-build-distribution-system/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Zookeeper</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">分布式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tooz</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/03/24/Python-How-to-use-zookeeper-to-build-distribution-system/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-AWS-Certified-Solutions-Architecture-Associate-Practice" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1026,95 +1132,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-openstack-training-user-experience" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2016/03/27/openstack-training-user-experience/">OpenStack培训的用户体验</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2016/03/27/openstack-training-user-experience/" class="archive-article-date">
-        <time datetime="2016-03-27T02:42:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-27</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>尽管在云计算领域仍然有很大的争议，但是OpenStack事实上已经成为Iaas云平台的事实标准和首选的平台。从培训市场的火热也证明了这一点，现在的OpenStack培训有很多，讲的内容也不尽相同，那么哪一种培训才是用户最需要的呢？</p>
-<p>这篇文章并不是要评价任何一个OpenStack培训，只是想从用户体验的角度分析一下，到底什么才是用户真正需要的。如果文章观点有任何不妥，还请各位前辈和大牛们多多海涵。</p>
-    
-    <a class="article-more-a" href="/2016/03/27/openstack-training-user-experience/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack//" class="article-tag-list-link color5">openstack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2016/03/27/openstack-training-user-experience/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
@@ -1243,11 +1260,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
