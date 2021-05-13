@@ -183,6 +183,111 @@ var _hmt = _hmt || [];
             
 
   
+    <article id="post-ceph-performance-optimization-summary" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2015/06/27/ceph-performance-optimization-summary/">Ceph性能优化总结(v0.94)</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2015/06/27/ceph-performance-optimization-summary/" class="archive-article-date">
+        <time datetime="2015-06-27T22:30:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-06-28</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>最近一直在忙着搞Ceph存储的优化和测试，看了各种资料，但是好像没有一篇文章把其中的方法论交代清楚，所以呢想在这里进行一下总结，很多内容并不是我原创，只是做一个总结。如果其中有任何的问题，欢迎各位喷我，以便我提高。</p>
+<h2 id="优化方法论"><a href="#优化方法论" class="headerlink" title="优化方法论"></a>优化方法论</h2><p>做任何事情还是要有个方法论的，“授人以鱼不如授人以渔”的道理吧，方法通了，所有的问题就有了解决的途径。通过对公开资料的分析进行总结，对分布式存储系统的优化离不开以下几点：</p>
+<h3 id="1-硬件层面"><a href="#1-硬件层面" class="headerlink" title="1. 硬件层面"></a>1. 硬件层面</h3><ul>
+<li>硬件规划</li>
+<li>SSD选择</li>
+<li>BIOS设置</li>
+</ul>
+<h3 id="2-软件层面"><a href="#2-软件层面" class="headerlink" title="2. 软件层面"></a>2. 软件层面</h3><ul>
+<li>Linux OS</li>
+<li>Ceph Configurations</li>
+<li>PG Number调整</li>
+<li>CRUSH Map</li>
+<li>其他因素</li>
+</ul>
+    
+    <a class="article-more-a" href="/2015/06/27/ceph-performance-optimization-summary/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ceph//" class="article-tag-list-link color5">ceph</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ceph/openstack//" class="article-tag-list-link color5">openstack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2015/06/27/ceph-performance-optimization-summary/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ceph-osd-is-full" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
