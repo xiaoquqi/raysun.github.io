@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.site">
-  <title>使用MongoDB作为Salt Pillar后端存储数据 | 老孙正经胡说</title>
+  <title>利用Tushare对一夜持股法进行回归验证 | 老孙正经胡说</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="今天在查找salt中pillar嵌套pillar的方法时，无意之间发现了pillar除了可以直接使用文件(sls)外，也同时支持多种后端的数据存储方式。例如：MySQL, MongoDB, Ldap, json, cobbler甚至是puppet。这无疑为开发中的接口提供了极大的便利。">
+  <meta name="description" content="最近在抖音看到很多金融博主在推荐一些投资股票的心得，可以说是五花八门，再看评论区，更是千奇百怪，大部分人都在说没用，但又拿不出什么证据来。事实是检验真理的唯一标准，我觉得对于此类投资观点，最好的方式进行用历史数据去验证，因为历史总是重复的，如果是对的，那么对于未来的投资也算是找到了一条生财之道。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用MongoDB作为Salt Pillar后端存储数据">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2015&#x2F;02&#x2F;22&#x2F;use-mongodb-to-store-salt-pillar&#x2F;index.html">
+<meta property="og:title" content="利用Tushare对一夜持股法进行回归验证">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2021&#x2F;07&#x2F;01&#x2F;%E5%88%A9%E7%94%A8Tushare%E5%AF%B9%E6%8A%96%E9%9F%B3%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E6%96%B9%E6%B3%95%E8%BF%9B%E8%A1%8C%E5%9B%9E%E5%BD%92%E9%AA%8C%E8%AF%81&#x2F;index.html">
 <meta property="og:site_name" content="老孙正经胡说">
-<meta property="og:description" content="今天在查找salt中pillar嵌套pillar的方法时，无意之间发现了pillar除了可以直接使用文件(sls)外，也同时支持多种后端的数据存储方式。例如：MySQL, MongoDB, Ldap, json, cobbler甚至是puppet。这无疑为开发中的接口提供了极大的便利。">
+<meta property="og:description" content="最近在抖音看到很多金融博主在推荐一些投资股票的心得，可以说是五花八门，再看评论区，更是千奇百怪，大部分人都在说没用，但又拿不出什么证据来。事实是检验真理的唯一标准，我觉得对于此类投资观点，最好的方式进行用历史数据去验证，因为历史总是重复的，如果是对的，那么对于未来的投资也算是找到了一条生财之道。">
 <meta property="og:locale" content="zh">
-<meta property="article:published_time" content="2015-02-22T23:19:21.000Z">
-<meta property="article:modified_time" content="2021-07-02T11:14:53.965Z">
+<meta property="article:published_time" content="2021-07-01T10:23:09.000Z">
+<meta property="article:modified_time" content="2021-07-02T11:14:53.969Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
   
@@ -180,22 +180,22 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-use-mongodb-to-store-salt-pillar" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-利用Tushare对抖音股票投资方法进行回归验证" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      使用MongoDB作为Salt Pillar后端存储数据
+      利用Tushare对一夜持股法进行回归验证
     </h1>
   
 
 
   
   
-<a href="/2015/02/22/use-mongodb-to-store-salt-pillar/" class="archive-article-date">
-        <time datetime="2015-02-22T23:19:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-02-23</time>
+<a href="/2021/07/01/%E5%88%A9%E7%94%A8Tushare%E5%AF%B9%E6%8A%96%E9%9F%B3%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E6%96%B9%E6%B3%95%E8%BF%9B%E8%A1%8C%E5%9B%9E%E5%BD%92%E9%AA%8C%E8%AF%81/" class="archive-article-date">
+        <time datetime="2021-07-01T10:23:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-01</time>
 </a>
 
   
@@ -208,7 +208,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">690字</span>
+      <span class="post-count">1.2k字</span>
     </span>
   </span>
 
@@ -217,7 +217,7 @@ var _hmt = _hmt || [];
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -228,54 +228,39 @@ var _hmt = _hmt || [];
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>今天在查找salt中pillar嵌套pillar的方法时，无意之间发现了pillar除了可以直接使用文件(sls)外，也同时支持多种后端的数据存储方式。例如：MySQL, MongoDB, Ldap, json, cobbler甚至是puppet。这无疑为开发中的接口提供了极大的便利。</p>
+    <p>最近在抖音看到很多金融博主在推荐一些投资股票的心得，可以说是五花八门，再看评论区，更是千奇百怪，大部分人都在说没用，但又拿不出什么证据来。事实是检验真理的唯一标准，我觉得对于此类投资观点，最好的方式进行用历史数据去验证，因为历史总是重复的，如果是对的，那么对于未来的投资也算是找到了一条生财之道。</p>
 <a id="more"></a>
 
-<p>详细的支持列表可见：<a href="http://docs.saltstack.com/en/latest/ref/pillar/all/index.html#all-salt-pillars" target="_blank" rel="noopener">http://docs.saltstack.com/en/latest/ref/pillar/all/index.html#all-salt-pillars</a></p>
-<p>严格意义上来说，这篇博文并非完全原创，英文原文请参考：<a href="http://www.tmartin.io/articles/2014/salt-pillar-mongodb/" target="_blank" rel="noopener">http://www.tmartin.io/articles/2014/salt-pillar-mongodb/</a></p>
-<p>下面就来说说详细的配置方式，假定你已经有了一个部署好的salt环境，并且正确配置了salt master和salt minion，并且完成认证，主机名为salt-master.salt.com，这里我们使用Ubuntu 12.04 64bit作为演示环境。</p>
-<h2 id="安装MongoDB和Python-MongoDB"><a href="#安装MongoDB和Python-MongoDB" class="headerlink" title="安装MongoDB和Python MongoDB"></a>安装MongoDB和Python MongoDB</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install mongodb python-pymongo python-pymongo-ext</span><br></pre></td></tr></table></figure>
-
-<p>确保你能连接到MongoDB</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
-
-<pre><code>MongoDB shell version: 2.2.3
-connecting to: test
-&gt;</code></pre><h2 id="创建MongoDB数据库和存放Pillar的Collection"><a href="#创建MongoDB数据库和存放Pillar的Collection" class="headerlink" title="创建MongoDB数据库和存放Pillar的Collection"></a>创建MongoDB数据库和存放Pillar的Collection</h2><ul>
-<li><p>创建数据库pillar</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use pillar</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在数据库中插入pillar数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.pillar.insert(&#123;</span><br><span class="line">    _id: &#39;salt-master.salt.com&#39;,</span><br><span class="line">    mongo_pillar: &#123;</span><br><span class="line">        key1: &quot;value1&quot;,</span><br><span class="line">        key2: &quot;value2&quot;,</span><br><span class="line">    &#125;&#125;)</span><br></pre></td></tr></table></figure>
-<p>注意：这里的_id必须要和你的minion节点的主机名一致，并且无法使用通配符，也就是一个节点都有自己一套独立的pillar，这一点和文件中定义pillar有很大的不同。mongo_pillar部分中是定义的是pillar中的内容，也就是我们可以直接引用的部分。</p>
-</li>
-</ul>
-<h3 id="配置Salt-Master"><a href="#配置Salt-Master" class="headerlink" title="配置Salt Master"></a>配置Salt Master</h3><ul>
-<li><p>下一步就是告诉Salt Master，我们在MongoDB中存放了pillar数据，需要劳您大驾，移步MongoDB读取数据。修改：</p>
-<p>  /etc/salt/master</p>
-</li>
-</ul>
-<p>添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mongo.db: &quot;pillar&quot;</span><br><span class="line">mongo.host: &quot;localhost&quot;</span><br><span class="line">ext_pillar:</span><br><span class="line">    - mongo: &#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：如果需要使用不同于标准安装接口，请使用mongo.port，如果需要配置用户名和密码，请使用mongo.user和mongo.password。其他参数定义，请详见：<a href="http://docs.saltstack.com/en/latest/ref/pillar/all/salt.pillar.mongo.html#module-documentation" target="_blank" rel="noopener">http://docs.saltstack.com/en/latest/ref/pillar/all/salt.pillar.mongo.html#module-documentation</a></p>
+<h1 id="关于一夜持股法"><a href="#关于一夜持股法" class="headerlink" title="关于一夜持股法"></a>关于一夜持股法</h1><p>简单来说，一夜持股法是利用两天之间的追涨来获取收益，即第一天尾盘买入股票，第二天趁着涨势再卖掉，降低盘中震荡对于价格的冲击，如此反复操作，获取收益。</p>
+<p>在原文视频中，作者给出了这种操作的八个条件：</p>
 <ul>
-<li><p>测试</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt salt-master.salt.com pillar.item mongo_pillar</span><br></pre></td></tr></table></figure>
-<p>返回</p>
-<p>  salt-master.salt.com:</p>
-<pre><code>----------
-mongo_pillar:
-    ----------
-    key1:
-        value1
-    key2:
-        value2</code></pre></li>
-<li><p>如果想在sls中直接使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;&#123;&#123; salt[&#39;pillar.get&#39;](&#39;mongo_pillar:key1&#39;) &#125;&#125;&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>在收盘前，即下午2点半左右看盘</li>
+<li>在当天的股票中，利用软件筛选出涨幅在3%-5%的股票</li>
+<li>再根据量比排名，找出大于1的股票</li>
+<li>再根据换手率排名，选出换手率在5%-10%的股票，换手率太高可能有庄家出货嫌疑，换手率太低第二天缺乏上攻的动力</li>
+<li>再根据流通盘排名，筛选出50亿-200亿之间的股票，股票流通盘太大，拉动需要大量资金</li>
+<li>查看K线图，删除成交量忽高忽低的，只留下成交量持续放大的股票</li>
+<li>观察K线形态，如果在重要均线下方，或者近期冲高回落有套牢盘的全部删掉，只留下K线上方没有任何压力的，第二天冲高概率才大</li>
+<li>观察当天分时图，股价全天必须在分时图均线价格上方，那么意味着所有人都吃到了涨幅，第二天冲高有动力；股票价格必须要强于当天的大盘分时图，选择逆势而上的强势股</li>
+<li>均线在下午2点半左右，创出新高，股价回落均线</li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>pillar应该是salt中一个比较灵活的配置选项，个人理解pillar的作用就像puppet中init定义的初始化的参数的默认值，每次部署时，只需要更改pillar的文件就可以啦。但是随着代码的增长(主要用于部署OpenStack)，发现pillar的管理越来越难，pillar本身对如何组织结构并没有严格的限制，而且嵌套(extend)功能暂时还不能很完美的支持(<a href="https://github.com/saltstack/salt/issues/3991)，这也给pillar的管理提高了复杂度。" target="_blank" rel="noopener">https://github.com/saltstack/salt/issues/3991)，这也给pillar的管理提高了复杂度。</a></p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>看到以上八个苛刻的条件，可能大部分还没找到股票，当天交易估计就结束了，别说交易了。说实话我刚看到这个视频时候，也是将信将疑，所以决定用程序对过去一年的历史数据进行校验。如果有效，再通过程序实现一个自动化交易的算法，完成自动化交易。</p>
+<h2 id="数据源"><a href="#数据源" class="headerlink" title="数据源"></a>数据源</h2><p>首先我们来分析一下我们需要哪些数据源：</p>
+<ul>
+<li>股票列表，包括涨幅、量比、换手率、流通盘</li>
+<li>股票K线数据，包括重要的均线</li>
+<li>股票分时图</li>
+</ul>
+<h2 id="回归验证"><a href="#回归验证" class="headerlink" title="回归验证"></a>回归验证</h2><p>我们主要针对2020年1月到2020年12月的数据，以及2021年上半年的数据进行回归交易，回归验证的流程为：</p>
+<ul>
+<li>我们假设有10万本金进行上述交易</li>
+<li>我们先根据上述条件进行股票过滤，如果当天能够筛选出股票，将资金平均分为3份，购买股票</li>
+<li>卖出策略有很多种，我们先采取最简单的策略进行回归，我们假定在第二天上午10点30分将股票全部卖出</li>
+<li>运行程序进行模拟，并计算总收益</li>
+</ul>
+<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><p>我们需要大量的历史交易数据，通过对网上资料的搜索，我发现tushare是目前提供最全的金融SDK，不仅仅是股票，还包括其他很多金融产品。tushare分为两个版本，一个为普通版本，一个为专业版本。普通版本虽然功能还能使用，但是逐步在废弃。专业版本是依靠积分机制来获取不同接口权限的，可以通过对社区贡献或者直接捐钱获取积分，不过这也不难理解，毕竟一个社区的良性发展需要资金支持。</p>
+<p>Tushare旧版本的文档在这里：<a href="http://tushare.org/fundamental.html" target="_blank" rel="noopener">http://tushare.org/fundamental.html</a><br>全新版本的文档在：<a href="https://waditu.com/document/1" target="_blank" rel="noopener">https://waditu.com/document/1</a></p>
+<p>旧版本有很多接口已经废弃了，使用的时候会有提示。而新版本则需要先申请token，再进行使用，根据你的积分不同，你调用的接口和频度是不同的。同时tushare返回的格式直接就是pandas的DateFrame类型，可以直接进行排序或者过滤等数据操作，非常方便。目前对于一夜持股法的验证还在继续中，也欢迎有兴趣的同学参与。</p>
 
     
 
@@ -322,7 +307,7 @@ mongo_pillar:
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://sunqi.site/2015/02/22/use-mongodb-to-store-salt-pillar/" title="使用MongoDB作为Salt Pillar后端存储数据" target="_blank">http://sunqi.site/2015/02/22/use-mongodb-to-store-salt-pillar/</a>
+          <a href="http://sunqi.site/2021/07/01/利用Tushare对抖音股票投资方法进行回归验证/" title="利用Tushare对一夜持股法进行回归验证" target="_blank">http://sunqi.site/2021/07/01/利用Tushare对抖音股票投资方法进行回归验证/</a>
         </li>
         
         <li>
@@ -340,25 +325,6 @@ mongo_pillar:
     
     
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack//" class="article-tag-list-link color5">OpenStack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/Salt//" class="article-tag-list-link color5">Salt</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OpenStack/Salt/Cloud-Computing//" class="article-tag-list-link color1">Cloud Computing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
 
@@ -408,7 +374,7 @@ mongo_pillar:
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2015/02/22/use-mongodb-to-store-salt-pillar/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2021/07/01/%E5%88%A9%E7%94%A8Tushare%E5%AF%B9%E6%8A%96%E9%9F%B3%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E6%96%B9%E6%B3%95%E8%BF%9B%E8%A1%8C%E5%9B%9E%E5%BD%92%E9%AA%8C%E8%AF%81/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -423,15 +389,11 @@ mongo_pillar:
 
 <nav id="article-nav">
   
-    <a href="/2015/03/03/openstack-instance-ha-high-availability/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          OpenStack虚拟机的高可靠
-        
-      </div>
-    </a>
   
+    <a href="/2021/05/30/%E9%98%BF%E9%87%8C%E4%BA%91Serverless%E7%8E%B0%E7%8A%B6%E4%B8%8E%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从阿里云峰会看Serverless现状与发展趋势</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
