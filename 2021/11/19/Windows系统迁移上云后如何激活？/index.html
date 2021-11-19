@@ -6,21 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sunqi.site">
-  <title>Ceph集群磁盘没有剩余空间的解决方法 | 老孙正经胡说</title>
+  <title>Windows系统迁移上云后如何激活？ | 老孙正经胡说</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="故障描述OpenStack + Ceph集群在使用过程中，由于虚拟机拷入大量新的数据，导致集群的磁盘迅速消耗，没有空余空间，虚拟机无法操作，Ceph集群所有操作都无法执行。">
+  <meta name="description" content="使用整机迁移方式(Re-Host)将Windows迁移至云平台后，由于底层的硬件发生改变，导致Windows序列号失效，需要重新进行激活。对于企业用户，如何保护既有投资，使用合理的方式对系统激活而不产生额外费用呢？本文基于项目中的最佳实践，为您详细进行解读。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ceph集群磁盘没有剩余空间的解决方法">
-<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2015&#x2F;05&#x2F;11&#x2F;ceph-osd-is-full&#x2F;index.html">
+<meta property="og:title" content="Windows系统迁移上云后如何激活？">
+<meta property="og:url" content="http:&#x2F;&#x2F;sunqi.site&#x2F;2021&#x2F;11&#x2F;19&#x2F;Windows%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E4%B8%8A%E4%BA%91%E5%90%8E%E5%A6%82%E4%BD%95%E6%BF%80%E6%B4%BB%EF%BC%9F&#x2F;index.html">
 <meta property="og:site_name" content="老孙正经胡说">
-<meta property="og:description" content="故障描述OpenStack + Ceph集群在使用过程中，由于虚拟机拷入大量新的数据，导致集群的磁盘迅速消耗，没有空余空间，虚拟机无法操作，Ceph集群所有操作都无法执行。">
+<meta property="og:description" content="使用整机迁移方式(Re-Host)将Windows迁移至云平台后，由于底层的硬件发生改变，导致Windows序列号失效，需要重新进行激活。对于企业用户，如何保护既有投资，使用合理的方式对系统激活而不产生额外费用呢？本文基于项目中的最佳实践，为您详细进行解读。">
 <meta property="og:locale" content="zh">
-<meta property="article:published_time" content="2015-05-11T17:21:42.000Z">
-<meta property="article:modified_time" content="2021-11-19T02:46:24.335Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-280.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-281.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-282.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-283.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-284.png">
+<meta property="article:published_time" content="2021-11-19T00:06:32.000Z">
+<meta property="article:modified_time" content="2021-11-19T02:46:24.339Z">
 <meta property="article:author" content="孙琦(Ray)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;sunqi.site&#x2F;images&#x2F;pasted-280.png">
   
     <link rel="alternative" href="/atom.xml" title="老孙正经胡说" type="application/atom+xml">
   
@@ -180,22 +186,22 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ceph-osd-is-full" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Windows系统迁移上云后如何激活？" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Ceph集群磁盘没有剩余空间的解决方法
+      Windows系统迁移上云后如何激活？
     </h1>
   
 
 
   
   
-<a href="/2015/05/11/ceph-osd-is-full/" class="archive-article-date">
-        <time datetime="2015-05-11T17:21:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-05-12</time>
+<a href="/2021/11/19/Windows%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E4%B8%8A%E4%BA%91%E5%90%8E%E5%A6%82%E4%BD%95%E6%BF%80%E6%B4%BB%EF%BC%9F/" class="archive-article-date">
+        <time datetime="2021-11-19T00:06:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-19</time>
 </a>
 
   
@@ -208,7 +214,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.7k字</span>
+      <span class="post-count">1.3k字</span>
     </span>
   </span>
 
@@ -217,7 +223,7 @@ var _hmt = _hmt || [];
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">8分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -228,45 +234,41 @@ var _hmt = _hmt || [];
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="故障描述"><a href="#故障描述" class="headerlink" title="故障描述"></a>故障描述</h2><p>OpenStack + Ceph集群在使用过程中，由于虚拟机拷入大量新的数据，导致集群的磁盘迅速消耗，没有空余空间，虚拟机无法操作，Ceph集群所有操作都无法执行。</p>
+    <p>使用整机迁移方式(Re-Host)将Windows迁移至云平台后，由于底层的硬件发生改变，导致Windows序列号失效，需要重新进行激活。对于企业用户，如何保护既有投资，使用合理的方式对系统激活而不产生额外费用呢？本文基于项目中的最佳实践，为您详细进行解读。</p>
 <a id="more"></a>
 
-<h2 id="故障现象"><a href="#故障现象" class="headerlink" title="故障现象"></a>故障现象</h2><ul>
-<li>尝试使用OpenStack重启虚拟机无效</li>
-<li>尝试直接用rbd命令直接删除块失败</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]# rbd -p volumes rm volume-c55fd052-212d-4107-a2ac-cf53bfc049be</span><br><span class="line">2015-04-29 05:31:31.719478 7f5fb82f7760  0 client.4781741.objecter  FULL, paused modify 0xe9a9e0 tid 6</span><br></pre></td></tr></table></figure>
+<h1 id="为什么迁移后授权失效？"><a href="#为什么迁移后授权失效？" class="headerlink" title="为什么迁移后授权失效？"></a>为什么迁移后授权失效？</h1><p>根据微软的解释：在安装Windows时，数字许可证本身与设备的硬件相关联。如果你对设备进行重大的硬件更改（例如更换母板），Windows将无法找到与设备匹配的许可证，因此你需要重新激活Windows才能使其正常运行。</p>
+<p>根据云原生迁移工具HyperMotion的迁移原理，基于底层块级别技术进行复制，在系统拉起后，底层硬件变更为云平台的虚拟设备，导致硬件变更，造成了授权失效的情况发生。同时，由于云平台的机制，这种改变是必须的，所以并没有方法从虚拟化底层避免这一问题的发生。所以在公有云和私有云迁移或容灾时，就需要使用不同方法加以应对。</p>
+<h1 id="公有云"><a href="#公有云" class="headerlink" title="公有云"></a>公有云</h1><p>根据目前的公开文档，绝大多数的公有云使用KMS方式对Windows采用自动化激活的方式。</p>
+<p><img src="/images/pasted-280.png" alt="upload successful"></p>
+<p>也可以在开机通过设定脚本的方式，实现自动化激活。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cscript &#x2F;nologo %windir%&#x2F;system32&#x2F;slmgr.vbs -skms kms.tencentyun.com:1688</span><br><span class="line">cscript &#x2F;nologo %windir%&#x2F;system32&#x2F;slmgr.vbs -ato</span><br></pre></td></tr></table></figure>
 
+<p>华为云也是类似的方法，都是通过云内部的KMS实现批量激活。</p>
+<p><img src="/images/pasted-281.png" alt="upload successful"></p>
+<h2 id="保留原有授权"><a href="#保留原有授权" class="headerlink" title="保留原有授权"></a>保留原有授权</h2><p>这种方法目前只在AWS相关文档看到，这个方式叫做License Mobility，但是需要联系到原有授权的经销商才可以提交相关申请。</p>
+<p><img src="/images/pasted-282.png" alt="upload successful"></p>
+<h1 id="私有云"><a href="#私有云" class="headerlink" title="私有云"></a>私有云</h1><p>私有云的客户大多数为企业客户，一般都会购买过正版批量授权，对于授权的可激活次数是有一定宽松条件的。需要明确的一个先决条件，企业用户必须购买了正版的批量授权，零售版不在我们讨论范围内。</p>
+<p>首先先要明确一个概念，授权和可激活次数是两个完全不同的概念，授权的数量是一定的，而激活次数是灵活的。也正是利用这一点，可以解决我们在业务系统迁移后，授权激活的问题。解决问题的思路如下：</p>
 <ul>
-<li>查看ceph健康状态</li>
+<li>假如用户一共购买了10套Windows Server，那么在Windows批量授权中心，用户可激活的次数应该为50次</li>
+<li>用户已经安装了10套Windows Server，并且已经激活，此时用户需要进行迁移</li>
+<li>利用HyperMotion的热迁移能力，在保证业务连续性的前提下，将Windows从VMware环境以无代理方式迁移至了云平台上</li>
+<li>用户希望利用HyperMotion的迁移验证功能，快速建立仿真环境，我们将10台Windows全部在云平台进行启动（原业务正常运行）</li>
+<li>此时启动的Windows由于虚拟化底层发生改变，Windows都是未激活状态（Windows 2012如果在联网状况下，会自动尝试激活），但是并不影响业务系统验证</li>
+<li>客户在验证后，确认业务可用，准备进行系统割接</li>
+<li>经过最终的增量同步，原有业务系统关机，在正式的VPC内启动业务系统，并保持IP地址不变</li>
+<li>业务系统割接后，Windows仍然属于未激活状态，我们在联网状态下，使用原有的序列号再次进行激活</li>
+<li>完成业务系统迁移，同时Windows激活</li>
 </ul>
-<figure class="highlight plain"><figcaption><span>ceph -s</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cluster 059f27e8-a23f-4587-9033-3e3679d03b31</span><br><span class="line"> health HEALTH_ERR 20 pgs backfill_toofull; 20 pgs degraded; 20 pgs stuck unclean; recovery 7482&#x2F;129081 objects degraded (5.796%); 2 full osd(s); 1 near full osd(s)</span><br><span class="line"> monmap e6: 4 mons at &#123;node-5e40.cloud.com&#x3D;10.10.20.40:6789&#x2F;0,node-6670.cloud.com&#x3D;10.10.20.31:6789&#x2F;0,node-66c4.cloud.com&#x3D;10.10.20.36:6789&#x2F;0,node-fb27.cloud.com&#x3D;10.10.20.41:6789&#x2F;0&#125;, election epoch 886, quorum 0,1,2,3 node-6670.cloud.com,node-66c4.cloud.com,node-5e40.cloud.com,node-fb27.cloud.com</span><br><span class="line"> osdmap e2743: 3 osds: 3 up, 3 in</span><br><span class="line">        flags full</span><br><span class="line">  pgmap v6564199: 320 pgs, 4 pools, 262 GB data, 43027 objects</span><br><span class="line">        786 GB used, 47785 MB &#x2F; 833 GB avail</span><br><span class="line">        7482&#x2F;129081 objects degraded (5.796%)</span><br><span class="line">             300 active+clean</span><br><span class="line">              20 active+degraded+remapped+backfill_toofull</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><figcaption><span>ceph health detail</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">HEALTH_ERR 20 pgs backfill_toofull; 20 pgs degraded; 20 pgs stuck unclean; recovery 7482&#x2F;129081 objects degraded (5.796%); 2 full osd(s); 1 near full osd(s)</span><br><span class="line">pg 3.8 is stuck unclean for 7067109.597691, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.7d is stuck unclean for 1852078.505139, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.21 is stuck unclean for 7072842.637848, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.22 is stuck unclean for 7070880.213397, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.a is stuck unclean for 7067057.863562, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.7f is stuck unclean for 7067122.493746, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.5 is stuck unclean for 7067088.369629, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.1e is stuck unclean for 7073386.246281, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.19 is stuck unclean for 7068035.310269, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.5d is stuck unclean for 1852078.505949, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.1a is stuck unclean for 7067088.429544, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.1b is stuck unclean for 7072773.771385, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.3 is stuck unclean for 7067057.864514, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.15 is stuck unclean for 7067088.825483, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.11 is stuck unclean for 7067057.862408, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.6d is stuck unclean for 7067083.634454, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.6e is stuck unclean for 7067098.452576, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.c is stuck unclean for 5658116.678331, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.e is stuck unclean for 7067078.646953, current state active+degraded+remapped+backfill_toofull, last acting [2,0]</span><br><span class="line">pg 3.20 is stuck unclean for 7067140.530849, current state active+degraded+remapped+backfill_toofull, last acting [0,2]</span><br><span class="line">pg 3.7d is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.7f is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.6d is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.6e is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.5d is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.20 is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.21 is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.22 is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.1e is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.19 is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.1a is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.1b is active+degraded+remapped+backfill_toofull, acting [0,2]</span><br><span class="line">pg 3.15 is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.11 is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.c is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.e is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.8 is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.a is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.5 is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">pg 3.3 is active+degraded+remapped+backfill_toofull, acting [2,0]</span><br><span class="line">recovery 7482&#x2F;129081 objects degraded (5.796%)</span><br><span class="line">osd.0 is full at 95%</span><br><span class="line">osd.2 is full at 95%</span><br><span class="line">osd.1 is near full at 93%</span><br></pre></td></tr></table></figure>
-<h2 id="解决方案一-已验证"><a href="#解决方案一-已验证" class="headerlink" title="解决方案一(已验证)"></a>解决方案一(已验证)</h2><p>增加OSD节点，这也是官方文档中推荐的做法，增加新的节点后，Ceph开始重新平衡数据，OSD使用空间开始下降</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2015-04-29 06:51:58.623262 osd.1 [WRN] OSD near full (91%)</span><br><span class="line">2015-04-29 06:52:01.500813 osd.2 [WRN] OSD near full (92%)</span><br></pre></td></tr></table></figure>
-
-<h2 id="解决方案二-理论上，没有进行验证"><a href="#解决方案二-理论上，没有进行验证" class="headerlink" title="解决方案二(理论上，没有进行验证)"></a>解决方案二(理论上，没有进行验证)</h2><p>如果在没有新的硬盘的情况下，只能采用另外一种方式。在当前状态下，Ceph不允许任何的读写操作，所以此时任何的Ceph命令都不好使，解决的方案就是尝试降低Ceph对于full的比例定义，我们从上面的日志中可以看到Ceph的full的比例为95%，我们需要做的就是提高full的比例，之后尽快尝试删除数据，将比例下降。</p>
-<ul>
-<li>尝试直接用命令设置，但是失败了，Ceph集群并没有重新同步数据，怀疑可能仍然需要重启服务本身</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ceph mon tell \* injectargs &#39;--mon-osd-full-ratio 0.98&#39;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改配置文件，之后重启monitor服务，但是担心出问题，所以没有敢尝试该方法，后续经过在邮件列表确认，该方法应该不会对数据产生影响，但是前提是在恢复期间，所有的虚拟机不要向Ceph再写入任何数据。</li>
-</ul>
-<p>默认情况下full的比例是95%，而near full的比例是85%，所以需要根据实际情况对该配置进行调整。</p>
-<figure class="highlight plain"><figcaption><span>/etc/ceph/ceph.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">    mon osd full ratio &#x3D; .98</span><br><span class="line">    mon osd nearfull ratio &#x3D; .80</span><br></pre></td></tr></table></figure>
-
-<h2 id="分析总结"><a href="#分析总结" class="headerlink" title="分析总结"></a>分析总结</h2><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>根据Ceph官方文档中的描述，当一个OSD full比例达到95%时，集群将不接受任何Ceph Client端的读写数据的请求。所以导致虚拟机在重启时，无法启动的情况。</p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>从官方的推荐来看，应该比较支持添加新的OSD的方式，当然临时的提高比例是一个解决方案，但是并不推荐，因为需要手动的删除数据去解决，而且一旦再有一个新的节点出现故障，仍然会出现比例变满的状况，所以解决之道最好是扩容。</p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>在这次故障过程中，有两点是值得思考的：</p>
-<ul>
-<li>监控：由于当时服务器在配置过程中DNS配置错误，导致监控邮件无法正常发出，从而没有收到Ceph WARN的提示信息</li>
-<li>云平台本身： 由于Ceph的机制，在OpenStack平台中分配中，大多时候是超分的，从用户角度看，拷贝大量数据的行为并没有不妥之处，但是由于云平台并没有相应的预警机制，导致了该问题的发生</li>
-</ul>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
-<li><a href="http://ceph.com/docs/master/rados/configuration/mon-config-ref/#storage-capacity" target="_blank" rel="noopener">http://ceph.com/docs/master/rados/configuration/mon-config-ref/#storage-capacity</a></li>
+<p>如果激活次数达到上限后，该如何处理呢？通过咨询微软400，对于企业用户的批量授权，激活次数是可以免费扩充的，只需要在该链接（<a href="https://support.microsoft.com/en-us/supportrequestform/2afa6f15-b710-db46-909a-8346017c802f?sl=en&amp;sc=US）" target="_blank" rel="noopener">https://support.microsoft.com/en-us/supportrequestform/2afa6f15-b710-db46-909a-8346017c802f?sl=en&amp;sc=US）</a> 提交申请，大概在5个工作日左右微软完成核实后，用户可以登陆自身的“微软的批量许可中心”查询可激活的次数，或者直接通过400电话咨询想过扩充方式。但是前提是您的激活次数达到上限才可以。</p>
+<p><img src="/images/pasted-283.png" alt="upload successful"></p>
+<p>整体的流程请见下图：</p>
+<p><img src="/images/pasted-284.png" alt="upload successful"></p>
+<h1 id="Windows不激活会自动重启吗？"><a href="#Windows不激活会自动重启吗？" class="headerlink" title="Windows不激活会自动重启吗？"></a>Windows不激活会自动重启吗？</h1><p>根据微软400电话反馈，由于正版保护的策略，Windows会出现一些随机事件，重启只是其中的一种，但并不是100%出现，目前肯定出现的问题是定期出现的是激活提醒。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>公有云环境，推荐使用公有云自身提供的KMS服务</li>
+<li>私有云环境，如果你购买了企业的批量授权，并不用担心授权激活问题，微软会帮你解决激活问题</li>
 </ul>
 
     
@@ -314,7 +316,7 @@ var _hmt = _hmt || [];
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://sunqi.site/2015/05/11/ceph-osd-is-full/" title="Ceph集群磁盘没有剩余空间的解决方法" target="_blank">http://sunqi.site/2015/05/11/ceph-osd-is-full/</a>
+          <a href="http://sunqi.site/2021/11/19/Windows系统迁移上云后如何激活？/" title="Windows系统迁移上云后如何激活？" target="_blank">http://sunqi.site/2021/11/19/Windows系统迁移上云后如何激活？/</a>
         </li>
         
         <li>
@@ -332,21 +334,6 @@ var _hmt = _hmt || [];
     
     
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack//" class="article-tag-list-link color5">openstack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/openstack/ceph//" class="article-tag-list-link color5">ceph</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
 
@@ -396,7 +383,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2015/05/11/ceph-osd-is-full/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://sunqi.site/2021/11/19/Windows%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E4%B8%8A%E4%BA%91%E5%90%8E%E5%A6%82%E4%BD%95%E6%BF%80%E6%B4%BB%EF%BC%9F/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -411,18 +398,9 @@ var _hmt = _hmt || [];
 
 <nav id="article-nav">
   
-    <a href="/2015/06/27/ceph-performance-optimization-summary/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Ceph性能优化总结(v0.94)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/05/10/best-localrc-for-devstack-kilo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">(Kilo)Devstack Kilo版本localrc推荐</div>
+    <a href="/2021/11/11/%E5%A6%82%E4%BD%95%E5%9C%A8%E8%8B%B9%E6%9E%9C%E6%97%A5%E5%8E%86%E8%AE%A2%E9%98%85%E9%92%89%E9%92%89%E6%97%A5%E5%8E%86%EF%BC%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何在苹果日历订阅钉钉日历？</div>
       <i class="icon-circle-right"></i>
     </a>
   
